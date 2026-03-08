@@ -332,7 +332,7 @@ function Nav() {
       display: "flex", alignItems: "center", justifyContent: "space-between",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", cursor: "pointer" }} onClick={() => { window.location.hash = "#/"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-        <img src={LOGO_B64} alt="Kernel Arch Labs" style={{ width: "36px", height: "36px", borderRadius: "6px", objectFit: "cover" }} />
+        <img src="/logo.png" alt="Kernel Arch Labs" style={{ width: "36px", height: "36px", borderRadius: "6px", objectFit: "cover" }} />
         <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "13px", fontWeight: 500, color: CLR.szTextPrimary, letterSpacing: "0.5px" }}>KERNEL ARCH LABS</span>
       </div>
       <div style={{ display: "flex", gap: "32px", alignItems: "center" }} className="nav-desktop">
@@ -372,7 +372,7 @@ function HeroSection() {
   return (
     <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 1, padding: "120px 24px 80px", textAlign: "center" }}>
       <div style={{ opacity: bLoaded ? 1 : 0, transform: bLoaded ? "translateY(0)" : "translateY(20px)", transition: "all 0.8s ease 0.2s", marginBottom: "28px" }}>
-        <img src={LOGO_B64} alt="Kernel Arch Labs" style={{ width: "80px", height: "80px", borderRadius: "14px", objectFit: "cover", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }} />
+        <img src="/logo.png" alt="Kernel Arch Labs" style={{ width: "80px", height: "80px", borderRadius: "14px", objectFit: "cover", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }} />
       </div>
       <div style={{ opacity: bLoaded ? 1 : 0, transform: bLoaded ? "translateY(0)" : "translateY(15px)", transition: "all 0.7s ease 0.35s", marginBottom: "20px" }}>
         <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "4px", textTransform: "uppercase", padding: "6px 16px", border: "1px solid rgba(192,57,43,0.3)", borderRadius: "2px" }}>
@@ -630,7 +630,7 @@ function Footer() {
   return (
     <footer style={{ position: "relative", zIndex: 1, borderTop: `1px solid ${CLR.szBorder}`, padding: "36px 24px", maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "14px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }} onClick={() => { window.location.hash = "#/"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-        <img src={LOGO_B64} alt="Kernel Arch Labs" style={{ width: "28px", height: "28px", borderRadius: "5px", objectFit: "cover" }} />
+        <img src="/logo.png" alt="Kernel Arch Labs" style={{ width: "28px", height: "28px", borderRadius: "5px", objectFit: "cover" }} />
         <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextDim, letterSpacing: "0.5px" }}>KERNEL ARCH LABS</span>
       </div>
       <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "0.5px" }}>
