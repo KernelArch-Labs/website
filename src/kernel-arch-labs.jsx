@@ -60,7 +60,7 @@ const PROJECTS_DATA = [
       "Formal verification of security properties in Coq and Lean 4",
     ],
     szTimeline: "30-48 months",
-    szRepo: "github.com/astra-runtime",
+    szRepo: "github.com/KernelArch-Lab/astra-runtime",
   },
   {
     szId: "options-sim",
@@ -86,7 +86,7 @@ const PROJECTS_DATA = [
       "Tournament bracket evaluated on Sharpe ratio, not raw P&L",
     ],
     szTimeline: "14 weeks",
-    szRepo: "github.com/kernel-arch-labs/options-sim",
+    szRepo: "github.com/KernelArch-Lab/options-sim",
   },
   {
     szId: "drift",
@@ -112,7 +112,7 @@ const PROJECTS_DATA = [
       "Phased 16-week build: prototype, core systems, expansion, polish",
     ],
     szTimeline: "16 weeks",
-    szRepo: "github.com/kernel-arch-labs/drift",
+    szRepo: "github.com/KernelArch-Lab/drift",
   },
 ];
 
@@ -474,17 +474,25 @@ function ResearchSection() {
     <section id="research" style={{ position: "relative", zIndex: 1, padding: "100px 24px", maxWidth: "1100px", margin: "0 auto" }}>
       <Reveal><div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "16px" }}>// Research domains</div></Reveal>
       <Reveal iDelay={100}><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(28px, 4.5vw, 44px)", fontWeight: 400, color: CLR.szTextPrimary, lineHeight: 1.15, margin: "0 0 44px" }}>Where we focus</h2></Reveal>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", overflow: "hidden" }}>
-        {RESEARCH_DOMAINS.map((d, i) => (
-          <Reveal key={d.szTitle} iDelay={i * 70}>
-            <div style={{ padding: "28px 24px", backgroundColor: iHov === i ? CLR.szCardHover : CLR.szCard, transition: "background 0.3s", cursor: "default", minHeight: "150px", display: "flex", flexDirection: "column" }}
-              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(-1)}>
-              <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: iHov === i ? CLR.szRed : CLR.szTextDim, letterSpacing: "2px", marginBottom: "10px", transition: "color 0.3s" }}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "19px", fontWeight: 400, color: CLR.szTextPrimary, margin: "0 0 8px" }}>{d.szTitle}</h3>
-              <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "13px", color: CLR.szTextSecondary, lineHeight: 1.6, margin: 0, flex: 1 }}>{d.szBody}</p>
-            </div>
-          </Reveal>
-        ))}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", overflow: "hidden" }}>
+        {RESEARCH_DOMAINS.map((d, i) => {
+          const iTotal = RESEARCH_DOMAINS.length;
+          const iCols = 3;
+          const iLastRowCount = iTotal % iCols || iCols;
+          const iLastRowStart = iTotal - iLastRowCount;
+          const bLastRow = i >= iLastRowStart;
+          const flBasis = bLastRow ? `calc(${100 / iLastRowCount}% - ${(iLastRowCount - 1) / iLastRowCount}px)` : `calc(${100 / iCols}% - ${(iCols - 1) / iCols}px)`;
+          return (
+            <Reveal key={d.szTitle} iDelay={i * 70}>
+              <div style={{ padding: "28px 24px", backgroundColor: iHov === i ? CLR.szCardHover : CLR.szCard, transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", cursor: "default", minHeight: "150px", display: "flex", flexDirection: "column", flexBasis: flBasis, flexGrow: 0, flexShrink: 0, transform: iHov === i ? "translateY(-2px)" : "translateY(0)" }}
+                onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(-1)}>
+                <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: iHov === i ? CLR.szRed : CLR.szTextDim, letterSpacing: "2px", marginBottom: "10px", transition: "color 0.4s" }}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "19px", fontWeight: 400, color: CLR.szTextPrimary, margin: "0 0 8px" }}>{d.szTitle}</h3>
+                <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "13px", color: CLR.szTextSecondary, lineHeight: 1.6, margin: 0, flex: 1 }}>{d.szBody}</p>
+              </div>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
@@ -641,9 +649,9 @@ function CollaborateSection() {
       </Reveal>
       <Reveal iDelay={360}>
         <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "13px", color: CLR.szTextDim, padding: "18px 20px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szSurface, textAlign: "left", lineHeight: 1.8, borderRadius: "4px" }}>
-          <span style={{ color: CLR.szRed }}>$</span> git clone github.com/kernel-arch-labs<br />
+          <span style={{ color: CLR.szRed }}>$</span> git clone github.com/KernelArch-Lab<br />
           <span style={{ color: CLR.szRed }}>$</span> cd astra-runtime && cat CONTRIBUTING.md<br />
-          <span style={{ color: CLR.szTextDim }}># or reach out: collaborate@kernelarchlabs.org</span><br />
+          <span style={{ color: CLR.szTextDim }}># or reach out: reachout@kernelarch.com</span><br />
           <span style={{ color: CLR.szTextDim }}># follow us: linkedin.com/company/kernelarch-labs</span>
         </div>
       </Reveal>
@@ -664,7 +672,7 @@ function Footer() {
         Open Source &middot; Research Foundation &middot; 2026
       </div>
       <div style={{ display: "flex", gap: "18px" }}>
-        {[{ szLabel: "GitHub", szHref: "https://github.com/kernel-arch-labs" }, { szLabel: "LinkedIn", szHref: SZ_LINKEDIN }, { szLabel: "Papers", szHref: "#/papers" }, { szLabel: "Contact", szHref: "#collaborate" }].map((lnk) => (
+        {[{ szLabel: "GitHub", szHref: "https://github.com/KernelArch-Lab" }, { szLabel: "LinkedIn", szHref: SZ_LINKEDIN }, { szLabel: "Papers", szHref: "#/papers" }, { szLabel: "Contact", szHref: "#collaborate" }].map((lnk) => (
           <a key={lnk.szLabel} href={lnk.szHref} target={lnk.szHref.startsWith("http") ? "_blank" : undefined} rel={lnk.szHref.startsWith("http") ? "noopener noreferrer" : undefined} onClick={(e) => { if (lnk.szHref === "#/papers") { e.preventDefault(); navigateTo("#/papers"); } else if (lnk.szHref.startsWith("#") && !lnk.szHref.startsWith("#/")) { e.preventDefault(); if (window.location.hash.startsWith("#/papers")) { window.location.hash = "#/"; setTimeout(() => scrollTo(lnk.szHref), 100); } else { scrollTo(lnk.szHref); } } }}
             style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, textDecoration: "none", letterSpacing: "1px", textTransform: "uppercase", transition: "color 0.2s" }}
             onMouseEnter={(e) => (e.target.style.color = CLR.szRed)} onMouseLeave={(e) => (e.target.style.color = CLR.szTextDim)}>
