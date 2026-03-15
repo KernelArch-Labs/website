@@ -88,6 +88,32 @@ const PROJECTS_DATA = [
     szTimeline: "14 weeks",
     szRepo: "github.com/kernel-arch-labs/options-sim",
   },
+  {
+    szId: "drift",
+    szTitle: "Drift",
+    szTag: "AI & Interactive Systems",
+    szVersion: "v0.1",
+    szOneLiner: "AI-driven mobile experience built from scratch on Unity",
+    szDescription:
+      "A mobile-first interactive experience for iOS and Android built in Unity with a low-poly art style optimized to run on any smartphone. Combines handcrafted game systems with multi-model AI integration to create dynamic, context-aware interactions that feel alive. Designed around an offline-first philosophy where every feature works without internet and AI acts as an enhancement layer.",
+    szStatus: "Early Development",
+    vStack: ["Unity", "C#", "Gemini API", "Groq / Llama", "Claude API"],
+    vMetrics: [
+      { szLabel: "Phases", szValue: "4" },
+      { szLabel: "Duration", szValue: "16 weeks" },
+      { szLabel: "Target Size", szValue: "<300MB" },
+      { szLabel: "Team", szValue: "2" },
+    ],
+    vKeyPoints: [
+      "Multi-model AI architecture with tiered conversation system",
+      "Persistent memory system for context-aware AI interactions",
+      "Offline-first design — every feature works without internet",
+      "Low-poly art style optimized for broad device compatibility",
+      "Phased 16-week build: prototype, core systems, expansion, polish",
+    ],
+    szTimeline: "16 weeks",
+    szRepo: "github.com/kernel-arch-labs/drift",
+  },
 ];
 
 const RESEARCH_DOMAINS = [
@@ -97,6 +123,7 @@ const RESEARCH_DOMAINS = [
   { szTitle: "Applied Mathematics", szBody: "Stochastic calculus, probability theory, numerical PDE solvers, Monte Carlo methods, and optimisation under uncertainty." },
   { szTitle: "Machine Learning", szBody: "Anomaly detection, adversarial robustness, predictive scheduling, and learned resource management from system traces." },
   { szTitle: "Quantitative Finance", szBody: "Options pricing, market microstructure, inventory risk, volatility modelling, and optimal execution strategies." },
+  { szTitle: "AI & Interactive Systems", szBody: "Multi-model AI orchestration, persistent memory architectures, tiered conversation systems, and offline-first mobile experiences." },
 ];
 
 const PUBLICATION_TARGETS = [
@@ -567,7 +594,7 @@ function PublicationsSection() {
       </Reveal>
       <Reveal iDelay={320}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", overflow: "hidden" }}>
-          {[{ szVal: "14", szLabel: "Papers Planned" }, { szVal: "14", szLabel: "Target Venues" }, { szVal: "2", szLabel: "Active Projects" }, { szVal: "12", szLabel: "Contributors" }].map((s) => (
+          {[{ szVal: "14", szLabel: "Papers Planned" }, { szVal: "14", szLabel: "Target Venues" }, { szVal: "3", szLabel: "Active Projects" }, { szVal: "12", szLabel: "Contributors" }].map((s) => (
             <div key={s.szLabel} style={{ padding: "22px 18px", backgroundColor: CLR.szCard, textAlign: "center" }}>
               <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "30px", color: CLR.szTextPrimary }}><AnimCounter szTarget={s.szVal} /></div>
               <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "9px", color: CLR.szTextDim, letterSpacing: "1.5px", textTransform: "uppercase", marginTop: "5px" }}>{s.szLabel}</div>
