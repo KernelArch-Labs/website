@@ -474,26 +474,36 @@ function ResearchSection() {
     <section id="research" style={{ position: "relative", zIndex: 1, padding: "100px 24px", maxWidth: "1100px", margin: "0 auto" }}>
       <Reveal><div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "16px" }}>// Research domains</div></Reveal>
       <Reveal iDelay={100}><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(28px, 4.5vw, 44px)", fontWeight: 400, color: CLR.szTextPrimary, lineHeight: 1.15, margin: "0 0 44px" }}>Where we focus</h2></Reveal>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", overflow: "hidden" }}>
-        {RESEARCH_DOMAINS.map((d, i) => {
-          const iTotal = RESEARCH_DOMAINS.length;
-          const iCols = 3;
-          const iLastRowCount = iTotal % iCols || iCols;
-          const iLastRowStart = iTotal - iLastRowCount;
-          const bLastRow = i >= iLastRowStart;
-          const flBasis = bLastRow ? `calc(${100 / iLastRowCount}% - ${(iLastRowCount - 1) / iLastRowCount}px)` : `calc(${100 / iCols}% - ${(iCols - 1) / iCols}px)`;
-          return (
-            <Reveal key={d.szTitle} iDelay={i * 70}>
-              <div style={{ padding: "28px 24px", backgroundColor: iHov === i ? CLR.szCardHover : CLR.szCard, transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", cursor: "default", minHeight: "150px", display: "flex", flexDirection: "column", flexBasis: flBasis, flexGrow: 0, flexShrink: 0, transform: iHov === i ? "translateY(-2px)" : "translateY(0)" }}
-                onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(-1)}>
-                <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: iHov === i ? CLR.szRed : CLR.szTextDim, letterSpacing: "2px", marginBottom: "10px", transition: "color 0.4s" }}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "19px", fontWeight: 400, color: CLR.szTextPrimary, margin: "0 0 8px" }}>{d.szTitle}</h3>
-                <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "13px", color: CLR.szTextSecondary, lineHeight: 1.6, margin: 0, flex: 1 }}>{d.szBody}</p>
-              </div>
-            </Reveal>
+      {(() => {
+        const iCols = 3;
+        const iTotal = RESEARCH_DOMAINS.length;
+        const iFullRows = Math.floor(iTotal / iCols);
+        const iLastRowCount = iTotal % iCols || iCols;
+        const vRows = [];
+        for (let r = 0; r < Math.ceil(iTotal / iCols); r++) {
+          const vSlice = RESEARCH_DOMAINS.slice(r * iCols, r * iCols + iCols);
+          const bLast = r === Math.ceil(iTotal / iCols) - 1 && iTotal % iCols !== 0;
+          const iColsThisRow = bLast ? vSlice.length : iCols;
+          vRows.push(
+            <div key={r} style={{ display: "grid", gridTemplateColumns: `repeat(${iColsThisRow}, 1fr)`, gap: "1px", backgroundColor: CLR.szBorder, ...(r === 0 ? { borderRadius: "4px 4px 0 0", border: `1px solid ${CLR.szBorder}`, borderBottom: "none" } : r === Math.ceil(iTotal / iCols) - 1 ? { borderRadius: "0 0 4px 4px", border: `1px solid ${CLR.szBorder}`, borderTop: "none" } : { borderLeft: `1px solid ${CLR.szBorder}`, borderRight: `1px solid ${CLR.szBorder}` }) }}>
+              {vSlice.map((d, j) => {
+                const iGlobal = r * iCols + j;
+                return (
+                  <Reveal key={d.szTitle} iDelay={iGlobal * 70}>
+                    <div style={{ padding: "28px 24px", backgroundColor: iHov === iGlobal ? CLR.szCardHover : CLR.szCard, transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", cursor: "default", minHeight: "150px", display: "flex", flexDirection: "column", transform: iHov === iGlobal ? "translateY(-2px)" : "translateY(0)", height: "100%", boxSizing: "border-box" }}
+                      onMouseEnter={() => setHov(iGlobal)} onMouseLeave={() => setHov(-1)}>
+                      <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: iHov === iGlobal ? CLR.szRed : CLR.szTextDim, letterSpacing: "2px", marginBottom: "10px", transition: "color 0.4s" }}>{String(iGlobal + 1).padStart(2, "0")}</span>
+                      <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "19px", fontWeight: 400, color: CLR.szTextPrimary, margin: "0 0 8px" }}>{d.szTitle}</h3>
+                      <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "13px", color: CLR.szTextSecondary, lineHeight: 1.6, margin: 0, flex: 1 }}>{d.szBody}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
           );
-        })}
-      </div>
+        }
+        return <div style={{ overflow: "hidden", borderRadius: "4px" }}>{vRows}</div>;
+      })()}
     </section>
   );
 }
