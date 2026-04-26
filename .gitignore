@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output (Vercel rebuilds this from source on every deploy)
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Vercel CLI link metadata (each developer links their own)
+.vercel/

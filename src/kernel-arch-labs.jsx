@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import AstraLanding from "./AstraLanding";
 
 /* ===================================================================
    KERNEL ARCH LABS -- Research Foundation Website
@@ -331,6 +332,7 @@ function Nav() {
     { szLabel: "Mission", szHref: "#mission", szType: "scroll" },
     { szLabel: "Research", szHref: "#research", szType: "scroll" },
     { szLabel: "Projects", szHref: "#projects", szType: "scroll" },
+    { szLabel: "Astra", szHref: "#/astra", szType: "route" },
     { szLabel: "Papers", szHref: "#/papers", szType: "route" },
     { szLabel: "Collaborate", szHref: "#collaborate", szType: "scroll" },
   ];
@@ -339,7 +341,7 @@ function Nav() {
     if (aLink.szType === "route") {
       navigateTo(aLink.szHref);
     } else {
-      if (window.location.hash.startsWith("#/papers")) {
+      if (window.location.hash.startsWith("#/papers") || window.location.hash.startsWith("#/astra")) {
         window.location.hash = "#/";
         setTimeout(() => scrollTo(aLink.szHref), 100);
       } else {
@@ -548,9 +550,16 @@ function ProjectCard({ aProject, iIdx }) {
         </div>
         <div style={{ padding: "18px 26px" }}>
           <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "13.5px", color: CLR.szTextSecondary, lineHeight: 1.7, margin: "0 0 14px" }}>{aProject.szDescription}</p>
-          <button onClick={() => setExpanded(!bExpanded)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "1px", padding: 0, display: "flex", alignItems: "center", gap: "6px" }}>
-            {bExpanded ? "- COLLAPSE" : "+ KEY HIGHLIGHTS"}
-          </button>
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
+            <button onClick={() => setExpanded(!bExpanded)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "1px", padding: 0, display: "flex", alignItems: "center", gap: "6px" }}>
+              {bExpanded ? "- COLLAPSE" : "+ KEY HIGHLIGHTS"}
+            </button>
+            {aProject.szId === "astra-runtime" && (
+              <button onClick={() => navigateTo("#/astra")} style={{ background: CLR.szRed, border: "none", cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: "#fff", letterSpacing: "1px", padding: "8px 14px", borderRadius: "3px", display: "flex", alignItems: "center", gap: "6px" }}>
+                EXPLORE ASTRA →
+              </button>
+            )}
+          </div>
           {bExpanded && (
             <div style={{ marginTop: "14px", paddingTop: "14px", borderTop: `1px solid ${CLR.szBorder}` }}>
               {aProject.vKeyPoints.map((pt, i) => (
@@ -889,13 +898,14 @@ function HomePage() {
 export default function KernelArchLabs() {
   const szRoute = useHashRoute();
   const bPapersPage = szRoute === "#/papers";
+  const bAstraPage = szRoute === "#/astra";
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
       <GlobalStyles />
       <ParticleNetwork />
       <Nav />
-      {bPapersPage ? <PapersPage /> : <HomePage />}
+      {bAstraPage ? <AstraLanding /> : bPapersPage ? <PapersPage /> : <HomePage />}
       <Footer />
     </div>
   );
