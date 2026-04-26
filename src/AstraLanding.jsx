@@ -329,11 +329,16 @@ const SPAWN_STEPS = [
   },
 ];
 
+// 2026-04-27 prior-art reframe: the "O(1) revocation" row was previously a
+// flat "yes" claim. Redell 1974 / KeyKOS / EROS / Cornucopia Reloaded
+// (ASPLOS '24) all use the same algorithmic pattern, so Astra's contribution
+// is "first software-only Linux-userspace realization" not "novel algorithm".
+// Marked "partial" with the explicit "(in software)" hedge in the legend.
 const COMPARISON = [
   { szFeature: "Userspace (no kernel patch needed)", vMark: ["yes", "yes", "yes", "yes", "no"] },
   { szFeature: "Capability-based access control", vMark: ["partial", "no", "no", "no", "yes"] },
   { szFeature: "Zero-copy IPC for sandboxed processes", vMark: ["yes", "no", "no", "via-vsock", "via-svc"] },
-  { szFeature: "O(1) cascading capability revocation", vMark: ["yes", "no", "no", "no", "kernel"] },
+  { szFeature: "Cascading revocation (epoch-class, EROS / Cornucopia pattern)", vMark: ["software", "no", "no", "no", "kernel"] },
   { szFeature: "Runs unmodified Linux binaries", vMark: ["yes", "yes", "yes", "yes", "no"] },
   { szFeature: "Hardware-virt isolation", vMark: ["no", "no", "partial", "yes", "no"] },
   { szFeature: "Formally verified core", vMark: ["partial", "no", "no", "no", "yes"] },
@@ -1651,6 +1656,7 @@ function AstraComparison() {
     if (m === "kernel") return <span style={{ color: CLR.szTextDim, fontSize: "11px", fontStyle: "italic" }}>(in-kernel)</span>;
     if (m === "via-svc") return <span style={{ color: CLR.szTextDim, fontSize: "11px", fontStyle: "italic" }}>(via msg-passing)</span>;
     if (m === "via-vsock") return <span style={{ color: CLR.szTextDim, fontSize: "11px", fontStyle: "italic" }}>(via vsock)</span>;
+    if (m === "software") return <span style={{ color: CLR.szGreen, fontSize: "11px", fontWeight: 600 }}>YES <span style={{ color: CLR.szTextDim, fontWeight: "normal", fontStyle: "italic" }}>(software)</span></span>;
     return m;
   };
   return (
@@ -1659,7 +1665,7 @@ function AstraComparison() {
         <div style={SX_LABEL}>vs the field</div>
         <h2 style={SX_H2}>Where Astra sits in the landscape.</h2>
         <p style={SX_LEAD}>
-          Honest read against the closest competitors. Astra wins on the unique combination of capability tokens + zero-copy IPC + O(1) revocation on stock Linux. It loses on hardware-virt isolation strength (Firecracker) and proof depth (seL4) — and that's fine; those are different bets.
+          Honest read against the closest competitors. Astra's contribution is the <strong>combination</strong> on stock Linux — capability-token-mediated access control on a zero-copy memfd IPC fastpath, with cascading revocation in software at the application layer. Each ingredient has prior art (Aeron has shipped ~250 ns memfd IPC for years; the EROS / Cornucopia Reloaded epoch-revocation pattern is decades old). Astra reuses both, on Linux, without kernel patches or CHERI hardware. It loses on hardware-virt isolation strength (Firecracker) and proof depth (seL4) — different bets, named honestly.
         </p>
       </Reveal>
       <div style={{ overflowX: "auto", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px" }}>
