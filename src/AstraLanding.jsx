@@ -366,6 +366,22 @@ function useOnScreen() {
   return [refEl, bVisible];
 }
 
+// ---- Viewport hook for responsive layouts -----------------------------
+function useViewport() {
+  const [vw, setVw] = useState(typeof window !== "undefined" ? window.innerWidth : 1280);
+  useEffect(() => {
+    const fn = () => setVw(window.innerWidth);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+  return {
+    vw,
+    bMobile: vw < 768,
+    bTablet: vw >= 768 && vw < 1024,
+    bDesktop: vw >= 1024,
+  };
+}
+
 function Reveal({ children, iDelay = 0, style = {} }) {
   const [ref, vis] = useOnScreen();
   return (
@@ -375,26 +391,32 @@ function Reveal({ children, iDelay = 0, style = {} }) {
   );
 }
 
-const SX_SECTION_PADDING = { padding: "100px 24px", maxWidth: "1200px", margin: "0 auto" };
+const sxSectionPadding = (bMobile) => ({
+  padding: bMobile ? "60px 16px" : "100px 24px",
+  maxWidth: "1200px",
+  margin: "0 auto",
+});
+const SX_SECTION_PADDING = sxSectionPadding(false); // legacy; prefer sxSectionPadding(bMobile)
 const SX_LABEL = { fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "20px" };
-const SX_H2 = { fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(28px, 4vw, 44px)", color: CLR.szTextPrimary, fontWeight: 600, letterSpacing: "-0.5px", marginBottom: "18px", lineHeight: 1.1 };
-const SX_LEAD = { fontFamily: "'Geist', system-ui, sans-serif", fontSize: "17px", color: CLR.szTextSecondary, lineHeight: 1.7, maxWidth: "780px", marginBottom: "40px" };
+const SX_H2 = { fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(24px, 4.5vw, 44px)", color: CLR.szTextPrimary, fontWeight: 600, letterSpacing: "-0.5px", marginBottom: "18px", lineHeight: 1.15 };
+const SX_LEAD = { fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(15px, 2vw, 17px)", color: CLR.szTextSecondary, lineHeight: 1.7, maxWidth: "780px", marginBottom: "40px" };
 
 // ---- HERO -----------------------------------------------------------------
 
 function AstraHero() {
+  const { bMobile } = useViewport();
   return (
-    <section style={{ ...SX_SECTION_PADDING, paddingTop: "150px", paddingBottom: "60px" }}>
+    <section style={{ ...sxSectionPadding(bMobile), paddingTop: bMobile ? "100px" : "150px", paddingBottom: bMobile ? "40px" : "60px" }}>
       <Reveal>
         <div style={SX_LABEL}>flagship project · KernelArch Labs</div>
       </Reveal>
       <Reveal iDelay={120}>
-        <h1 style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(40px, 6vw, 72px)", lineHeight: 1.05, fontWeight: 600, letterSpacing: "-1.5px", color: CLR.szTextPrimary, marginBottom: "28px", maxWidth: "1000px" }}>
+        <h1 style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(28px, 6vw, 72px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-1px", color: CLR.szTextPrimary, marginBottom: "24px", maxWidth: "1000px" }}>
           A userspace runtime that gates every <span style={{ color: CLR.szRed }}>shared-memory message</span> with an unforgeable capability token.
         </h1>
       </Reveal>
       <Reveal iDelay={240}>
-        <p style={{ ...SX_LEAD, fontSize: "20px", maxWidth: "880px" }}>
+        <p style={{ ...SX_LEAD, fontSize: "clamp(16px, 2.2vw, 20px)", maxWidth: "880px" }}>
           Astra is a 21-module supervisor that runs above stock Linux. It hands every sandboxed process its own private view of the world, lets two sandboxes talk to each other at memory-bus speed, and revokes every permission they hold the moment something looks wrong — all without a kernel patch.
         </p>
       </Reveal>
@@ -406,7 +428,7 @@ function AstraHero() {
         </div>
       </Reveal>
       <Reveal iDelay={480}>
-        <div style={{ marginTop: "70px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}` }}>
+        <div style={{ marginTop: bMobile ? "40px" : "70px", display: "grid", gridTemplateColumns: bMobile ? "repeat(2, 1fr)" : "repeat(auto-fit, minmax(170px, 1fr))", gap: "1px", backgroundColor: CLR.szBorder, border: `1px solid ${CLR.szBorder}` }}>
           {[
             { szLabel: "Modules total", szValue: "21" },
             { szLabel: "Built today", szValue: "6" },
@@ -432,10 +454,11 @@ const sxBtnGhost = { fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fo
 // ---- THE PROBLEM ----------------------------------------------------------
 
 function AstraProblem() {
+  const { bMobile } = useViewport();
   const COL_BAD = "#f3e8e6";
   const COL_GOOD = "#e6f3eb";
   return (
-    <section id="astra-problem" style={{ ...SX_SECTION_PADDING, paddingTop: "60px" }}>
+    <section id="astra-problem" style={{ ...sxSectionPadding(bMobile), paddingTop: bMobile ? "40px" : "60px" }}>
       <Reveal>
         <div style={SX_LABEL}>the problem</div>
         <h2 style={SX_H2}>The world runs untrusted code now.</h2>
@@ -477,6 +500,7 @@ function AstraProblem() {
 // ---- LAYER + MODULE EXPLORER ---------------------------------------------
 
 function AstraLayerExplorer() {
+  const { bMobile } = useViewport();
   const [iSelectedLayer, setLayer] = useState(2);   // start on Services (the built layer)
   const [szSelectedModule, setModule] = useState("M-03");
 
@@ -485,7 +509,7 @@ function AstraLayerExplorer() {
   const aModule = MODULES.find((m) => m.szId === szSelectedModule) || vLayerModules[0];
 
   return (
-    <section id="astra-architecture" style={{ ...SX_SECTION_PADDING }}>
+    <section id="astra-architecture" style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
         <div style={SX_LABEL}>interactive · 6 layers · 21 modules</div>
         <h2 style={SX_H2}>Tap a layer. Tap a module. See exactly what it does.</h2>
@@ -495,7 +519,7 @@ function AstraLayerExplorer() {
       </Reveal>
 
       {/* Layer ribbon */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "8px", marginBottom: "32px", marginTop: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: bMobile ? "repeat(3, 1fr)" : "repeat(6, 1fr)", gap: "8px", marginBottom: "32px", marginTop: "20px" }}>
         {LAYERS.map((l) => {
           const bActive = l.iId === iSelectedLayer;
           return (
@@ -508,9 +532,9 @@ function AstraLayerExplorer() {
         })}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.6fr)", gap: "24px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1.6fr)", gap: bMobile ? "16px" : "24px" }}>
         {/* Left: layer summary + modules in this layer */}
-        <div style={{ padding: "28px", backgroundColor: CLR.szCard, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", height: "fit-content" }}>
+        <div style={{ padding: bMobile ? "20px" : "28px", backgroundColor: CLR.szCard, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px", height: "fit-content" }}>
           <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szRed, letterSpacing: "1.5px" }}>LAYER {aLayer.iId}</div>
           <div style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: "26px", fontWeight: 600, color: CLR.szTextPrimary, marginTop: "4px" }}>{aLayer.szName}</div>
           <div style={{ fontSize: "14px", color: CLR.szTextSecondary, marginTop: "4px", fontStyle: "italic" }}>{aLayer.szTagline}</div>
@@ -538,7 +562,7 @@ function AstraLayerExplorer() {
         </div>
 
         {/* Right: module detail */}
-        <div style={{ padding: "32px", backgroundColor: CLR.szCard, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px" }}>
+        <div style={{ padding: bMobile ? "20px" : "32px", backgroundColor: CLR.szCard, border: `1px solid ${CLR.szBorder}`, borderRadius: "4px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
             <div>
               <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szRed, letterSpacing: "1.5px" }}>{aModule.szId}</div>
@@ -635,6 +659,7 @@ const CMAP_NODES = [
 const CMAP_NODE_W = 110, CMAP_NODE_H = 60;
 
 function AstraConnectionMap() {
+  const { bMobile } = useViewport();
   const [szSel, setSel] = useState(null);
 
   const fnNode = (id) => CMAP_NODES.find((n) => n.szId === id);
@@ -666,19 +691,19 @@ function AstraConnectionMap() {
   const aSel = szSel ? fnModule(szSel) : null;
 
   return (
-    <section style={{ ...SX_SECTION_PADDING }}>
+    <section style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
         <div style={SX_LABEL}>full topology · all 21 modules</div>
         <h2 style={SX_H2}>Every module, every dependency, in one picture.</h2>
         <p style={SX_LEAD}>
-          Six built (green), fifteen reserved (grey). Arrows always run from a module to whatever it leans on. Click any module to light up its full dependency chain — both what it depends on and what depends on it. Layer 1 sits at the top because everything ultimately routes through it.
+          Six built (green), fifteen reserved (grey). Arrows always run from a module to whatever it leans on. {bMobile ? "Tap" : "Click"} any module to light up its full dependency chain — both what it depends on and what depends on it. Layer 1 sits at the top because everything ultimately routes through it.{bMobile ? " On a phone the map scrolls horizontally — pinch to zoom for details." : ""}
         </p>
       </Reveal>
 
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 2fr) minmax(0, 1fr)", gap: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 2fr) minmax(0, 1fr)", gap: bMobile ? "14px" : "20px" }}>
         {/* SVG map */}
-        <div style={{ padding: "16px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", overflow: "auto" }}>
-          <svg viewBox={`0 0 ${CMAP_W} ${CMAP_H}`} width="100%" style={{ display: "block", maxHeight: "720px" }}>
+        <div style={{ padding: bMobile ? "10px" : "16px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+          <svg viewBox={`0 0 ${CMAP_W} ${CMAP_H}`} width={bMobile ? CMAP_W : "100%"} style={{ display: "block", maxHeight: bMobile ? "none" : "720px", minWidth: bMobile ? `${CMAP_W}px` : "auto" }}>
             <defs>
               <marker id="cm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M 0 0 L 10 5 L 0 10 z" fill={CLR.szRed} />
@@ -756,7 +781,7 @@ function AstraConnectionMap() {
         </div>
 
         {/* Side panel */}
-        <div style={{ padding: "20px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", height: "fit-content", position: "sticky", top: "100px" }}>
+        <div style={{ padding: bMobile ? "16px" : "20px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", height: "fit-content", position: bMobile ? "static" : "sticky", top: bMobile ? "auto" : "100px" }}>
           {!aSel && (
             <>
               <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "1.5px", marginBottom: "12px" }}>HOW TO READ THIS MAP</div>
@@ -1002,6 +1027,7 @@ const SCENARIOS = [
 ];
 
 function AstraScenarioPlayer() {
+  const { bMobile } = useViewport();
   const [iScenario, setScenario] = useState(0);
   const [iStep, setStep] = useState(0);
   const [bAuto, setAuto] = useState(false);
@@ -1026,9 +1052,9 @@ function AstraScenarioPlayer() {
   const setActive = new Set(aStep.vActive);
 
   return (
-    <section style={{ ...SX_SECTION_PADDING }}>
+    <section style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
-        <div style={SX_LABEL}>see it in action · 4 scenarios</div>
+        <div style={SX_LABEL}>see it in action · 7 scenarios</div>
         <h2 style={SX_H2}>Pick a scenario. Watch the modules talk to each other.</h2>
         <p style={SX_LEAD}>
           Astra's modules are interconnected through three plumbing primitives — direct calls on the Runtime, hook chains, and the EventBus. Below, watch four real things Astra does, broken into the exact handoffs between modules. Click <strong>NEXT</strong> to step through, or hit auto-play.
@@ -1055,10 +1081,10 @@ function AstraScenarioPlayer() {
       </div>
 
       {/* Canvas + side panel */}
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 2fr) minmax(0, 1fr)", gap: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 2fr) minmax(0, 1fr)", gap: bMobile ? "14px" : "20px" }}>
         {/* SVG canvas */}
-        <div style={{ padding: "20px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", overflow: "hidden" }}>
-          <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ display: "block", maxHeight: "360px" }}>
+        <div style={{ padding: bMobile ? "12px" : "20px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+          <svg viewBox={`0 0 ${W} ${H}`} width={bMobile ? W : "100%"} style={{ display: "block", maxHeight: bMobile ? "none" : "360px", minWidth: bMobile ? `${W}px` : "auto" }}>
             <defs>
               <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
                 <path d="M 0 0 L 10 5 L 0 10 z" fill={CLR.szRed} />
@@ -1231,6 +1257,7 @@ const IPC_TABS = [
 ];
 
 function AstraIpcDeepDive() {
+  const { bMobile } = useViewport();
   const [szTab, setTab] = useState("problem");
   const [iTick, setTick] = useState(0);
 
@@ -1241,7 +1268,7 @@ function AstraIpcDeepDive() {
   }, []);
 
   return (
-    <section id="astra-ipc" style={{ ...SX_SECTION_PADDING }}>
+    <section id="astra-ipc" style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
         <div style={SX_LABEL}>flagship feature · zero-copy ipc · m-03</div>
         <h2 style={SX_H2}>How a message gets from Service A to Service B in under a microsecond.</h2>
@@ -1263,26 +1290,26 @@ function AstraIpcDeepDive() {
         })}
       </div>
 
-      <div style={{ padding: "30px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px" }}>
-        <div style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: "22px", fontWeight: 600, color: CLR.szTextPrimary, marginBottom: "16px" }}>
+      <div style={{ padding: bMobile ? "20px" : "30px", border: `1px solid ${CLR.szBorder}`, backgroundColor: CLR.szCard, borderRadius: "4px" }}>
+        <div style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: bMobile ? "18px" : "22px", fontWeight: 600, color: CLR.szTextPrimary, marginBottom: "16px" }}>
           {IPC_TABS.find((t) => t.szId === szTab).szTitle}
         </div>
 
-        {szTab === "problem" && <IpcPanelProblem />}
-        {szTab === "memfd"   && <IpcPanelMemfd />}
-        {szTab === "layout"  && <IpcPanelLayout />}
-        {szTab === "mpsc"    && <IpcPanelMpsc iTick={iTick} />}
-        {szTab === "futex"   && <IpcPanelFutex />}
-        {szTab === "cap"     && <IpcPanelCap />}
+        {szTab === "problem" && <IpcPanelProblem bMobile={bMobile} />}
+        {szTab === "memfd"   && <IpcPanelMemfd bMobile={bMobile} />}
+        {szTab === "layout"  && <IpcPanelLayout bMobile={bMobile} />}
+        {szTab === "mpsc"    && <IpcPanelMpsc iTick={iTick} bMobile={bMobile} />}
+        {szTab === "futex"   && <IpcPanelFutex bMobile={bMobile} />}
+        {szTab === "cap"     && <IpcPanelCap bMobile={bMobile} />}
       </div>
     </section>
   );
 }
 
 // Panel 1: the problem
-function IpcPanelProblem() {
+function IpcPanelProblem({ bMobile }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "30px", alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1fr)", gap: bMobile ? "20px" : "30px", alignItems: "start" }}>
       <div>
         <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "16px" }}>
           A typical IPC send (Unix socket, pipe, dbus) traverses kernel buffers and copies your bytes <strong>three or four times</strong> before the receiver gets them. Each copy:
@@ -1333,9 +1360,9 @@ function IpcPanelProblem() {
 }
 
 // Panel 2: memfd
-function IpcPanelMemfd() {
+function IpcPanelMemfd({ bMobile }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "30px", alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1fr)", gap: bMobile ? "20px" : "30px", alignItems: "start" }}>
       <div>
         <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "12px" }}>
           Astra's M-03 IPC creates the channel <strong>once</strong>, in three syscalls:
@@ -1382,9 +1409,9 @@ void* base = mmap(nullptr, size,
 }
 
 // Panel 3: memory layout
-function IpcPanelLayout() {
+function IpcPanelLayout({ bMobile }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.2fr)", gap: "30px", alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1.2fr)", gap: bMobile ? "20px" : "30px", alignItems: "start" }}>
       <div>
         <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "12px" }}>
           The shared region opens with a <strong>3-cache-line control block</strong>, then the ring data area.
@@ -1428,7 +1455,7 @@ function IpcPanelLayout() {
 }
 
 // Panel 4: MPSC claim/commit
-function IpcPanelMpsc({ iTick }) {
+function IpcPanelMpsc({ iTick, bMobile }) {
   // animate two producers racing
   const iPhase = iTick % 6;
   return (
@@ -1436,7 +1463,7 @@ function IpcPanelMpsc({ iTick }) {
       <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "20px", maxWidth: "780px" }}>
         Multiple services can produce on the same channel concurrently. Astra splits the write path by message size: <strong>≤ 256 B uses a wait-free fetch_add</strong> (one atomic, no retries), <strong>&gt; 256 B uses a lock-free CAS loop</strong>. Both protocols guarantee the reader sees a contiguous, ordered byte stream.
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "24px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1fr)", gap: bMobile ? "16px" : "24px" }}>
         {/* Small message path */}
         <div style={{ padding: "18px", border: `1px solid ${CLR.szBorder}`, borderRadius: "3px", backgroundColor: CLR.szSurface }}>
           <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szRed, letterSpacing: "1.5px", marginBottom: "8px" }}>WAIT-FREE · ≤ 256 B</div>
@@ -1504,9 +1531,9 @@ function IpcPanelMpsc({ iTick }) {
 }
 
 // Panel 5: futex
-function IpcPanelFutex() {
+function IpcPanelFutex({ bMobile }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "30px", alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1fr)", gap: bMobile ? "20px" : "30px", alignItems: "start" }}>
       <div>
         <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "12px" }}>
           A consumer that's always polling burns 100% of a CPU core for nothing. A consumer that <code style={{ background: CLR.szSurface, padding: "1px 4px", borderRadius: "2px", fontSize: "12px" }}>sleep(1ms)</code>s adds 1 ms to every message latency.
@@ -1551,9 +1578,9 @@ function IpcPanelFutex() {
 }
 
 // Panel 6: capability gate (PLANNED — not yet wired into IPC)
-function IpcPanelCap() {
+function IpcPanelCap({ bMobile }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "30px", alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: bMobile ? "1fr" : "minmax(0, 1fr) minmax(0, 1fr)", gap: bMobile ? "20px" : "30px", alignItems: "start" }}>
       <div>
         <div style={{ display: "inline-block", padding: "4px 10px", backgroundColor: CLR.szAmber, color: "#fff", borderRadius: "3px", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", letterSpacing: "1.5px", marginBottom: "12px" }}>PLANNED · NOT YET WIRED</div>
         <p style={{ fontSize: "15px", color: CLR.szTextSecondary, lineHeight: 1.7, marginBottom: "12px" }}>
@@ -1616,6 +1643,7 @@ Status RingBuffer::write(const void* data,
 // ---- COMPARISON TABLE ----------------------------------------------------
 
 function AstraComparison() {
+  const { bMobile } = useViewport();
   const fnRender = (m) => {
     if (m === "yes") return <span style={{ color: CLR.szGreen, fontWeight: 700 }}>YES</span>;
     if (m === "no") return <span style={{ color: CLR.szTextDim }}>—</span>;
@@ -1626,7 +1654,7 @@ function AstraComparison() {
     return m;
   };
   return (
-    <section style={{ ...SX_SECTION_PADDING }}>
+    <section style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
         <div style={SX_LABEL}>vs the field</div>
         <h2 style={SX_H2}>Where Astra sits in the landscape.</h2>
@@ -1663,8 +1691,9 @@ function AstraComparison() {
 // ---- ROADMAP -------------------------------------------------------------
 
 function AstraRoadmap() {
+  const { bMobile } = useViewport();
   return (
-    <section style={{ ...SX_SECTION_PADDING }}>
+    <section style={{ ...sxSectionPadding(bMobile) }}>
       <Reveal>
         <div style={SX_LABEL}>the next 12 months</div>
         <h2 style={SX_H2}>From honest pitch to first top-tier publication.</h2>
@@ -1694,10 +1723,11 @@ function AstraRoadmap() {
 // ---- CTA -----------------------------------------------------------------
 
 function AstraCTA() {
+  const { bMobile } = useViewport();
   return (
-    <section style={{ ...SX_SECTION_PADDING, paddingTop: "60px", paddingBottom: "120px" }}>
+    <section style={{ ...sxSectionPadding(bMobile), paddingTop: bMobile ? "40px" : "60px", paddingBottom: bMobile ? "80px" : "120px" }}>
       <Reveal>
-        <div style={{ padding: "60px 40px", backgroundColor: CLR.szTextPrimary, color: "#fff", borderRadius: "6px", textAlign: "center" }}>
+        <div style={{ padding: bMobile ? "40px 24px" : "60px 40px", backgroundColor: CLR.szTextPrimary, color: "#fff", borderRadius: "6px", textAlign: "center" }}>
           <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRedLight, letterSpacing: "2px", textTransform: "uppercase", marginBottom: "16px" }}>read · clone · contribute</div>
           <h2 style={{ fontFamily: "'Geist', system-ui, sans-serif", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.15, marginBottom: "20px", maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>
             All of this is open source. The code, the docs, the publication strategy.
@@ -1718,13 +1748,14 @@ function AstraCTA() {
 // ---- MAIN PAGE -----------------------------------------------------------
 
 export default function AstraLanding() {
+  const { bMobile } = useViewport();
   // Scroll to top on mount
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
   return (
     <div style={{ position: "relative", backgroundColor: CLR.szBg, minHeight: "100vh" }}>
       <button onClick={() => { window.location.hash = "#/"; }}
-        style={{ position: "fixed", top: "100px", left: "24px", zIndex: 50, background: CLR.szCard, border: `1px solid ${CLR.szBorder}`, cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", padding: "8px 14px", borderRadius: "3px" }}>
-        ← BACK TO LABS
+        style={{ position: "fixed", top: bMobile ? "70px" : "100px", left: bMobile ? "12px" : "24px", zIndex: 50, background: CLR.szCard, border: `1px solid ${CLR.szBorder}`, cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: bMobile ? "10px" : "11px", color: CLR.szTextSecondary, letterSpacing: "1px", padding: bMobile ? "6px 10px" : "8px 14px", borderRadius: "3px", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+        ← BACK
       </button>
       <AstraHero />
       <AstraProblem />
