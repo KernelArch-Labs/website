@@ -117,6 +117,42 @@ const PROJECTS_DATA = [
   },
 ];
 
+// Products are not research projects, and they are kept apart on purpose.
+// PROJECTS_DATA holds long-term research with papers as a deliverable; this
+// holds things a person can install. Add an app by adding an object.
+const PRODUCTS_DATA = [
+  {
+    szId: "exakt",
+    szTitle: "EXAKT",
+    szTag: "Puzzle",
+    szPlatform: "iOS and Android",
+    szStatus: "Pre-release",
+    szOneLiner: "Arithmetic puzzles with exactly one right answer",
+    szDescription:
+      "Swipe a number across a grid of operations to land on a target exactly. Every level is generated from its number alone and verified solvable before it ships, so there is no such thing as an impossible board and no such thing as a last level. The hint engine proves its advice by playing the level out rather than guessing, and says so plainly when it cannot.",
+    vFacts: [
+      { szLabel: "Levels", szValue: "Unbounded" },
+      { szLabel: "Languages", szValue: "EN / DE" },
+      { szLabel: "Free levels", szValue: "40" },
+      { szLabel: "Ads", szValue: "None" },
+    ],
+    vPoints: [
+      "Every level verified winnable by an exhaustive solver before release",
+      "Hints are proofs: the search plays the level out, or admits it could not",
+      "No accounts, no analytics, no ad SDK, no data leaves the device",
+      "Drawn entirely in geometry -- no icon font ships with the app",
+    ],
+    vShots: [
+      { szSrc: "/exakt/shots/1-the-target.png", szAlt: "The target being revealed" },
+      { szSrc: "/exakt/shots/2-the-board.png", szAlt: "A four by four board mid-level" },
+      { szSrc: "/exakt/shots/3-the-clear.png", szAlt: "A level cleared, with stars" },
+      { szSrc: "/exakt/shots/5-the-levels.png", szAlt: "The level map" },
+    ],
+    szPrivacyHref: "/exakt/privacy-policy.html",
+    szContact: "service@kernelarch.com",
+  },
+];
+
 const RESEARCH_DOMAINS = [
   { szTitle: "Systems & Runtimes", szBody: "Microkernel architectures, memory allocators, lock-free IPC, eBPF observability, and userspace isolation primitives." },
   { szTitle: "Cryptographic Engineering", szBody: "Constant-time implementations, authenticated encryption, digital signatures, and hardware-accelerated crypto via AES-NI." },
@@ -334,6 +370,7 @@ function Nav() {
     { szLabel: "Projects", szHref: "#projects", szType: "scroll" },
     { szLabel: "Astra", szHref: "#/astra", szType: "route" },
     { szLabel: "Papers", szHref: "#/papers", szType: "route" },
+    { szLabel: "Products", szHref: "#/products", szType: "route" },
     { szLabel: "Collaborate", szHref: "#collaborate", szType: "scroll" },
   ];
 
@@ -341,7 +378,11 @@ function Nav() {
     if (aLink.szType === "route") {
       navigateTo(aLink.szHref);
     } else {
-      if (window.location.hash.startsWith("#/papers") || window.location.hash.startsWith("#/astra")) {
+      // Any route page has to go home before a scroll target exists. Listed
+      // rather than tested with a generic "#/" check, because the home page's
+      // own scroll anchors are also hashes.
+      const vRoutePrefixes = ["#/papers", "#/astra", "#/products"];
+      if (vRoutePrefixes.some((szPrefix) => window.location.hash.startsWith(szPrefix))) {
         window.location.hash = "#/";
         setTimeout(() => scrollTo(aLink.szHref), 100);
       } else {
@@ -880,6 +921,115 @@ function PapersPage() {
 
 // ---- HOME PAGE ----
 
+// ---- PRODUCTS ----
+
+// Kept separate from PapersPage and the research sections deliberately. A
+// foundation that publishes papers and a foundation that ships an app are
+// doing different things, and a puzzle game listed beside formal verification
+// in Coq reads as a category error. This page is also what a store listing
+// links to, so it has to stand on its own with no research context.
+function ProductsPage() {
+  return (
+    <section style={{ position: "relative", zIndex: 1, padding: "120px 24px 100px", maxWidth: "900px", margin: "0 auto" }}>
+      <button onClick={() => { window.location.hash = "#/"; }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextDim, letterSpacing: "1px", padding: "0 0 32px", display: "flex", alignItems: "center", gap: "6px" }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextDim)}>
+        &larr; BACK TO HOME
+      </button>
+
+      <Reveal>
+        <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szRed, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "14px" }}>
+          // Products
+        </div>
+      </Reveal>
+      <Reveal iDelay={80}>
+        <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(32px, 5vw, 50px)", fontWeight: 400, color: CLR.szTextPrimary, lineHeight: 1.15, margin: "0 0 14px" }}>
+          Things you can install
+        </h1>
+      </Reveal>
+      <Reveal iDelay={140}>
+        <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "16px", color: CLR.szTextSecondary, lineHeight: 1.7, margin: "0 0 44px", maxWidth: "600px" }}>
+          Separate from the research programme. These are finished applications
+          rather than long-term investigations -- built to the same standards,
+          measured the same way, but shipped to people rather than written up.
+        </p>
+      </Reveal>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
+        {PRODUCTS_DATA.map((aProduct, iIdx) => <ProductCard key={aProduct.szId} aProduct={aProduct} iIdx={iIdx} />)}
+      </div>
+
+      <Reveal iDelay={380}>
+        <div style={{ marginTop: "22px", border: `1px dashed ${CLR.szBorder}`, padding: "28px", textAlign: "center", borderRadius: "4px" }}>
+          <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "12px", color: CLR.szTextDim, letterSpacing: "1px" }}>+ MORE APPS IN PROGRESS</span>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function ProductCard({ aProduct, iIdx }) {
+  const [bHover, setHover] = useState(false);
+
+  return (
+    <Reveal iDelay={180 + iIdx * 60}>
+      <article
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        style={{ border: `1px solid ${bHover ? CLR.szBorderHover : CLR.szBorder}`, borderRadius: "4px", padding: "30px", transition: "border-color 0.2s" }}>
+
+        <div style={{ display: "flex", alignItems: "baseline", gap: "12px", flexWrap: "wrap", marginBottom: "6px" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "30px", fontWeight: 400, color: CLR.szTextPrimary, margin: 0, letterSpacing: "1px" }}>{aProduct.szTitle}</h2>
+          <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szRed, letterSpacing: "2px", textTransform: "uppercase", border: "1px solid rgba(192,57,43,0.3)", borderRadius: "2px", padding: "3px 8px" }}>{aProduct.szTag}</span>
+          <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "1px", textTransform: "uppercase" }}>{aProduct.szStatus} &middot; {aProduct.szPlatform}</span>
+        </div>
+
+        <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "17px", color: CLR.szTextPrimary, lineHeight: 1.5, margin: "0 0 14px" }}>{aProduct.szOneLiner}</p>
+        <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "14.5px", color: CLR.szTextSecondary, lineHeight: 1.7, margin: "0 0 24px" }}>{aProduct.szDescription}</p>
+
+        <div style={{ display: "flex", gap: "22px", flexWrap: "wrap", marginBottom: "26px", paddingBottom: "22px", borderBottom: `1px solid ${CLR.szBorder}` }}>
+          {aProduct.vFacts.map((aFact) => (
+            <div key={aFact.szLabel}>
+              <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "17px", color: CLR.szTextPrimary }}>{aFact.szValue}</div>
+              <div style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "1px", textTransform: "uppercase" }}>{aFact.szLabel}</div>
+            </div>
+          ))}
+        </div>
+
+        <ul style={{ listStyle: "none", padding: 0, margin: "0 0 26px" }}>
+          {aProduct.vPoints.map((szPoint) => (
+            <li key={szPoint} style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "14px", color: CLR.szTextSecondary, lineHeight: 1.6, marginBottom: "8px", paddingLeft: "16px", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: CLR.szRed }}>&mdash;</span>
+              {szPoint}
+            </li>
+          ))}
+        </ul>
+
+        {/* Horizontally scrolled rather than a grid: these are 1:2 portrait
+            frames, and four of them side by side on a phone would each be a
+            thumbnail too small to read the board in. */}
+        <div style={{ display: "flex", gap: "14px", overflowX: "auto", paddingBottom: "10px", marginBottom: "24px" }}>
+          {aProduct.vShots.map((aShot) => (
+            <img key={aShot.szSrc} src={aShot.szSrc} alt={aShot.szAlt} loading="lazy"
+              style={{ height: "380px", width: "auto", borderRadius: "6px", border: `1px solid ${CLR.szBorder}`, flexShrink: 0 }} />
+          ))}
+        </div>
+
+        <div style={{ display: "flex", gap: "18px", flexWrap: "wrap", alignItems: "center" }}>
+          <a href={aProduct.szPrivacyHref} style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none", borderBottom: `1px solid ${CLR.szBorder}`, paddingBottom: "2px" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextSecondary)}>
+            Privacy policy
+          </a>
+          <a href={`mailto:${aProduct.szContact}`} style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none", borderBottom: `1px solid ${CLR.szBorder}`, paddingBottom: "2px" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextSecondary)}>
+            Support
+          </a>
+          <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "1px", textTransform: "uppercase" }}>Store links on release</span>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
 function HomePage() {
   return (
     <>
@@ -899,13 +1049,14 @@ export default function KernelArchLabs() {
   const szRoute = useHashRoute();
   const bPapersPage = szRoute === "#/papers";
   const bAstraPage = szRoute === "#/astra";
+  const bProductsPage = szRoute === "#/products";
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
       <GlobalStyles />
       <ParticleNetwork />
       <Nav />
-      {bAstraPage ? <AstraLanding /> : bPapersPage ? <PapersPage /> : <HomePage />}
+      {bAstraPage ? <AstraLanding /> : bPapersPage ? <PapersPage /> : bProductsPage ? <ProductsPage /> : <HomePage />}
       <Footer />
     </div>
   );
