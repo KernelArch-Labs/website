@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  The accessibility statement (issue #514).
+
+  What the app does for players who use a screen reader, a switch, a
+  keyboard, large text or reduced motion, what it does not do yet, and where
+  to write. Upload it as-is to
+  https://www.kernelarch.com/exakt/accessibility.html, next to the privacy
+  policy. One self-contained file, like the others: no scripts, no external
+  assets, nothing it could collect.
+
+  Every claim here is a claim about the code, and `play_without_swipes_test`
+  and `every_control_is_labelled_test` hold the main ones. If the board's
+  semantics change, this page changes with them.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — Accessibility</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+  }
+  h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.5rem; color: #00e5ff; }
+  .updated { color: #a79fc8; font-size: 0.9rem; margin-top: 0; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.4rem 0; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — Accessibility</h1>
+<p class="updated">Last updated: 15 October 2026</p>
+
+<p class="lead">
+  EXAKT is meant to be playable by everyone. This page says what the game
+  does for accessibility, what it does not do yet, and how to tell us when
+  something gets in your way.
+</p>
+
+<h2>Playing without a swipe</h2>
+<ul>
+  <li><strong>With a screen reader</strong> (VoiceOver on iPhone and iPad,
+    TalkBack on Android), the board offers each direction as an action, such
+    as "Swipe up: the +1 waiting below comes in". Choose one from the board's
+    actions and the move is played, just as a swipe would play it.</li>
+  <li><strong>The four tiles waiting round the board</strong> are buttons
+    that play the swipe bringing them in. They work with a screen reader,
+    Switch Control, Voice Control and a pointer. A tile whose swipe would
+    move nothing is faint, and its button is off.</li>
+  <li><strong>Swipe buttons:</strong> turn them on in Settings, and four
+    full-size buttons under the board play one swipe each.</li>
+  <li><strong>With a keyboard,</strong> the arrow keys play moves while the
+    board has focus. Tab moves between the buttons.</li>
+  <li><strong>Placing a tile</strong> with a card: each empty square is
+    offered as a button, named by its row and column.</li>
+</ul>
+
+<h2>What a screen reader hears</h2>
+<ul>
+  <li>The board says your number, the target and the moves left. Then it
+    names every tile with its row and column, and says which tiles cannot
+    apply to your number: the ones the board draws hatched.</li>
+  <li>After each move, the board says the new position.</li>
+  <li>On the first five levels, the guide says each move in words as well as
+    acting it out.</li>
+  <li>Every control has a label, in English or German, as the app is
+    set.</li>
+</ul>
+
+<h2>Seeing and reading</h2>
+<ul>
+  <li>Colour is never the only signal. Every tile shows its symbol and its
+    value, and a tile that cannot apply is hatched, not only greyed.</li>
+  <li>Text meets the WCAG 2.1 AA contrast levels: 4.5:1 for body text and
+    3:1 for large text.</li>
+  <li>Text grows with your device's text size. It is checked up to 200% on
+    the smallest phone, in English and German.</li>
+  <li>Buttons are at least 44 points high on iPhone and iPad, and 48 dp on
+    Android. The one exception is the tiles waiting round the board, which
+    take their taps in the room beside it, smaller at large text sizes:
+    Settings, Swipe buttons gives every swipe a full-size button.</li>
+</ul>
+
+<h2>Motion and sound</h2>
+<ul>
+  <li>With Reduce Motion (iOS) or Remove animations (Android) turned on, the
+    game drops its animations: the board shows where a move ends without
+    sliding there.</li>
+  <li>No sound is the only signal of anything. Sound, music and vibration
+    each have their own switch in Settings.</li>
+</ul>
+
+<h2>What is not there yet</h2>
+<ul>
+  <li>Rooms, the multiplayer races, run against a clock when they open. A
+    screen reader can play a room the same way, but the clock does not
+    wait.</li>
+  <li>The board is one image to a screen reader, not a grid of squares to
+    explore one by one. Its tiles are read out as a list instead.</li>
+  <li>The game has not yet been tested with people who use screen readers or
+    switches every day. We would welcome your report.</li>
+</ul>
+
+<h2>Tell us</h2>
+<p>
+  Write to <a href="mailto:service@kernelarch.com">service@kernelarch.com</a>
+  with what got in your way, on which device, and with which setting turned
+  on. We read every message, and a fix goes into the next update where we
+  can make one.
+</p>
+
+<footer>
+  EXAKT, by kernelarch labs. This page is static, carries no scripts, no
+  cookies and no trackers, and loads nothing from anywhere else.
+</footer>
+
+</body>
+</html>

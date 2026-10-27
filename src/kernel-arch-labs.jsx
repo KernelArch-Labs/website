@@ -127,28 +127,40 @@ const PRODUCTS_DATA = [
     szTag: "Puzzle",
     szPlatform: "iOS and Android",
     szStatus: "Pre-release",
-    szOneLiner: "Arithmetic puzzles with exactly one right answer",
+    szOneLiner: "Arithmetic puzzles where you have to hit the number exactly",
     szDescription:
-      "Swipe a number across a grid of operations to land on a target exactly. Every level is generated from its number alone and verified solvable before it ships, so there is no such thing as an impossible board and no such thing as a last level. The hint engine proves its advice by playing the level out rather than guessing, and says so plainly when it cannot.",
+      "You have a number and a target. Swipe, and your number slides across a board of arithmetic tiles, taking the operations it runs into, and the way you swipe decides which tile comes in next. Land on the target exactly: not close, exactly. All 2,000 levels are generated and then solved by the game's own solver before they ship, so there is no such thing as an impossible board, and the par you see before you start comes from a verified solution.",
     vFacts: [
-      { szLabel: "Levels", szValue: "Unbounded" },
+      { szLabel: "Levels", szValue: "2,000" },
+      { szLabel: "Free levels", szValue: "All" },
+      { szLabel: "Daily puzzle", szValue: "Every day" },
       { szLabel: "Languages", szValue: "EN / DE" },
-      { szLabel: "Free levels", szValue: "40" },
-      { szLabel: "Ads", szValue: "None" },
+      { szLabel: "Ads", szValue: "Yes, removable" },
     ],
     vPoints: [
-      "Every level verified winnable by an exhaustive solver before release",
-      "Hints are proofs: the search plays the level out, or admits it could not",
-      "No accounts, no analytics, no ad SDK, no data leaves the device",
-      "Drawn entirely in geometry -- no icon font ships with the app",
+      "Three free hints on every level, each one worked out from the board in front of you by the same solver, never a guess",
+      "A daily puzzle, the same for everyone: no hints, every try free, your first clear counts, and no streak to keep up",
+      "Free to play, with ads from Google AdMob: an ad between levels at most once every four clears, and optional videos for coins or a life. No Ads, bought once, ends the ads between levels",
+      "No analytics or crash reporting of our own. Coins and lives are kept on our server against an anonymous account; signing in is optional, and you can delete your account from inside the app",
+      "An age question at first launch, of which only an age group is kept, on the phone. A child's phone plays with no account, no ads and no purchases",
+      "Playable without a swipe: with VoiceOver or TalkBack, Switch Control, a keyboard, or swipe buttons under the board",
     ],
     vShots: [
-      { szSrc: "/exakt/shots/1-the-target.png", szAlt: "The target being revealed" },
-      { szSrc: "/exakt/shots/2-the-board.png", szAlt: "A four by four board mid-level" },
-      { szSrc: "/exakt/shots/3-the-clear.png", szAlt: "A level cleared, with stars" },
-      { szSrc: "/exakt/shots/5-the-levels.png", szAlt: "The level map" },
+      { szSrc: "/exakt/shots/1-home.webp", szAlt: "Home, with the day's puzzle" },
+      { szSrc: "/exakt/shots/2-the-target.webp", szAlt: "Level 23 opening on its target, 24" },
+      { szSrc: "/exakt/shots/3-the-board.webp", szAlt: "A four by four board mid-level" },
+      { szSrc: "/exakt/shots/4-the-clear.webp", szAlt: "Level 23 cleared in three moves" },
+      { szSrc: "/exakt/shots/5-the-levels.webp", szAlt: "The level map, with stars and locked levels" },
+      { szSrc: "/exakt/shots/6-the-daily.webp", szAlt: "The daily puzzle" },
     ],
-    szPrivacyHref: "/exakt/privacy-policy.html",
+    // The pages the app and both store listings link to. Each is the app
+    // repository's store/*.html, uploaded as-is.
+    vLinks: [
+      { szLabel: "Privacy policy", szHref: "/exakt/privacy-policy.html" },
+      { szLabel: "Terms", szHref: "/exakt/terms.html" },
+      { szLabel: "Delete your account", szHref: "/exakt/delete-account.html" },
+      { szLabel: "Accessibility", szHref: "/exakt/accessibility.html" },
+    ],
     szContact: "service@kernelarch.com",
   },
 ];
@@ -1004,8 +1016,8 @@ function ProductCard({ aProduct, iIdx }) {
           ))}
         </ul>
 
-        {/* Horizontally scrolled rather than a grid: these are 1:2 portrait
-            frames, and four of them side by side on a phone would each be a
+        {/* Horizontally scrolled rather than a grid: these are tall portrait
+            frames, and six of them side by side on a phone would each be a
             thumbnail too small to read the board in. */}
         <div style={{ display: "flex", gap: "14px", overflowX: "auto", paddingBottom: "10px", marginBottom: "24px" }}>
           {aProduct.vShots.map((aShot) => (
@@ -1015,13 +1027,17 @@ function ProductCard({ aProduct, iIdx }) {
         </div>
 
         <div style={{ display: "flex", gap: "18px", flexWrap: "wrap", alignItems: "center" }}>
-          <a href={aProduct.szPrivacyHref} style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none", borderBottom: `1px solid ${CLR.szBorder}`, paddingBottom: "2px" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextSecondary)}>
-            Privacy policy
-          </a>
+          {aProduct.vLinks.map((aLink) => (
+            <a key={aLink.szHref} href={aLink.szHref} style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none", borderBottom: `1px solid ${CLR.szBorder}`, paddingBottom: "2px" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextSecondary)}>
+              {aLink.szLabel}
+            </a>
+          ))}
+          {/* The address is spelled out, not only linked: the stores want a
+              support page that says how to reach us. */}
           <a href={`mailto:${aProduct.szContact}`} style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "11px", color: CLR.szTextSecondary, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none", borderBottom: `1px solid ${CLR.szBorder}`, paddingBottom: "2px" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = CLR.szRed)} onMouseLeave={(e) => (e.currentTarget.style.color = CLR.szTextSecondary)}>
-            Support
+            Support <span style={{ textTransform: "none", letterSpacing: 0 }}>{aProduct.szContact}</span>
           </a>
           <span style={{ fontFamily: "'Geist Mono', 'JetBrains Mono', monospace", fontSize: "10px", color: CLR.szTextDim, letterSpacing: "1px", textTransform: "uppercase" }}>Store links on release</span>
         </div>

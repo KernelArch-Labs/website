@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+  The account deletion page Google Play requires (issue #121).
+
+  Play's account-deletion policy wants deletion in the app **and** a web page
+  that works for somebody who no longer has the app; its URL goes in the Data
+  safety form. Upload it as-is to
+  https://www.kernelarch.com/exakt/delete-account.html, next to the privacy
+  policy. Like the policy it is one self-contained file: no scripts, no
+  external assets, nothing it could collect.
+
+  Every claim here is a claim about the code; if deletion changes, this
+  page changes with it.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — Delete your account</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+  }
+  h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.5rem; color: #00e5ff; }
+  .updated { color: #a79fc8; font-size: 0.9rem; margin-top: 0; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.4rem 0; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — Delete your account</h1>
+<p class="updated">Last updated: 15 October 2026</p>
+
+<p class="lead">
+  You can delete your EXAKT account and everything our server holds about
+  you at any time. It is permanent and takes effect at once. The one thing
+  kept for good is a one-way mark on each purchase, linked to nobody, so
+  that no payment can be credited twice. Our logs are deleted as they age.
+</p>
+
+<h2>In the app — the quickest way</h2>
+<p>
+  Open EXAKT, then <strong>Settings → Account → Delete account</strong>, and
+  confirm. That deletes your account and its record on our server straight
+  away. You do not need to write to us.
+</p>
+
+<h2>Without the app</h2>
+<p>
+  Email
+  <a href="mailto:service@kernelarch.com?subject=Delete%20my%20EXAKT%20account">service@kernelarch.com</a>
+  with the subject "Delete my EXAKT account", and either:
+</p>
+<ul>
+  <li><strong>your Player ID</strong>, which the app shows under
+    <strong>Settings → Account</strong>, with a button that copies it; or</li>
+  <li>if you signed in with Google, write from the address you signed in
+    with.</li>
+</ul>
+<p>
+  We delete the account and its server record within 30 days and reply when
+  it is done. You do not need the app, or to install it again.
+</p>
+<p>
+  If you only ever played without signing in and do not have your Player ID,
+  your account holds no name or email, so nothing links it to you, not even
+  for us. Its record on our server is erased by itself once nobody has used
+  the account for 24 months, unless coins or hours of unlimited lives were
+  bought on it and it still holds some: then it is kept, so that nothing
+  bought is lost.
+</p>
+
+<h2>What is deleted</h2>
+<ul>
+  <li>Your account: its identifier, and the email address and name your sign-in provider gave us.</li>
+  <li>Your record on our server: coins, lives, when unlimited lives end, the
+    ad rewards of the last 8 days, your device's App Attest key, the
+    fingerprints of purchases we credited, and everything else it holds.</li>
+</ul>
+<p>
+  One thing stays for good: a one-way fingerprint of each purchase you
+  made, marked as already redeemed and linked to nobody, so that the same
+  payment can never be credited again. For an hour, our server also keeps
+  when the deletion happened, so that a sign-in from before it can't be
+  used; then that is deleted too. Our logs, kept for India's CERT-In, keep
+  what they hold about the account until they are deleted at 180 days old,
+  or a year old from 13 May 2027.
+</p>
+<p>
+  Coins and lives cannot be restored once the account is deleted. Apple and
+  Google keep their own records of any purchase you made in their stores,
+  and AdMob keeps what it collects under Google's own rules; the
+  <a href="privacy-policy.html">privacy policy</a> explains both.
+</p>
+
+<footer>
+  EXAKT, by KernelArch Labs. This page is static, carries no scripts, no
+  cookies and no trackers, and loads nothing from anywhere else.
+</footer>
+
+</body>
+</html>
