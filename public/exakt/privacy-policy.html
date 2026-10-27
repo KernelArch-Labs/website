@@ -9,8 +9,17 @@
   collect anything.
 
   **Every claim here is a claim about the code.** If any of it stops being
-  true, this file and both store forms change together - see
-  docs/LEGAL_COMPLIANCE.md, which enumerates what moves.
+  true, this file and both store forms change together. Rewritten on
+  24 September 2026 for the server (#71) and ads (issue #120); it assumes the
+  consent screen (#75) and deletion for every account (#76) are in the
+  release. Leaderboards (#139) added on 25 September 2026, rooms (#140) on
+  29 September 2026, Google Play's age signal (#646, #633) and a child's age
+  in South Korea and Canada (#639) on 16 October 2026, the reminders (#684)
+  and the daily puzzle (#687) on 18 October 2026. On 19 October 2026 (#690)
+  the opening, the account and the children's section were rewritten for
+  the age question (#502), which they still described as absent. On
+  20 October 2026 a teen's ad requests began asking Google for restricted
+  data processing (#711). Have a lawyer read it once before launch.
 -->
 <html lang="en">
 <head>
@@ -42,96 +51,532 @@
 <body>
 
 <h1>EXAKT — Privacy Policy</h1>
-<p class="updated">Last updated: 16 September 2026</p>
+<p class="updated">Last updated: 20 October 2026</p>
 
 <p class="lead">
-  EXAKT does not collect your data. There is no account, no analytics, no
-  advertising, and no crash reporting. We do not have a server that stores
-  anything about you, because we do not have a server.
+  EXAKT keeps as little about you as it can. It starts by asking when you
+  were born, and keeps only the age group the answer gives, on the phone.
+  <strong>A child's phone sends our game server nothing</strong>: Children
+  and teens, below, says what that means. Every other player has an account
+  identifier, and our server keeps your game balances against it: coins,
+  lives and a few counters.
+  If you play in a room, it also holds that room - its numbered seats and
+  their scores - for as long as the room lasts, and no longer.
+  If you sign in, Firebase Authentication, which runs our accounts, also
+  holds the email address and name your sign-in provider gives; our own
+  server never sees them. Ads are shown through Google
+  AdMob, which collects information from your device to show and measure
+  them, and asks for your consent first where the law requires it. If you
+  use Game Center or Google Play Games, your leaderboard scores go to Apple
+  or Google, never to us. We run no analytics and no crash reporting of our
+  own; AdMob measures its ads and collects diagnostics about its own
+  software, as Advertising below explains.
+</p>
+<p>
+  EXAKT is made by KernelArch Labs, which decides how this data is used.
+  <strong>You can delete your account, and everything our server holds about
+  you, at any time from inside the app:</strong> Settings → Account → Delete
+  account.
 </p>
 
 <h2>What stays on your device</h2>
 <p>
-  Your progress — which levels you have cleared and your best move count on
-  each — and your settings for sound and vibration are stored in your device's
-  own local preferences. Nothing else is stored.
+  Your progress — which levels you have cleared, and your best move count
+  and best score on each — and your settings are kept in your device's own
+  storage, so the game works without a network. So are:
+</p>
+<ul>
+  <li>your lives, and any change to them or to your coins not yet sent to
+    our server, each marked with the account it belongs to;</li>
+  <li>a copy of your last known coin balance, signed so it cannot be
+    edited. It is only a copy: the real figure is on our server;</li>
+  <li>which account the save belongs to;</li>
+  <li>the age group your answer to the first question puts you in — a
+    child, a teen or an adult — and never the date you gave. It stays on
+    this phone, and the app sends it nowhere;</li>
+  <li>on Android, the age group Google Play's age signal last put you in,
+    so that the more careful of it and your answer applies: each time the
+    app starts, it asks Google Play for your age range, which Play may
+    first ask you to share, and keeps only the group, never the range,
+    sending it nowhere;</li>
+  <li>whether you own No Ads, how many levels you have cleared since the
+    last ad between levels, and when you last bought something, because ads
+    pause for a day after a purchase;</li>
+  <li>two notes for the checks below: how far the device's clock is from our
+    server's, and since when the device has been unable to vouch for
+    itself, if it has;</li>
+  <li>your latest daily puzzle result: the day, your moves and stars, the
+    swipes themselves, so that the result can be sent again if it did not
+    reach our server, and where it stood among the day's players;</li>
+  <li>if you turn reminders on, the reminders waiting to be shown: a
+    notification for when your lives are full and, if you are an adult and
+    have been away a day or more, one about that day's daily puzzle or your
+    next level. They are
+    scheduled on this phone, the phone asks your permission before the
+    first, and nothing about them is sent anywhere. Turn them off in
+    Settings → Reminders.</li>
+</ul>
+<p>
+  <strong>What the game saves on your device is encrypted</strong>, apart
+  from the iCloud copy of your progress described below. It is
+  compressed, sealed with AES-256 and kept in a small database, under a key
+  that your device's own secure storage holds — the Keychain on iPhone and
+  iPad, the Android Keystore on Android — and never beside the data. A copy
+  of the app's files cannot be read without that key. Two small things sit
+  outside it, in the app's ordinary preferences, because the device's
+  checks need them there. On iPhone, those are the identifier of the key App
+  Attest made for your device, its attestation until our server has it, and
+  whether it has, under names that include your account identifier. On
+  Android, they are the keys that seal the save and sign the balance copy,
+  themselves sealed by the Android Keystore.
 </p>
 
 <h2>Your own cloud account, not ours</h2>
 <p>
-  So that you do not lose your progress when you change phones, that same
-  small amount of data can be copied into <strong>your own</strong> Apple or
-  Google account:
+  So that you do not lose your progress when you change phones, your progress
+  can also be copied into <strong>your own</strong> Apple or Google account:
 </p>
 <ul>
   <li>
     On iPhone and iPad, through iCloud key-value storage, if you have iCloud
-    enabled. Apple is the data processor.
+    enabled. Apple is the data processor. The app doesn't encrypt this
+    copy, because it has to open on a new device that doesn't hold your
+    key. So it holds your progress and nothing else — never your coins,
+    lives, settings or account — and iOS keeps a copy of it on the device
+    too.
   </li>
   <li>
     On Android, through Android Auto Backup, which is part of the operating
-    system. Google is the data processor.
+    system. Google is the data processor. The backed-up save stays
+    encrypted; the key that opens it on your new phone is kept by Google's
+    Block Store, end-to-end encrypted where your phone supports it.
   </li>
 </ul>
 <p>
+  An encrypted or iCloud backup of your iPhone or iPad brings the encrypted
+  save back together with its key when you restore a new device. A backup
+  without its key — an unencrypted computer backup, for example — brings the
+  save back unreadable, and the game starts that device afresh; coins and
+  lives are unaffected, because they are kept by our server.
+</p>
+<p>
   We cannot see this data and we cannot retrieve it. It lives under your
   account, subject to Apple's or Google's privacy policy, and you can remove
-  it from your account's storage settings. If you turn these features off, the
-  game keeps working and the data simply stays on the device.
+  it from your account's storage settings.
+</p>
+
+<h2>Your account</h2>
+<p>
+  Once the first question is answered, the app creates an anonymous account
+  with Google Firebase Authentication, unless the answer makes this a
+  child's phone, which has no account. That account holds no name, email or
+  contact details — only an identifier — and it is what our server keeps
+  your coins and lives against.
+</p>
+<p>
+  Signing in with Google or Apple is optional, and the game is complete
+  without it. If you sign in with Google, Google gives us an account
+  identifier, your email address and your display name. If you sign in with
+  Apple, Apple gives us an account identifier and nothing else: the app asks
+  Apple for neither your name nor your email. Firebase Authentication stores
+  these as our processor. Signing in keeps the same account, so nothing you
+  had is lost, and it lets your coins and lives follow you to a new phone.
+  We use these details only to know that an account is yours. We do not
+  email you, we do not profile you, and we do not sell or share them.
+</p>
+
+<h2>Our server</h2>
+<p>
+  Our game server runs on Cloudflare. Against your account identifier it
+  keeps: your coin balance; your lives and when the next one returns; when
+  any unlimited lives you have started end, and the bought hours you have
+  not started yet; how many coins ads have given
+  you today, and for 8 days which videos paid you, so that none pays twice;
+  how many of today's clears gave their life back without a device check;
+  how many store test purchases it has credited to your account, and their
+  coins, which a paid purchase never adds to; one-way fingerprints of the
+  store purchases it has credited, so that no purchase is paid twice; the
+  identifiers of your last 128 requests and of the attempts still open, so
+  that nothing sent twice counts twice; on iPhone, the public key Apple's
+  App Attest issued for your device, and a counter; and, for an account that
+  never signed in, about when it was last used, so that it can be erased
+  after 24 months unused. It keeps no history of how you played or of what
+  you bought, and it does not store your IP address against your
+  account. The record is encrypted where it is stored. Each time the app
+  syncs with it, it also says which build of the app is asking, so that a
+  build with a serious fault can be told to update; that number is checked
+  and not kept.
+</p>
+<p>
+  Cloudflare receives each request, including the IP address it came from,
+  in order to deliver it to our server.
 </p>
 
 <h2>Purchases</h2>
 <p>
-  EXAKT is free to play through level 40. Unlocking every level is a single
-  one-time purchase. That purchase is handled entirely by Apple's App Store or
-  Google Play — <strong>we never see your payment details</strong>, and the
-  only thing the app records is a single flag meaning "this player has
-  unlocked the levels". Refunds and revocations are handled by the store.
+  Every level is free. The things sold are packs of coins, which buy hints
+  and the other helpers inside a level, an hour of unlimited lives, and the
+  removal of ads between levels. Payment is handled
+  entirely by Apple's App Store or Google Play — <strong>we never see your
+  payment details</strong>. After you pay, the app sends our server the
+  signed purchase record the store gives it. The server checks the store's
+  signature, credits the coins and keeps only a one-way fingerprint of the
+  transaction. Each purchase carries a code derived from your account
+  identifier, so that it cannot be claimed by another account; the code does
+  not reveal the identifier. Beside your record, the server also notes which
+  account redeemed each purchase, as a one-way hash of the account
+  identifier, so that every purchase is credited once, to one account.
+</p>
+<p>
+  On Android, once our server has credited a purchase, it also confirms
+  the purchase to Google, so that it is completed even when the app
+  cannot do so itself. When either store refunds a purchase, it tells our
+  server, which counts refunds by product and by reason and keeps nothing
+  about whose they were.
+</p>
+<p>
+  You can also buy <strong>No Ads</strong>, alone or with 60 coins. It turns
+  off the ads between levels for good; watching a video for coins stays
+  optional. It is a one-time purchase that the store keeps: the app
+  remembers it on your device and asks the store again when you reinstall
+  or press Restore purchases. For the version with coins, our server
+  credits the coins once, the same way as for a pack.
+</p>
+<p>
+  You can also buy an <strong>hour of unlimited lives</strong>. Our server
+  keeps it until you start it, then records when it ends, the same way it
+  counts your lives, and every attempt until then is free.
 </p>
 
-<h2>The one network request</h2>
+<h2>Advertising</h2>
 <p>
-  The app makes exactly one network request, once when it starts: it downloads
-  a small static file that says which app versions are still supported, so
-  that a seriously broken release can be stopped from being played. The
-  request contains <strong>no identifier of any kind</strong> — no account, no
-  device ID, no advertising ID, no query string, and no information about you.
-  As with any web request, the server that hosts the file sees the IP address
-  it came from. We keep no logs tied to you and use nothing from it.
+  EXAKT shows ads through Google AdMob, including optional videos that
+  reward you with coins. To choose, show and measure ads and to prevent
+  fraud, AdMob collects information from your device: its advertising
+  identifier and, on Android, its app set ID, IP address, device and app
+  information, how you interact with ads, and diagnostic information about
+  how its ads and its software perform, such as crash and loading data.
+  Google processes this under its own privacy policy, at
+  <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>,
+  and may use it for personalised ads where you allow it. How Google uses
+  information from the apps that use its services is at
+  <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>,
+  and how it handles the data of the businesses that use its ads is at
+  <a href="https://business.safety.google/privacy/">business.safety.google/privacy</a>.
 </p>
 <p>
-  If the request fails, the game plays normally.
+  <strong>On a child's phone the app never starts AdMob or asks for an
+  ad.</strong> For a teen,
+  every ad request carries Google's teen setting, so the ads are never
+  personalised and nothing is used for remarketing. It also asks Google
+  for its restricted data processing, under which Google handles the
+  request's data only as our service provider. iOS never asks a teen about
+  tracking. For everyone, every ad must be one rated for general
+  audiences.
+</p>
+<p>
+  <strong>In the EEA, the UK and Switzerland, the app asks for your consent
+  before any ad is requested</strong> if you are an adult, and shows only
+  non-personalised ads if you do not give it. A teen there is not asked: the
+  app tells Google that the player is under the age of consent, so Google
+  shows no personalised ads. You can change your choice at any time in
+  Settings → Privacy options. In the US states whose privacy laws let you opt out of
+  the sale or sharing of your data for advertising, the app offers that
+  choice too, in the same place. On iPhone, a short explanation comes before
+  iOS asks whether to allow tracking; AdMob uses the advertising identifier
+  only if you allow it, and you can change that in iOS Settings → Privacy
+  &amp; Security → Tracking.
+</p>
+<p>
+  When you watch a rewarded video, the app gives AdMob your account
+  identifier so that Google can tell our server which account the reward
+  is for. Nothing else about your account is shared with advertisers.
 </p>
 
-<h2>Children</h2>
+<h2>Checks that keep the game fair</h2>
 <p>
-  EXAKT is an arithmetic puzzle and is suitable for all ages. Because it
-  collects no personal data at all, it does not knowingly or unknowingly
-  collect data from children. There is no advertising, no social feature, no
-  chat, no user-generated content, and no external link out of gameplay.
+  So that coins and lives cannot be forged, the app asks Google Play
+  Integrity, on Android, or Apple App Attest, on iPhone, to confirm that it
+  is the genuine EXAKT app on a real device. Google and Apple carry out these
+  checks. On Android, our server receives Google's signed verdict. On
+  iPhone, it receives Apple's attestation of a key made for your device,
+  once, and then a signature from that key with each check; it keeps the
+  key and a counter, and nothing else.
+</p>
+
+<h2>Leaderboards</h2>
+<p>
+  If you are signed in to Game Center on iPhone or iPad, or to Google Play
+  Games on Android, the game sends your leaderboard scores to Apple or
+  Google: one total for all the levels you have cleared, and one for each
+  stage of fifty levels. They show those scores on their leaderboards beside
+  your Game Center or Play Games nickname and picture, where other players
+  can see them. Google Play Games also collects information it needs to run
+  its service, such as which games you play. Apple and Google do this under
+  their own privacy policies.
+</p>
+<p>
+  <strong>The leaderboards' scores never reach our server, and neither do
+  your nickname or your Game Center or Play Games identity.</strong> The
+  scores are worked out on your
+  device from the levels you have cleared. To keep your scores off the
+  leaderboards, sign out of Game Center in iOS Settings, or out of Google
+  Play Games in the Play Games app; the game plays the same without them.
+</p>
+<h2>Rooms</h2>
+<p>
+  Rooms let up to eight players play the same levels against one clock.
+  <strong>While a room lasts, and no longer,</strong> our server holds its
+  six-character code and its seats. Each seat is known by an identifier
+  derived from the player's account - never the account identifier itself,
+  a name or an email address - and the server holds whether each seat's
+  phone is connected, the round's levels and clock, and each seat's cleared
+  levels, points and when it last scored. For each level you clear, the app
+  sends the moves you played, and the server replays them to score them; it
+  keeps the score, not the moves. If the host removes a seat before the
+  round, the room also keeps that seat's identifier, so the same account
+  can't come back in - again only for as long as the room lasts. A room
+  deletes itself a few minutes after its round, and everything in it goes
+  with it. A room takes nothing from your account: it is free, and takes no
+  coins. While you have rooms open, your account notes the codes of the ones
+  you opened, two at most, so that one account can't keep more open at once.
+  The codes of rooms that have ended are dropped the next time you open a
+  room.
+</p>
+<p>
+  The other players in a room see only numbered seats - "Player 1" to
+  "Player 8" - whether each is connected, and each seat's points. A room has
+  no chat and no free text of any kind, and nobody can join one without the
+  code its host shares.
+</p>
+
+<h2>The daily puzzle</h2>
+<p>
+  The daily puzzle is one level a day, the same for everyone. When you solve
+  it, your phone sends our server the day and the swipes you played, with
+  your account's sign-in token. The server checks the token, replays the
+  swipes to see that they solve the day's puzzle, and adds one to how many
+  players solved it in that number of moves. <strong>It keeps nothing that
+  says it was you:</strong> not your account identifier, not your address,
+  and not the swipes - apart from what every request leaves in our logs,
+  as Logs below says. Each day's counts are deleted a week after the day
+  has ended everywhere. Anyone can read a day's counts, and they say nothing
+  about any player. On a child's phone, nothing is sent: the puzzle is
+  played on the phone alone.
+</p>
+
+<h2>The version check</h2>
+<p>
+  When it starts, the app also downloads a small static file saying which
+  versions are still supported, so that a seriously broken release can be
+  stopped. That request carries <strong>no identifier beyond the IP address
+  any web request carries</strong>: the server that hosts the file sees that
+  address, uses it only to send the file and keep the site secure, and
+  nothing in the request ties it to your account.
+</p>
+
+<h2>Logs</h2>
+<p>
+  <strong>Our game server's logs are kept for 180 days, in India</strong>,
+  as India's CERT-In directions require, and then deleted. From 13 May 2027
+  they are kept for a year, as India's Digital Personal Data Protection
+  Rules will then require. For each request the server answers, and each
+  task it runs on its own, they hold the time, what was asked, how it ended
+  and any error, with the details Cloudflare records of a request, which
+  may include the IP address it came from. They also hold the lines the
+  server writes, mostly counts and outcomes that name nobody. A few can
+  hold an account's identifier: the erasure of an account whose player
+  wrote to ask for it, and AdMob's report of a rewarded video, whose web
+  address carries it. Firebase Authentication's logs of our accounts are
+  kept the same way. Only KernelArch Labs reads them. Google stores them
+  and Cloudflare writes them, as our processors, and we give them to
+  nobody else unless the law requires it, as it can when CERT-In asks for
+  them after an incident. Deleting your account does not delete them: what
+  they hold about it goes when they reach that age.
+</p>
+<p>
+  So that no one can flood it, our server also counts the requests from
+  each IP address, and from each account, for 60 seconds at a time.
+  Cloudflare keeps each count, and drops it when its minute is up.
+</p>
+
+<h2>If you write to us</h2>
+<p>
+  If you email us - to ask for something, to complain, or to report an ad or
+  a bug - we receive your address and whatever you send, and use them only
+  to answer you and to keep a record of what was done. We keep a message
+  for a year after the matter it raised is closed, then delete it. Report
+  bug, in the menu, only shows details for you to copy: nothing is sent
+  unless you send it yourself. A child's phone shows the same address, and
+  a parent or guardian is welcome to write for a child. A message from a
+  child is answered once and then deleted, rather than kept for the year.
+</p>
+
+<h2>Who processes your data</h2>
+<ul>
+  <li>
+    Google — Firebase Authentication (accounts), Google Cloud (our logs),
+    AdMob (ads), Google Play (purchases), Play Age Signals (your age range,
+    on Android), Play Integrity (device checks) and Google Play Games
+    (leaderboards).
+  </li>
+  <li>
+    Apple — the App Store (purchases), App Attest (device checks), iCloud
+    (your own progress backup) and Game Center (leaderboards).
+  </li>
+  <li>
+    Cloudflare — hosting for our game server.
+  </li>
+</ul>
+<p>
+  These companies may process data outside your country: Google's services
+  in the United States and its data centres around the world, with our logs
+  kept in India; our game server on Cloudflare's network, in data centres
+  around the world; and Apple's services in the United States and around
+  the world. Where data leaves
+  the EEA, the UK or Switzerland, their terms with us include the European
+  Commission's standard contractual clauses, or the UK's and Switzerland's
+  versions of them, and Google and Cloudflare are also certified under the
+  EU-US Data Privacy Framework. Each of them is bound, by its terms with us, to
+  protect the data it handles for EXAKT at least as well as this policy
+  does; where one uses data for itself, as Google does for ads, its own
+  privacy policy applies too. We share your personal information with
+  nobody except as described here, and nobody pays us for it. But US state
+  privacy laws count letting an ad network use a device's data to show ads
+  as "selling" or "sharing" it, even when the ads are not personalised, and
+  EXAKT's ads do that. Where those laws give you the right to opt out, the
+  app offers it in Settings → Privacy options.
+</p>
+
+<h2>Why we may use it</h2>
+<p>
+  Under the GDPR and the UK GDPR, each use above rests on one of these:
+</p>
+<ul>
+  <li>
+    <strong>The game you asked for</strong> (a contract with you): your
+    account, its balances, purchases, the daily puzzle and rooms. For a
+    teen whose contract the law where they live may not recognise, our
+    legitimate interest in running the game they chose to play.
+  </li>
+  <li>
+    <strong>Our legitimate interests</strong> in keeping the game fair and
+    secure, and in answering you: the device checks, the request counts,
+    the logs, and the emails you send us.
+  </li>
+  <li>
+    <strong>Your consent</strong>, which you can withdraw at any time:
+    personalised ads and, on iPhone, tracking (Settings → Privacy options),
+    and reminders (Settings → Reminders).
+  </li>
+</ul>
+
+<h2>How long we keep it</h2>
+<p>
+  Your account and its record on our server are kept until you delete them,
+  with one exception: if you never signed in, the record is erased, with its
+  coins and lives, once the account has gone unused for 24 months. Playing
+  even once in that time keeps it. So does anything bought: an account you
+  bought coins or hours of unlimited lives on is kept, however long unused,
+  for as long as it holds coins or bought hours.
+  Deleting your account removes the Firebase account and the server record
+  for good. What stays is the one-way fingerprint of each purchase you made,
+  marked as already redeemed and with nothing that links it to you, so that
+  the same payment can never be credited again - on another account, or on
+  this one. For an hour after a deletion, the server also keeps when it
+  happened, under an identifier derived from the account, so that a sign-in
+  token from before it can't be used; then that goes too. Our logs keep
+  what they hold about the account until they are deleted, at 180 days old
+  (a year old, from 13 May 2027), as Logs above explains. A room deletes
+  itself a few minutes after its round, as Rooms above explains. What AdMob
+  collects is kept under Google's own retention rules. Your progress on the
+  device stays until you delete the app.
+</p>
+
+<h2>Children and teens</h2>
+<p>
+  EXAKT is for everyone, children included, so the first thing it asks is
+  when you were born: a month and a year, with nothing chosen for you. It
+  keeps only the age group the answer gives, never the date, on the phone,
+  and sends it nowhere. Skipping the question counts as a child's answer.
+  On Android, Google Play's age signal can put a player in a younger group,
+  never an older one.
+</p>
+<p>
+  <strong>A child - anyone under 13, under 14 in South Korea and Canada, or
+  under 18 in India - plays on the phone alone, and we keep nothing about a
+  child.</strong> A child's phone has no account. It sends nothing to our
+  game server, so we hold no record of it. The app never starts AdMob, its
+  consent form or the tracking prompt on it, so it shows no ads. It sells
+  nothing, and has no sign-in, rooms or leaderboards. Its daily puzzle is
+  played on the phone alone, and its reminders, if turned on, are only the
+  one for full lives, scheduled on the phone. The only requests it makes are
+  the version check and, on Android, the request for Google Play's age
+  signal. The version check carries nothing but the IP address any web
+  request carries, which the file's host uses only to send the file and keep
+  the site secure - support for the app's own working, in the words of the
+  US children's privacy rule - and never to identify or contact the child.
+  On iPhone, its progress is copied to the phone's own iCloud if iCloud is
+  on, as for every player.
+</p>
+<p>
+  <strong>A teen</strong> - 13 to 17, or 14 to 17 in South Korea and Canada;
+  in India everyone under 18 is a child - plays with an account, as an adult
+  does, with three differences. Every ad request carries Google's teen
+  setting and asks for its restricted data processing, so the ads are never
+  personalised and Google acts only as our service provider; iOS never asks
+  a teen about tracking; and a teen's reminders, if turned on, are only the
+  one for full
+  lives. A teen can buy through the App Store or Google Play, where a parent
+  can require approval first, with Ask to Buy or Google Play's purchase
+  approvals.
+</p>
+<p>
+  EXAKT has no chat and no user-generated content. Its rooms are joined only
+  with a code shared by the room's host, and show other players only as
+  numbered seats with their points. Its leaderboards are Game Center's and
+  Google Play Games', and follow the age and privacy settings of those
+  services.
+</p>
+<p>
+  <strong>Parents:</strong> a child's phone says "On this phone only" in
+  Settings, and nothing of it is on our server, so there is nothing for us
+  to show you or delete. A teen's account can be deleted in Settings →
+  Account → Delete account, or without the app, as Your rights says. If a
+  phone that had an account becomes a child's, for example when Google
+  Play's age signal says so, the app stops using that account and sends it
+  nothing more; it is erased as How long we keep it says, or sooner if you
+  ask us. If a child writes to us, we answer once and then delete the
+  message, unless a parent or guardian writes too. Questions about a child's
+  or a teen's data are welcome at the address below.
 </p>
 
 <h2>Your rights</h2>
 <p>
-  Under the GDPR, the UK GDPR, the CCPA and comparable laws you have rights of
-  access, correction, deletion and portability over personal data a company
-  holds about you. <strong>We hold none</strong>, so there is nothing for us
-  to disclose, correct, export or delete. To remove the data on your own
-  device, delete the app; to remove the cloud copy, use your Apple or Google
-  account's storage settings.
+  Under the GDPR, the UK GDPR, India's Digital Personal Data Protection Act,
+  the CCPA and comparable laws, you have rights to access, correct, delete and
+  receive a copy of the personal data we hold about you, and to withdraw
+  consent. Where we rely on our legitimate interests, you can object, and
+  you can ask us to restrict what we do while a request is settled. We
+  answer within a month. Deletion is built into the app — Settings → Account → Delete
+  account — and needs no email. Without the app, you can ask at
+  www.kernelarch.com/exakt/delete-account.html. A copy of what our server
+  holds about your account is in the app too: Settings → Copy of my data.
+  For anything else, or a correction, write to the address below. You can
+  also complain to your data protection authority.
 </p>
 
 <h2>Changes</h2>
 <p>
-  If this policy ever changes, the date at the top changes with it. Any change
-  that introduced data collection would also require updating the privacy
-  declarations in both app stores, which are visible on the app's store
-  listing before you install.
+  If this policy changes, the date at the top changes with it, and the
+  privacy declarations on both store listings are updated to match.
 </p>
 
 <h2>Contact</h2>
 <p>
-  Questions about this policy: <a href="mailto:service@kernelarch.com">service@kernelarch.com</a>
+  KernelArch Labs. Questions, requests and complaints about privacy,
+  including under India's Digital Personal Data Protection Act:
+  <a href="mailto:service@kernelarch.com">service@kernelarch.com</a>
 </p>
 
 <footer>
