@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+  EXAKT's page (KernelArch-Lab/exakt#915), at https://www.kernelarch.com/exakt.
+
+  Every daily puzzle result a player shares from the app ends with this
+  address, so for a friend it is the first sight of EXAKT: the game in a
+  line, the daily puzzle, and where to get it. Static, like the legal pages
+  beside it: no scripts, no cookies, nothing it could collect, and nothing
+  loaded from anywhere else. The og: lines are read only by the app a link
+  is pasted into, for its preview.
+
+  Every path starts at the root (/exakt/...). Vercel serves this file at
+  /exakt as well as /exakt/, and at /exakt a relative path would resolve
+  against / instead.
+
+  The banner is the owner's, given in chat on 5 November 2026 (the app
+  repository's store/play/source/banner-wide.webp), reduced to 1200 pixels
+  wide: banner.webp for the page, banner.jpg for link previews.
+
+  When both store listings exist, the line under "Get EXAKT" gives way to
+  the stores' own badges: see the comment there.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — land on the number exactly</title>
+<meta name="description" content="A number puzzle for iPhone, iPad and Android: slide your number into +1, ×2, −1 and ÷2 tiles and land on the target exactly. A new daily puzzle every day, the same for everyone.">
+<link rel="canonical" href="https://www.kernelarch.com/exakt">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KernelArch Labs">
+<meta property="og:title" content="EXAKT">
+<meta property="og:description" content="Slide your number into +1, ×2, −1 and ÷2 and land on the target exactly. A new daily puzzle every day, the same for everyone.">
+<meta property="og:url" content="https://www.kernelarch.com/exakt">
+<meta property="og:image" content="https://www.kernelarch.com/exakt/banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="587">
+<meta property="og:image:alt" content="The EXAKT wordmark, the four operation tiles, plus, minus, times and divide, and EXAKT's mascot, a smiling tile, waving">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2rem 1rem 5rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+  }
+  .banner {
+    display: block; width: 100%; height: auto;
+    border-radius: 14px; border: 1px solid #2e1065;
+  }
+  h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin: 2rem 0 0.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.5rem; color: #00e5ff; }
+  .lead { font-size: 1.15rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 1rem 0 2rem; }
+  .result {
+    font-weight: 600; white-space: pre-line;
+    background: #120d33; border: 1px solid #2e1065; border-radius: 10px;
+    padding: 0.75rem 1rem; margin: 1rem 0;
+  }
+  .soon { font-size: 1.1rem; font-weight: 600; }
+  .facts { color: #a79fc8; }
+  a { color: #00e5ff; }
+  nav ul { list-style: none; padding: 0; margin: 0;
+           display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+  nav a { display: inline-block; padding: 0.6rem 0; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<main>
+<img class="banner" src="/exakt/banner.webp" width="1200" height="587"
+     alt="The EXAKT wordmark, the four operation tiles, plus, minus, times and divide, and EXAKT's mascot, a smiling tile, waving">
+
+<h1>EXAKT</h1>
+<p class="lead">
+  You have a number and a target. Swipe, and your number slides across a
+  board of +1, ×2, −1 and ÷2 tiles, taking each one it runs into, and the
+  way you swipe decides which tile comes in next. Land on the target
+  exactly: not close, exactly.
+</p>
+
+<h2>The daily puzzle</h2>
+<p>
+  A new puzzle every day at midnight where you are, and the same for
+  everyone. No hints or cards, every try is free, and your first clear is
+  the one that counts.
+</p>
+<p>A result a friend sends you looks like this:</p>
+<p class="result">EXAKT daily #17 · 9 moves · ★★★ · better than 77%
+https://www.kernelarch.com/exakt</p>
+<p>
+  That is puzzle number 17, solved in 9 moves for three stars, in fewer
+  moves than 77% of the players who had solved it by then. It never shows
+  the swipes, so the puzzle is still yours to solve.
+</p>
+
+<h2>Get EXAKT</h2>
+<p class="soon">Coming to the App Store and Google Play.</p>
+<!--
+  When both listings exist, replace the line above with the stores' own
+  badges, as Apple's and Google's badge guidelines say, linking to
+  https://apps.apple.com/app/id<the App Store's Apple ID for EXAKT> and
+  https://play.google.com/store/apps/details?id=app.exakt
+-->
+<p class="facts">
+  2,000 levels, every one free to play, and the daily puzzle. Free, with
+  ads and optional in-app purchases. In English and German, on iPhone,
+  iPad and Android phones and tablets.
+</p>
+</main>
+
+<footer>
+  <nav aria-label="More about EXAKT">
+    <ul>
+      <li><a href="https://www.kernelarch.com/#/products">EXAKT at KernelArch Labs</a></li>
+      <li><a href="/exakt/privacy-policy.html">Privacy policy</a></li>
+      <li><a href="/exakt/terms.html">Terms</a></li>
+      <li><a href="/exakt/accessibility.html">Accessibility</a></li>
+      <li><a href="mailto:service@kernelarch.com">service@kernelarch.com</a></li>
+    </ul>
+  </nav>
+  <p>
+    EXAKT, by KernelArch Labs. This page is static, carries no scripts, no
+    cookies and no trackers, and loads nothing from anywhere else.
+  </p>
+</footer>
+
+</body>
+</html>
