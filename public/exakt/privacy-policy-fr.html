@@ -2,9 +2,9 @@
 <!--
   DRAFT FOR QUEBEC COUNSEL'S REVIEW. The French below is our own
   translation, made on 2 November 2026 (#716) and brought up to date on
-  3 November 2026 (#884, #890), 5 November 2026 (#914) and 6 November
-  2026 (#920), of store/privacy-policy.html as it stood on 6 November
-  2026, the date its "Last updated" line carries.
+  3 November 2026 (#884, #890), 5 November 2026 (#914), 6 November 2026
+  (#920) and 8 November 2026 (#881, #852), of store/privacy-policy.html as
+  it stood on 8 November 2026, the date its "Last updated" line carries.
   Quebec counsel reads it once before Canada opens (docs/FINAL_REVIEW.md,
   the lawyer's question 14), and may change any of it.
 
@@ -84,7 +84,7 @@
 <body>
 
 <h1>EXAKT — Politique de confidentialité</h1>
-<p class="updated">Dernière mise à jour : 6 novembre 2026</p>
+<p class="updated">Dernière mise à jour : 8 novembre 2026</p>
 
 <p class="lead">
   EXAKT conserve le moins possible de renseignements sur vous. Il commence
@@ -348,7 +348,11 @@
   aussi à Google, pour qu'il soit finalisé même quand l'application ne peut
   pas le faire elle-même. Quand l'une ou l'autre boutique rembourse un achat,
   elle en informe notre serveur, qui compte les remboursements par produit et
-  par motif et ne conserve rien sur les personnes qu'ils concernaient.
+  par motif. Un achat remboursé par Apple est aussi marqué comme remboursé, à
+  côté du hachage à sens unique de l'identifiant du compte qui l'a encaissé,
+  pour qu'il ne puisse plus être crédité. Rien d'autre n'est conservé sur les
+  personnes que les remboursements concernaient, et une fois ce compte
+  supprimé, la marque ne désigne plus personne.
 </p>
 <p>
   Vous pouvez aussi acheter <strong>No Ads</strong> (sans publicité), seul ou
@@ -694,12 +698,14 @@
   qu'il contient des pièces ou des heures achetées.
   La suppression de votre compte retire pour de bon le compte Firebase et
   l'enregistrement sur le serveur. Ce qui reste, c'est l'empreinte à sens
-  unique de chaque achat que vous avez fait, marquée comme déjà encaissée et
-  sans rien qui la relie à vous, pour que le même paiement ne puisse jamais
-  être crédité de nouveau – sur un autre compte, ou sur celui-ci. Pendant
-  une heure après une suppression, le serveur conserve aussi le moment où
-  elle a eu lieu, sous un identifiant dérivé du compte, pour qu'un jeton de
-  connexion antérieur ne puisse pas être utilisé ; puis cela disparaît aussi.
+  unique de chaque achat que vous avez fait, marquée comme déjà encaissée, et
+  comme remboursée si Apple a remboursé l'achat, sans rien qui la relie à
+  vous, pour que le même paiement ne puisse jamais être crédité de nouveau –
+  sur un autre compte, ou sur celui-ci. Pendant 66 minutes après une
+  suppression, le serveur conserve aussi le moment où elle a eu lieu, sous un
+  identifiant dérivé du compte, pour qu'un jeton de connexion antérieur,
+  valable jusqu'à une heure, ne puisse pas être utilisé ; puis cela disparaît
+  aussi.
   Nos journaux conservent ce qu'ils contiennent au sujet du compte jusqu'à
   leur suppression, à 180 jours (un an, à partir du 13 mai 2027), comme
   l'explique la section Journaux plus haut. Une salle se supprime d'elle-même

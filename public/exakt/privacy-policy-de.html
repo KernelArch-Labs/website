@@ -2,9 +2,9 @@
 <!--
   DRAFT FOR A GERMAN LAWYER'S REVIEW. The German below is our own
   translation, made on 2 November 2026 (#704) and brought up to date on
-  3 November 2026 (#884, #890), 5 November 2026 (#914) and 6 November
-  2026 (#920), of store/privacy-policy.html as it stood on 6 November
-  2026, the date its "Last updated" line carries.
+  3 November 2026 (#884, #890), 5 November 2026 (#914), 6 November 2026
+  (#920) and 8 November 2026 (#881, #852), of store/privacy-policy.html as
+  it stood on 8 November 2026, the date its "Last updated" line carries.
   A German lawyer reads it before the German storefront opens
   (docs/FINAL_REVIEW.md, the lawyer's question 13), and may change any of
   it.
@@ -76,7 +76,7 @@
 <body>
 
 <h1>EXAKT — Datenschutzerklärung</h1>
-<p class="updated">Zuletzt aktualisiert: 6. November 2026</p>
+<p class="updated">Zuletzt aktualisiert: 8. November 2026</p>
 
 <p class="lead">
   EXAKT speichert so wenig über Sie wie möglich. Zuerst fragt es, wann Sie
@@ -335,8 +335,12 @@
   gutgeschrieben hat, auch gegenüber Google, damit er abgeschlossen wird,
   selbst wenn die App das nicht selbst kann. Wenn einer der Stores einen
   Kauf erstattet, teilt er das unserem Server mit, der Erstattungen nach
-  Produkt und Grund zählt und nichts darüber speichert, wessen Erstattungen
-  es waren.
+  Produkt und Grund zählt. Einen Kauf, den Apple erstattet hat, kennzeichnet
+  er außerdem als erstattet, neben dem Einweg-Hash der Kennung des Kontos,
+  das ihn eingelöst hat, damit er nicht noch einmal gutgeschrieben werden
+  kann. Sonst wird nichts darüber gespeichert, wessen Erstattungen es waren,
+  und sobald dieses Konto gelöscht ist, nennt die Kennzeichnung niemanden
+  mehr.
 </p>
 <p>
   Sie können auch <strong>Keine Werbung</strong> kaufen, allein oder mit 60
@@ -670,12 +674,13 @@
   lange es ungenutzt ist, solange es Münzen oder gekaufte Stunden enthält.
   Das Löschen Ihres Kontos entfernt das Firebase-Konto und den Datensatz auf
   dem Server endgültig. Was bleibt, ist der Einweg-Fingerabdruck jedes Ihrer
-  Käufe, als bereits eingelöst gekennzeichnet und ohne etwas, das ihn mit
-  Ihnen verbindet, damit dieselbe Zahlung nie wieder gutgeschrieben werden
-  kann – weder auf einem anderen Konto noch auf diesem. Eine Stunde lang nach
-  einer Löschung speichert der Server außerdem, wann sie geschah, unter einer
-  aus dem Konto abgeleiteten Kennung, damit ein Anmelde-Token von davor nicht
-  genutzt werden kann; dann verschwindet auch das. Unsere Protokolle
+  Käufe, als bereits eingelöst gekennzeichnet, und als erstattet, wenn Apple
+  den Kauf erstattet hat, ohne etwas, das ihn mit Ihnen verbindet, damit
+  dieselbe Zahlung nie wieder gutgeschrieben werden kann – weder auf einem
+  anderen Konto noch auf diesem. 66 Minuten lang nach einer Löschung
+  speichert der Server außerdem, wann sie geschah, unter einer aus dem Konto
+  abgeleiteten Kennung, damit ein Anmelde-Token von davor, das bis zu einer
+  Stunde gilt, nicht genutzt werden kann; dann verschwindet auch das. Unsere Protokolle
   behalten, was sie über das Konto enthalten, bis sie im Alter von 180 Tagen
   gelöscht werden (ab dem 13. Mai 2027 im Alter von einem Jahr), wie oben
   unter „Protokolle“ erklärt. Ein Raum löscht sich einige Minuten nach seiner
