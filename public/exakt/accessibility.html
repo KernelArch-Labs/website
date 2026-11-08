@@ -25,14 +25,25 @@
     background: #08061c; color: #eaf6ff; line-height: 1.6;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
                  sans-serif;
+    overflow-wrap: break-word;
   }
-  h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.5rem; color: #00e5ff; }
-  .updated { color: #a79fc8; font-size: 0.9rem; margin-top: 0; }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
   .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
           padding-left: 1rem; margin: 2rem 0; }
-  ul { padding-left: 1.2rem; }
-  li { margin: 0.4rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
   a { color: #00e5ff; }
   footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
            border-top: 1px solid #2e1065; padding-top: 1rem; }
@@ -41,7 +52,7 @@
 <body>
 
 <h1>EXAKT — Accessibility</h1>
-<p class="updated">Last updated: 15 October 2026</p>
+<p class="updated">Last updated: 5 November 2026</p>
 
 <p class="lead">
   EXAKT is meant to be playable by everyone. This page says what the game
@@ -73,8 +84,19 @@
     names every tile with its row and column, and says which tiles cannot
     apply to your number: the ones the board draws hatched.</li>
   <li>After each move, the board says the new position.</li>
-  <li>On the first five levels, the guide says each move in words as well as
-    acting it out.</li>
+  <li>On the first three levels, the tutorial, a pop-up says each move in
+    words before you make it, and a screen reader reads it as it comes up.
+    The guide acts each move out as well. The mascot beside the words is a
+    picture only, and a screen reader passes over it.</li>
+  <li>On levels 4 to 25, the first time two tiles merge on your board,
+    your number takes a merged tile, or a tile burns (a ÷2 on an odd
+    number, or one that would pass the level's ceiling or go below 0), the
+    same pop-up says why, once, and a screen reader reads it as it comes
+    up. While it is up, no move plays, by a swipe or any of the ways above,
+    so nothing changes under it. <strong>Got it</strong> closes it, and
+    <strong>No more tips</strong> turns them all off. The
+    <strong>Show tips again</strong> switch in Settings turns them off or
+    on again, and a screen reader reads it as a switch, on or off.</li>
   <li>Every control has a label, in English or German, as the app is
     set.</li>
 </ul>
@@ -97,7 +119,7 @@
 <ul>
   <li>With Reduce Motion (iOS) or Remove animations (Android) turned on, the
     game drops its animations: the board shows where a move ends without
-    sliding there.</li>
+    sliding there, and the mascot stays still.</li>
   <li>No sound is the only signal of anything. Sound, music and vibration
     each have their own switch in Settings.</li>
 </ul>
@@ -122,7 +144,7 @@
 </p>
 
 <footer>
-  EXAKT, by kernelarch labs. This page is static, carries no scripts, no
+  EXAKT, by KernelArch Labs. This page is static, carries no scripts, no
   cookies and no trackers, and loads nothing from anywhere else.
 </footer>
 

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--
+  DRAFT FOR A GERMAN LAWYER'S REVIEW. The German below is our own
+  translation, made on 2 November 2026 (#704) and brought up to date on
+  3 November 2026 (#890), of store/terms.html as it stood on
+  3 November 2026, the date its "Last updated" line carries. A
+  German lawyer reads it before the German storefront opens
+  (docs/FINAL_REVIEW.md, the lawyer's question 13), and may change any of
+  it.
+
+  **A translation, never a page of its own.** It has the English page's
+  blocks in the English page's order: the same headings, points, bold runs
+  and links. When the English page changes, this one changes with it, and
+  takes the English page's new date. test/data/legal/policy_asset_test.dart
+  fails while the two dates differ, or while the blocks don't match. The
+  version the app keeps as agreed to (#703) is the English page's date,
+  which this page carries too.
+
+  **Formal address, Sie,** as German terms almost always use, although the
+  app's own German says du. The app's controls are named as the app shows
+  them in German ("Weiter", "Überspringen", "Vertrag widerrufen"), because
+  the app shows this page when it is set to German. Its link to the privacy
+  policy is to the German one.
+
+  Upload it as-is to https://www.kernelarch.com/exakt/terms-de.html. The app
+  bundles the same text as assets/legal/terms-de.txt, generated from this
+  file by tool/generate_legal_text.py, and shows it under Settings → Legal,
+  from the age question, the Shop and the out-of-lives screen when the app
+  is in German. One self-contained file, with the other pages' style block:
+  no external assets, no fonts to fetch and no scripts.
+
+  Questions for the review:
+  - whether the terms should say that this German version is the one that
+    binds a German consumer, which the English page doesn't say;
+  - whether "Käufe sind endgültig" and the liability paragraph read, in
+    German, as clauses a German court would uphold (sections 307 to 309
+    BGB);
+  - the governing-law clause, and the company's registered details, which
+    the English page leaves out rather than guess (#500).
+-->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — Nutzungsbedingungen</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+    overflow-wrap: break-word;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — Nutzungsbedingungen</h1>
+<p class="updated">Zuletzt aktualisiert: 3. November 2026</p>
+
+<p class="lead">
+  EXAKT ist ein Rätselspiel von KernelArch Labs („wir“). Diese Bedingungen
+  sind die Vereinbarung zwischen Ihnen und uns, wenn Sie es spielen. Kurz
+  gesagt: Spielen Sie fair, sonst können wir entfernen, was durch Schummeln
+  gewonnen wurde; Münzen und Leben sind Teil des Spiels, kein Geld, und ein
+  Konto, das sich nie angemeldet hat, verliert sie nach 24 Monaten ohne
+  Nutzung; in der EU, im EWR und im Vereinigten Königreich haben Sie 14
+  Tage, um es sich bei einem Kauf anders zu überlegen, und anderswo
+  erstatten wir nichts, nur weil Sie es sich anders überlegt haben, aber
+  jedes Recht, das Ihnen das Gesetz gibt, bleibt Ihnen; wenn das Spiel
+  eingestellt wird oder Sie eine Änderung dieser Bedingungen nicht annehmen,
+  erstatten wir auf Wunsch, was Sie gekauft und nicht genutzt haben; und Sie
+  können Ihr Konto jederzeit löschen.
+</p>
+<p>
+  Wenn EXAKT zum ersten Mal geöffnet wird, fragt es, wann Sie geboren sind.
+  Dieser Bildschirm verweist auf diese Bedingungen, und <strong>wenn Sie dort
+  auf „Weiter“ oder „Überspringen“ tippen, stimmen Sie ihnen zu.</strong>
+  Wenn Sie unter 18 sind oder dort, wo Sie leben, noch nicht volljährig,
+  lesen Sie sie bitte mit einem Elternteil oder Erziehungsberechtigten,
+  bevor Sie zustimmen. Wenn Sie nicht zustimmen, nutzen Sie die App bitte
+  nicht. Was wir über Sie speichern und warum, steht in unserer
+  <a href="https://www.kernelarch.com/exakt/privacy-policy-de.html">Datenschutzerklärung</a>.
+</p>
+
+<h2>Ihr Konto</h2>
+<p>
+  Sobald diese Frage beantwortet ist, legt die App ein Konto für Sie an,
+  damit Ihre Münzen und Leben sicher auf unserem Server geführt werden
+  können. Das Gerät eines Kindes hat kein Konto: siehe unten unter „Alter“.
+  Sie können sich mit Google (oder, wo angeboten, Apple) anmelden, um Ihre
+  Münzen und Leben zu behalten, wenn Sie Ihr Gerät wechseln oder
+  zurücksetzen. Sie sind für das Anmeldekonto verantwortlich, das Sie
+  nutzen. Ein Konto ist für eine Person.
+</p>
+
+<h2>Münzen und Leben</h2>
+<ul>
+  <li>
+    Münzen und Leben sind Teil des Spiels. Sie geben Ihnen ein beschränktes,
+    persönliches Recht, Funktionen in EXAKT zu nutzen – einen weiteren
+    Versuch an einem Level, einen Tipp, einen Zug zurück, einen zusätzlichen
+    Zug, eine Kachel Ihrer Wahl.
+  </li>
+  <li>
+    <strong>Sie haben keinen Geldwert.</strong> Sie können nicht in Geld
+    umgetauscht, verkauft, auf ein anderes Konto oder eine andere Person
+    übertragen oder außerhalb des Spiels verwendet werden, und sie sind nicht
+    Ihr Eigentum.
+  </li>
+  <li>
+    Unser Server führt Ihre <strong>Guthaben</strong> an Münzen und Leben zu
+    Ihrem Konto. Er speichert keinen Verlauf darüber, was Sie gekauft oder
+    ausgegeben haben.
+  </li>
+  <li>
+    Wir können ändern, was Dinge in Münzen kosten, wie sich Leben auffüllen
+    und was eine freiwillige Werbung einbringt (Münzen oder ein Leben,
+    innerhalb eines Tageslimits), um das Spiel ausgewogen zu halten oder wenn
+    sich die Preise der Stores ändern. Das Spiel zahlt nichts fürs Spielen:
+    keine Belohnungen für Meilensteine oder Serien.
+  </li>
+</ul>
+
+<h2>Kaufen</h2>
+<p>
+  Münzen, „Keine Werbung“ und Stunden unbegrenzter Leben werden über den App
+  Store und Google Play verkauft, und für Ihren Kauf gelten auch die
+  Bedingungen von Apple oder Google. Die Preise werden im Store angezeigt,
+  bevor Sie bezahlen. Was Sie gekauft haben, wird hinzugefügt, sobald der
+  Store die Zahlung bestätigt und unser Server sie geprüft hat. Kommt es
+  nicht sofort an, versucht die App es von selbst weiter, und der Store hält
+  den Kauf offen, bis es ankommt.
+</p>
+<p>
+  <strong>Wenn Sie jugendlich sind, fragt die App zuerst.</strong> Vor Ihrem
+  ersten Kauf bittet sie um die Zustimmung eines Elternteils oder
+  Erziehungsberechtigten, wie unten unter „Alter“ beschrieben, und öffnet
+  erst dann das Zahlungsfenster des Stores.
+</p>
+<p>
+  <strong>Wenn Sie in der EU, im EWR oder im Vereinigten Königreich leben,
+  können Sie einen Kauf innerhalb von 14 Tagen ohne Angabe von Gründen
+  widerrufen</strong>: Münzen, soweit Sie sie nicht ausgegeben haben, eine
+  Stunde unbegrenzte Leben, solange Sie sie nicht gestartet haben, und
+  „Keine Werbung“. Tippen Sie in der App auf <strong>Vertrag
+  widerrufen</strong>: Sie finden es unter Einstellungen → Hilfe und
+  Beschwerden und neben dem Hinweis auf die 14 Tage unter dem, was die App
+  verkauft, im Laden und auf dem Bildschirm „Keine Leben mehr“. Es bringt
+  Sie zu dem Store, bei dem Sie bezahlt haben, und dieser erstattet Ihnen
+  das Geld: Apple über Ihren Kaufverlauf oder Google Play über seine
+  Erstattungsanfrage. Für einen Kauf bei Google Play können Sie uns auch mit
+  seiner Bestellnummer schreiben, und wir erstatten ihn.
+</p>
+<p>
+  <strong>Käufe sind endgültig: Wenn Sie es sich anders überlegen, erstatten
+  wir nichts, es sei denn, das Gesetz verlangt etwas anderes</strong>, wie
+  oben. Wenn etwas, das Sie gekauft haben, nicht ankommt oder nicht wie
+  beschrieben funktioniert, behalten Sie jedes Recht, das Ihnen das Gesetz
+  gibt, es in Ordnung bringen oder erstatten zu lassen. Apple und Google
+  bearbeiten Erstattungsanträge außerdem nach ihren eigenen Richtlinien, die
+  diese Rechte ergänzen und nie einschränken, und ein Kauf, der nicht
+  abgeschlossen werden kann, wird von dem Store erstattet, der die Zahlung
+  angenommen hat. Was Sie kaufen, wird geliefert, sobald der Store und unser
+  Server die Zahlung bestätigt haben, meist innerhalb von Sekunden.
+</p>
+<p>
+  <strong>Wenn das Spiel eingestellt wird oder Sie eine wesentliche Änderung
+  dieser Bedingungen nicht annehmen, erstatten wir auf Wunsch, was Sie
+  gekauft und nicht genutzt haben</strong>: die Münzen, die Sie nicht
+  ausgegeben haben, bis zu so vielen, wie Sie in den 12 Monaten vor Ihrer
+  Anfrage bei uns gekauft haben, und die Stunden unbegrenzter Leben, die Sie
+  in dieser Zeit gekauft und nicht gestartet haben, zum gezahlten Preis.
+  Unser Server führt Guthaben, nicht Ihre Käufe, deshalb unterscheiden die
+  12 Monate gekaufte Münzen von den übrigen. Schreiben Sie uns dafür an
+  service@kernelarch.com, mit den Bestellnummern aus den Belegen des Stores
+  und Ihrer „Kopie meiner Daten“ aus den Einstellungen. Einen Kauf bei
+  Google Play erstatten wir über Google Play auf dem Weg, auf dem Sie bezahlt
+  haben. Einen Kauf im App Store kann nur Apple erstatten; wenden Sie sich
+  dafür an Apple unter reportaproblem.apple.com. Bitte fragen Sie, bevor Sie
+  Ihr Konto löschen: Sobald es gelöscht ist, zeigt nichts mehr, was es
+  enthielt.
+</p>
+<p>
+  <strong>In Australien</strong> gelten für unsere Waren und Dienstleistungen
+  Garantien, die nach dem Australian Consumer Law nicht ausgeschlossen werden
+  können. Wenn ein Kauf nicht funktioniert oder nicht wie beschrieben ist,
+  wenden Sie sich an Apple oder Google oder an uns, und er wird in Ordnung
+  gebracht oder erstattet.
+</p>
+
+<h2>Werbung</h2>
+<p>
+  EXAKT zeigt Werbung über Google AdMob, aber nie auf dem Gerät eines Kindes,
+  und Jugendliche sehen nur Werbung, die nicht personalisiert ist. Manche
+  Werbung besteht aus freiwilligen Videos, die Ihnen Münzen geben, wenn Sie
+  sie bis zum Ende ansehen; ob Sie eines ansehen, entscheiden immer Sie. Wo
+  das Gesetz es verlangt, bittet die App um Ihre Einwilligung, bevor sie
+  Werbung zeigt, und Sie können Ihre Wahl unter Einstellungen →
+  Datenschutzoptionen ändern. Die Werbung Erwachsener ist nur personalisiert,
+  wenn sie Ja sagen: zu dieser Einwilligung, wo danach gefragt wird, und
+  überall sonst zur eigenen Frage der App, die einmal kommt. Sie können Ihre
+  Antwort jederzeit unter Einstellungen → Personalisierte Werbung ändern.
+</p>
+
+<h2>Das Tagesrätsel</h2>
+<ul>
+  <li>
+    Ein Level pro Tag, für alle Spieler dasselbe. <strong>Es ist
+    kostenlos:</strong> Es zu spielen kostet kein Leben und keine Münzen, und
+    ein neuer Versuch kostet nichts.
+  </li>
+  <li>
+    <strong>Es gibt keinen Preis zu gewinnen.</strong> Sein Ergebnis ist, wie
+    viele Züge Sie gebraucht haben und wie das im Vergleich zu den anderen
+    Spielern des Tages abschneidet, ohne Namen gezählt. Wenn Sie 18 oder
+    älter sind, bringt Ihnen jeder gelöste Tag außerdem eine Medaille auf
+    Ihrem Gerät, Gold, Silber oder Bronze, je nach den Sternen Ihres ersten
+    Lösens: Sie kann nicht gekauft, verkauft, ausgegeben oder getauscht
+    werden und schaltet nichts frei. Aus dem Tagesrätsel ist nichts von Wert
+    zu gewinnen.
+  </li>
+  <li>
+    Unser Server zählt ein Lösen erst, wenn er die Züge nachgespielt hat, die
+    die App sendet.
+  </li>
+</ul>
+
+<h2>Räume</h2>
+<ul>
+  <li>
+    In einem Raum spielen bis zu acht Spieler dieselben Level gegen eine
+    gemeinsame Uhr. <strong>Räume sind kostenlos:</strong> Einem beizutreten
+    oder darin zu spielen kostet keine Münzen und auch sonst nichts.
+  </li>
+  <li>
+    <strong>In einem Raum gibt es keinen Preis zu gewinnen.</strong> Sein
+    einziges Ergebnis ist die Platzierung jedes Spielers: Aus einem Raum ist
+    nichts von Wert zu gewinnen.
+  </li>
+  <li>
+    Unser Server wertet jedes in einem Raum geschaffte Level, indem er die
+    Züge nachspielt, die die App sendet, und seine Wertung gilt für den Raum.
+  </li>
+</ul>
+
+<h2>Fair Play</h2>
+<p>
+  Bitte schummeln Sie nicht. Sie dürfen die App nicht verändern, sie nicht
+  auf einem Gerät nutzen, das verändert wurde, um in sie einzugreifen, das
+  Spielen nicht automatisieren, sie nicht zurückentwickeln, um Münzen, Leben
+  oder sonst etwas zu bekommen, das Ihnen das Spiel nicht gegeben hat, in
+  einem Raum nicht mit etwas anderem als der App spielen und keinen Fehler
+  zum selben Zweck ausnutzen.
+</p>
+<p>
+  <strong>Dieser Absatz gilt nicht für Verbraucher in Québec.</strong> Wenn
+  wir Münzen oder Leben finden, die so erlangt oder versehentlich vergeben
+  wurden, können wir sie entfernen, und bei schwerem oder wiederholtem
+  Missbrauch können wir das Konto sperren oder schließen.
+</p>
+<p>
+  Wenn wir das tun, fragen Sie uns, und wir sagen Ihnen, warum. Wenn Sie
+  meinen, dass wir falsch lagen, schreiben Sie uns: Wir prüfen es erneut,
+  antworten innerhalb eines Monats und geben alles zurück, was wir
+  irrtümlich genommen haben.
+</p>
+<p>
+  Die Bestenlisten werden von Apple (Game Center) und Google (Google Play
+  Games) nach deren eigenen Bedingungen betrieben. Eine Punktzahl, die durch
+  Spielen nicht erreicht werden konnte, kann daraus entfernt werden.
+</p>
+
+<h2>Änderungen am Spiel</h2>
+<p>
+  Wir arbeiten weiter an EXAKT, deshalb können sich Level, Funktionen, Preise
+  in Münzen und Belohnungen ändern, und wir können das Angebot des Spiels
+  einstellen. <strong>Wenn wir beschließen, es einzustellen, beenden wir
+  sofort den Verkauf von Münzen und Stunden unbegrenzter Leben und teilen es
+  Ihnen mindestens 60 Tage vor der Einstellung in der App mit</strong>, mit
+  dem Tag der Einstellung. Bis dahin können Sie weiterspielen, und wir
+  erstatten auf Wunsch, was Sie gekauft und nicht genutzt haben, wie oben
+  unter „Kaufen“ beschrieben.
+</p>
+
+<h2>Ihr Konto löschen</h2>
+<p>
+  Sie können Ihr Konto jederzeit in der App löschen: Einstellungen → Konto →
+  Konto löschen. Damit werden Ihre Münzen und Leben endgültig von unserem
+  Server entfernt; das kann nicht rückgängig gemacht werden, und gelöschte
+  Münzen werden nicht erstattet. Der Fortschritt in den Leveln, der auf Ihrem
+  Gerät gespeichert ist, bleibt dort.
+</p>
+<p>
+  Wenn Sie sich nie angemeldet haben, werden die Münzen und Leben Ihres
+  Kontos außerdem gelöscht, sobald es 24 Monate lang nicht genutzt wurde,
+  und ebenfalls nicht erstattet. Schon einmal Spielen in dieser Zeit erhält
+  sie, und eine Anmeldung erhält sie, bis Sie das Konto löschen. Ein Konto,
+  auf dem Sie Münzen oder Stunden unbegrenzter Leben gekauft haben, wird auf
+  diese Weise nie gelöscht, solange es noch Münzen oder gekaufte Stunden
+  enthält, egal wie lange es ungenutzt bleibt.
+</p>
+
+<h2>Unser Spiel</h2>
+<p>
+  EXAKT – seine Level, Grafiken, Klänge und sein Code – gehört uns oder
+  denen, die es uns lizenzieren. Wir geben Ihnen ein persönliches, nicht
+  ausschließliches, nicht übertragbares Recht, die App zu Ihrer eigenen
+  Unterhaltung zu nutzen. Sie dürfen sie nicht kopieren, verkaufen oder
+  verbreiten, außer soweit das Gesetz es erlaubt.
+</p>
+
+<h2>Alter</h2>
+<p>
+  EXAKT ist für alle. Es fragt jeden neuen Spieler, wann er geboren ist, und
+  speichert nur die Altersgruppe, die sich aus der Antwort ergibt, auf dem
+  Gerät. Unter Android kann das Alterssignal von Google Play einen Spieler in
+  eine jüngere Gruppe einordnen, nie in eine ältere. Ändern sich die
+  Altersregeln für das Gerät nach einer Antwort – weil eine spätere Version
+  der App, oder die Sprachen oder die Zeitzone des Geräts, einen Spieler bis
+  zu einem höheren Alter als zuvor als Kind behandeln – und könnte die
+  Antwort jetzt zu einer jüngeren Gruppe gehören, fragt die App einmal
+  erneut; auch die neue Antwort kann den Spieler nur in eine jüngere Gruppe
+  einordnen.
+</p>
+<ul>
+  <li>
+    <strong>Ein Kind</strong> – unter 13; in Südkorea, Kanada, Chile und Peru
+    unter 14; und in Indien, Kolumbien, Kenia, Nigeria und Südafrika unter 18
+    – spielt nur auf dem Gerät: kein Konto, keine Werbung, keine Käufe, keine
+    Räume, keine Bestenlisten und keine Erinnerungen. Wer die Frage
+    überspringt, wird wie ein Kind behandelt.
+  </li>
+  <li>
+    <strong>Jugendliche</strong> spielen mit einem Konto, sehen nur Werbung,
+    die nicht personalisiert ist, und bekommen keine Erinnerungen. Ein
+    Elternteil kann mit der Kaufanfrage des App Store oder den
+    Kaufgenehmigungen von Google Play verlangen, dass alles, was Jugendliche
+    kaufen, genehmigt werden muss.
+  </li>
+</ul>
+<p>
+  Wenn Sie unter 18 sind oder dort, wo Sie leben, noch nicht volljährig,
+  fragen Sie bitte einen Elternteil oder Erziehungsberechtigten, bevor Sie
+  etwas kaufen. <strong>Vor dem ersten Kauf von Jugendlichen fragt auch die
+  App danach</strong>, einmal auf jedem Gerät:
+  <strong>Zurück</strong> kauft nichts, und
+  <strong>Meine Eltern sind einverstanden, weiter</strong> führt weiter zum
+  Store.
+</p>
+
+<h2>Unsere Haftung</h2>
+<p>
+  <strong>Die Beschränkungen in diesem Absatz gelten nicht für Verbraucher in
+  Québec.</strong> Wir arbeiten daran, dass EXAKT gut läuft, können aber nicht
+  versprechen, dass es immer verfügbar oder fehlerfrei ist, und <strong>es
+  wird so bereitgestellt, wie es ist, vorbehaltlich der Gewährleistungen, die
+  Ihnen das Gesetz gibt. Soweit das Gesetz es erlaubt, haften wir nicht für
+  indirekte oder unvorhersehbare Schäden, und unsere gesamte Haftung Ihnen
+  gegenüber ist auf den Betrag begrenzt, den Sie uns in den zwölf Monaten
+  vor Ihrem Anspruch gezahlt haben, oder auf den Gegenwert von 100 US-Dollar,
+  wenn das mehr ist.</strong>
+  Diese Beschränkungen berühren nicht die Gewährleistungen, die Ihnen das
+  Gesetz gibt und die nicht beschränkt werden können, etwa nach dem
+  Australian Consumer Law, und gelten nicht für Schäden, die wir oder jemand,
+  den wir zur Bereitstellung von EXAKT einsetzen, vorsätzlich oder grob
+  fahrlässig verursachen, oder für Schäden an Leben, Körper oder Gesundheit,
+  die durch Fahrlässigkeit verursacht werden.
+</p>
+<p>
+  <strong>Nichts in diesen Bedingungen nimmt Ihnen Rechte, die Sie nach dem
+  Recht Ihres Wohnorts haben</strong>, einschließlich Verbraucherrechten, auf
+  die nicht verzichtet werden kann, und nichts beschränkt eine Haftung, deren
+  Beschränkung das Gesetz nicht erlaubt.
+</p>
+
+<h2>Apple und Google</h2>
+<p>
+  Apple und Google sind nicht Partei dieser Bedingungen und nicht für die App
+  oder ihren Support verantwortlich. Wenn Sie EXAKT aus dem App Store geladen
+  haben, gelten außerdem Apples Standard-Lizenzbedingungen für Apps.
+</p>
+
+<h2>Änderungen dieser Bedingungen</h2>
+<p>
+  Wir können diese Bedingungen aktualisieren, wenn sich das Spiel, das Gesetz
+  oder die Regeln der Stores ändern, oder um sie klarer zu machen. Das Datum
+  oben auf dieser Seite zeigt, wann sie sich zuletzt geändert haben.
+  <strong>Über eine wesentliche Änderung dieser Bedingungen oder dessen, was
+  Dinge in Münzen kosten, informieren wir Sie in der App mindestens 30 Tage,
+  bevor sie gilt</strong>, mit dem Tag, ab dem sie gilt, und die neuen
+  Bedingungen stehen auf dieser Seite. Wenn sie gilt, bittet die App Sie bei
+  jedem Start um Ihre Zustimmung, bis Sie zustimmen: <strong>Wenn Sie auf
+  „Weiter“ tippen, stimmen Sie zu</strong>. Wenn Sie eine Änderung nicht
+  annehmen, können Sie aufhören zu spielen, uns um eine Erstattung dessen
+  bitten, was Sie gekauft und nicht genutzt haben, wie oben unter „Kaufen“
+  beschrieben, und Ihr Konto löschen.
+</p>
+<p>
+  <strong>In Québec</strong> können wir Folgendes ändern: die Level und
+  Funktionen des Spiels, was Dinge in Münzen kosten, wie sich Leben
+  auffüllen, was eine freiwillige Werbung einbringt und wie Konten und Käufe
+  funktionieren. Eine Änderung bindet Sie erst, wenn wir Sie mindestens 30
+  Tage, bevor sie gilt, schriftlich darüber informiert haben, mit der neuen
+  Klausel und dem Tag, an dem sie wirksam wird, und Sie können sie ablehnen
+  und den Vertrag kostenlos beenden. Das Recht dort verlangt außerdem eine
+  schriftliche Mitteilung 60 Tage, bevor wir den Betrieb des Spiels
+  einstellen, und wir werden sie geben.
+</p>
+
+<h2>Wenn etwas schiefgeht</h2>
+<p>
+  Bitte schreiben Sie uns zuerst oder nutzen Sie Einstellungen → Hilfe und
+  Beschwerden: Wir bestätigen eine Beschwerde innerhalb von 48 Stunden und
+  bemühen uns, sie innerhalb eines Monats zu lösen.
+</p>
+<p>
+  Für diese Bedingungen gilt das Recht Indiens. <strong>Wenn Sie Verbraucher
+  sind, nimmt Ihnen nichts darin den Schutz der zwingenden Vorschriften des
+  Landes, der Provinz oder des Bundesstaats, in dem Sie leben, oder Ihr
+  Recht, einen Anspruch vor den Gerichten und Verbraucherstellen geltend zu
+  machen, die Ihnen dieses Recht gibt.</strong> In Indien gehört dazu eine
+  Beschwerde bei der Consumer Commission an Ihrem Wohn- oder Arbeitsort, die
+  Sie online unter edaakhil.nic.in einreichen können, und die National
+  Consumer Helpline unter 1915. Nichts in diesen Bedingungen beschränkt Ihr
+  Recht, sich bei einer Behörde zu beschweren, etwa einer Datenschutz- oder
+  Verbraucherschutzbehörde oder Indiens Online Gaming Authority. Wenn wir je
+  einen Anspruch gegen Sie als Verbraucher geltend machen, dann nur vor den
+  Gerichten an Ihrem Wohnort. Streitigkeiten mit jemandem, der kein
+  Verbraucher ist, gehen vor die Gerichte in Indien am eingetragenen Sitz
+  von KernelArch Labs. Nichts in diesen Bedingungen verkürzt die Frist, die
+  Ihnen das Gesetz gibt, um einen Anspruch geltend zu machen.
+</p>
+
+<h2>Allgemeines</h2>
+<p>
+  Erklärt ein Gericht einen Teil dieser Bedingungen für unwirksam, gilt der
+  Rest weiter. Wir können diese Bedingungen auf ein Unternehmen übertragen,
+  das EXAKT übernimmt, und das schmälert Ihre Rechte daraus nicht.
+</p>
+
+<h2>Kontakt</h2>
+<p>
+  KernelArch Labs. Fragen zu diesen Bedingungen, einem Kauf oder Ihrem
+  Konto:
+  <a href="mailto:service@kernelarch.com">service@kernelarch.com</a>
+</p>
+
+<footer>
+  EXAKT. Diese Seite ist statisch, enthält keine Skripte, keine Cookies und
+  keine Tracker und lädt nichts von anderswo.
+</footer>
+</body>
+</html>

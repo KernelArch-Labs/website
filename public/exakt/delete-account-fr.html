@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+  DRAFT FOR QUEBEC COUNSEL'S REVIEW. The French below is our own
+  translation, made on 2 November 2026 (#716), of store/delete-account.html
+  as it stood on 28 October 2026, the date its "Last updated" line carries.
+  Quebec counsel reads it with the French terms and privacy policy
+  (docs/FINAL_REVIEW.md, the lawyer's question 14), and may change any of
+  it.
+
+  The account deletion page behind the French (Canada) listing: the French
+  privacy policy links it under Vos droits, for somebody who no longer has
+  the app. **Hosted only**: the app shows no deletion page, since deletion
+  is a button in Settings. Like the English page, it names the app's
+  controls as the app shows them, in English, between guillemets.
+
+  **A translation, never a page of its own.** It has the English page's
+  blocks in the English page's order: the same headings, points, bold runs
+  and links. When the English page changes, this one changes with it, and
+  takes the English page's new date. test/data/legal/policy_asset_test.dart
+  fails while the two dates differ, or while the blocks don't match. Its
+  email asks for a French subject line: the address, not the subject, is
+  what shows the account is yours.
+
+  Upload it as-is to https://www.kernelarch.com/exakt/delete-account-fr.html,
+  next to the French privacy policy. One self-contained file, with the
+  other pages' style block: no scripts, no external assets, nothing it
+  could collect.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — Supprimer votre compte</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+    overflow-wrap: break-word;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — Supprimer votre compte</h1>
+<p class="updated">Dernière mise à jour : 28 octobre 2026</p>
+
+<p class="lead">
+  Vous pouvez supprimer votre compte EXAKT et tout ce que notre serveur
+  conserve à votre sujet, à tout moment. C'est définitif et prend effet
+  immédiatement. La seule chose conservée pour de bon est une marque à sens
+  unique sur chaque achat, reliée à personne, pour qu'aucun paiement ne
+  puisse être crédité deux fois. Nos journaux sont supprimés à mesure qu'ils
+  vieillissent.
+</p>
+
+<h2>Dans l'application – le moyen le plus rapide</h2>
+<p>
+  Ouvrez EXAKT, puis <strong>« Settings → Account → Delete account »</strong>,
+  et confirmez. Cela supprime votre compte et son enregistrement sur notre
+  serveur immédiatement. Vous n'avez pas besoin de nous écrire.
+</p>
+
+<h2>Sans l'application</h2>
+<p>
+  <strong>Si vous vous êtes connecté avec Google</strong>, écrivez à
+  <a href="mailto:service@kernelarch.com?subject=Supprimer%20mon%20compte%20EXAKT">service@kernelarch.com</a>
+  avec l'objet « Supprimer mon compte EXAKT », depuis l'adresse avec laquelle
+  vous vous êtes connecté. Nous n'agissons qu'à partir d'un message venant de
+  cette adresse : c'est ce qui montre que le compte est le vôtre. Nous
+  supprimons le compte et son enregistrement sur le serveur dans un délai de
+  30 jours et vous répondons quand c'est fait. Vous n'avez pas besoin de
+  l'application, ni de la réinstaller.
+</p>
+<p>
+  <strong>Si vous avez toujours joué sans vous connecter</strong>, supprimez
+  le compte dans l'application, comme ci-dessus. Il ne contient ni nom ni
+  courriel, donc rien de ce qu'un message pourrait dire ne montre qu'il est
+  le vôtre, pas même son identifiant de joueur (« Player ID »), que d'autres
+  peuvent finir par connaître : nous ne supprimons pas un compte parce qu'un
+  message en cite un. Si vous n'avez plus l'application, l'enregistrement du
+  compte sur notre serveur se supprime de lui-même une fois que personne ne
+  l'a utilisé pendant 24 mois, sauf si des pièces ou des heures de vies
+  illimitées y ont été achetées et qu'il en contient encore : il est alors
+  conservé, pour que rien de ce qui a été acheté ne soit perdu.
+</p>
+
+<h2>Ce qui est supprimé</h2>
+<ul>
+  <li>Votre compte : son identifiant, ainsi que l'adresse courriel et le nom que votre fournisseur de connexion nous a transmis.</li>
+  <li>Votre enregistrement sur notre serveur : pièces, vies, fin des vies
+    illimitées, récompenses publicitaires des 8 derniers jours, clé App
+    Attest de votre appareil, empreintes des achats que nous avons crédités,
+    et tout ce qu'il contient d'autre.</li>
+</ul>
+<p>
+  Une chose reste pour de bon : une empreinte à sens unique de chaque achat
+  que vous avez fait, marquée comme déjà encaissée et reliée à personne, pour
+  que le même paiement ne puisse jamais être crédité de nouveau. Pendant une
+  heure, notre serveur conserve aussi le moment de la suppression, pour
+  qu'une connexion antérieure ne puisse pas être utilisée ; puis cela est
+  supprimé aussi. Nos journaux, conservés pour le CERT-In de l'Inde, gardent
+  ce qu'ils contiennent au sujet du compte jusqu'à leur suppression à
+  180 jours, ou à un an à partir du 13 mai 2027.
+</p>
+<p>
+  Les pièces et les vies ne peuvent pas être restaurées une fois le compte
+  supprimé. Apple et Google conservent leurs propres dossiers de tout achat
+  que vous avez fait dans leurs boutiques, et AdMob conserve ce qu'il
+  recueille selon les propres règles de Google ; la
+  <a href="privacy-policy-fr.html">politique de confidentialité</a> explique
+  les deux.
+</p>
+
+<footer>
+  EXAKT, par KernelArch Labs. Cette page est statique, ne contient ni
+  scripts, ni témoins, ni traceurs, et ne charge rien d'ailleurs.
+</footer>
+
+</body>
+</html>
