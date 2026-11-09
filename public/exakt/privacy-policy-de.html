@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<!--
+  DRAFT FOR A GERMAN LAWYER'S REVIEW. The German below is our own
+  translation, made on 2 November 2026 (#704) and brought up to date on
+  3 November 2026 (#884, #890), 5 November 2026 (#914), 6 November 2026
+  (#920) and 8 November 2026 (#881, #852), of store/privacy-policy.html as
+  it stood on 8 November 2026, the date its "Last updated" line carries.
+  A German lawyer reads it before the German storefront opens
+  (docs/FINAL_REVIEW.md, the lawyer's question 13), and may change any of
+  it.
+
+  **A translation, never a page of its own.** It has the English page's
+  blocks in the English page's order: the same headings, points, bold runs
+  and links. When the English page changes, this one changes with it, and
+  takes the English page's new date. test/data/legal/policy_asset_test.dart
+  fails while the two dates differ, or while the blocks don't match.
+
+  **Formal address, Sie,** as German privacy notices and terms almost
+  always use, although the app's own German says du. The app's controls
+  are named as the app shows them in German ("Einstellungen → Konto →
+  Konto löschen"), because the app shows this page when it is set to
+  German.
+
+  Upload it as-is to https://www.kernelarch.com/exakt/privacy-policy-de.html.
+  The app bundles the same text as assets/legal/privacy-policy-de.txt,
+  generated from this file by tool/generate_legal_text.py, and shows it
+  under Settings → Legal and from the age question when the app is in
+  German. One self-contained file, with the other pages' style block: no
+  external assets, no fonts to fetch and no scripts.
+
+  Questions for the review:
+  - whether the page should say that this German version is the one that
+    applies to a German consumer, which the English page doesn't say;
+  - the deletion page it links to, under Ihre Rechte, is in English: whether
+    it needs a German version too;
+  - the English names it keeps, such as Indiens Digital Personal Data
+    Protection Act, the Australian Privacy Principles and the Office of the
+    Australian Information Commissioner.
+-->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — Datenschutzerklärung</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+    overflow-wrap: break-word;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — Datenschutzerklärung</h1>
+<p class="updated">Zuletzt aktualisiert: 8. November 2026</p>
+
+<p class="lead">
+  EXAKT speichert so wenig über Sie wie möglich. Zuerst fragt es, wann Sie
+  geboren sind, und speichert nur die Altersgruppe, die sich aus der
+  Antwort ergibt, auf dem Gerät.
+  <strong>Das Gerät eines Kindes sendet unserem Spielserver nichts</strong>
+  außer einmal die Löschung eines Kontos, das es hatte, bevor es das Gerät
+  eines Kindes wurde: Was das bedeutet, steht unten unter „Kinder und
+  Jugendliche“. Jeder andere Spieler hat eine Konto-Kennung, unter der unser
+  Server Ihre Guthaben im Spiel führt: Münzen, Leben und ein paar Zähler.
+  Wenn Sie in einem Raum spielen, speichert er außerdem diesen Raum – seine
+  nummerierten Plätze und deren Punkte –, solange der Raum besteht, und
+  nicht länger.
+  Wenn Sie sich anmelden, speichert Firebase Authentication, das unsere
+  Konten führt, außerdem die E-Mail-Adresse und den Namen, die Ihr
+  Anmeldedienst übermittelt; unser eigener Server sieht sie nie. Werbung
+  wird über Google AdMob angezeigt, das Informationen von Ihrem Gerät
+  erhebt, um sie anzuzeigen und zu messen, und, wo das Gesetz es verlangt,
+  vorher um Ihre Einwilligung bittet. Personalisiert ist Ihre Werbung nur,
+  wenn Sie Ja sagen. Wenn Sie Game Center oder Google Play Games nutzen,
+  gehen Ihre Punktzahlen für die Bestenlisten an Apple oder Google, nie an
+  uns. Eigene Analysen oder Absturzberichte führen wir nicht durch; AdMob
+  misst seine Werbung und erhebt Diagnosedaten über seine eigene Software,
+  wie unten unter „Werbung“ erklärt.
+</p>
+<p>
+  EXAKT wird von KernelArch Labs entwickelt, das entscheidet, wie diese
+  Daten verwendet werden.
+  <strong>Sie können Ihr Konto und alles, was unser Server über Sie
+  speichert, jederzeit in der App löschen:</strong> Einstellungen → Konto →
+  Konto löschen.
+</p>
+
+<h2>Was auf Ihrem Gerät bleibt</h2>
+<p>
+  Ihr Fortschritt – welche Level Sie geschafft haben und Ihre beste Zugzahl
+  und beste Punktzahl in jedem – und Ihre Einstellungen werden im eigenen
+  Speicher Ihres Geräts aufbewahrt, damit das Spiel ohne Netz funktioniert.
+  Ebenso:
+</p>
+<ul>
+  <li>Ihre Leben und jede Änderung an ihnen oder an Ihren Münzen, die noch
+    nicht an unseren Server gesendet wurde, jeweils mit dem Konto
+    gekennzeichnet, zu dem sie gehört;</li>
+  <li>eine Kopie Ihres zuletzt bekannten Münzguthabens, signiert, damit sie
+    nicht verändert werden kann. Es ist nur eine Kopie: Der tatsächliche
+    Stand liegt auf unserem Server;</li>
+  <li>zu welchem Konto der Spielstand gehört;</li>
+  <li>ob das Konto, das dieses Gerät hatte, genutzt wird oder gelöscht wird,
+    weil das Alterssignal von Google Play oder Ihre Antwort auf die erneut
+    gestellte Altersfrage das Gerät zu dem eines Kindes gemacht hat, welches
+    von beiden, und ob die App Ihnen das mitgeteilt hat;</li>
+  <li>die Altersgruppe, in die Ihre Antwort auf die erste Frage Sie einordnet
+    – Kind, Jugendlicher oder Erwachsener –, und nie das Datum, das Sie
+    angegeben haben, mit dem Alter, unter dem ein Spieler auf diesem Gerät
+    zum Zeitpunkt Ihrer Antwort als Kind galt, damit die App erkennen kann,
+    wann sich dieses Alter seitdem geändert hat. Sie bleibt auf diesem
+    Gerät, und die App sendet sie nirgendwohin;</li>
+  <li>unter Android die Altersgruppe, in die Sie das Alterssignal von Google
+    Play zuletzt eingeordnet hat, damit die vorsichtigere der beiden – dieses
+    Signal oder Ihre Antwort – gilt: Bei jedem Start fragt die App Google
+    Play nach Ihrer Altersspanne, wobei Play Sie zuerst bitten kann, sie
+    freizugeben, und speichert nur die Gruppe, nie die Spanne, mit dem Alter,
+    unter dem ein Spieler auf diesem Gerät damals als Kind galt, ohne sie
+    irgendwohin zu senden;</li>
+  <li>wenn Sie jugendlich sind, der Tag, an dem Sie der App vor einem Kauf
+    bestätigt haben, dass ein Elternteil oder Erziehungsberechtigter mit
+    Ihrem Kauf einverstanden ist, und Ihre damalige Altersgruppe, damit sie
+    nur einmal fragt. Das bleibt auf diesem Gerät, und die App sendet es
+    nirgendwohin;</li>
+  <li>ob Sie „Keine Werbung“ besitzen, wie viele Level Sie seit der letzten
+    Werbung zwischen den Leveln geschafft haben und wann Sie zuletzt etwas
+    gekauft haben, weil die Werbung nach einem Kauf einen Tag lang
+    pausiert;</li>
+  <li>Ihre Antwort zu personalisierter Werbung, Ja oder Nein, gegeben auf die
+    Frage der App oder mit dem Schalter „Personalisierte Werbung“: wann Sie
+    sie gegeben haben und welche Fassung der Frage Sie beantwortet haben, als
+    Nachweis Ihrer Wahl. Sie bleibt auf diesem Gerät, und die App sendet sie
+    nirgendwohin;</li>
+  <li>der Preis, den der Store zuletzt für das kleinste Münzpaket genannt
+    hat, damit neben jedem Münzpreis weiter angezeigt wird, was Münzen in
+    Geld wert sind, wenn der Store nicht erreichbar ist;</li>
+  <li>zwei Vermerke für die unten beschriebenen Prüfungen: wie weit die Uhr
+    des Geräts von der unseres Servers abweicht und seit wann das Gerät
+    seine Echtheit nicht nachweisen kann, falls das der Fall ist;</li>
+  <li>Ihr neuestes Ergebnis im Tagesrätsel: der Tag, Ihre Züge und Sterne,
+    die Wischbewegungen selbst, damit das Ergebnis erneut gesendet werden
+    kann, falls es unseren Server nicht erreicht hat, und wo es unter den
+    Spielern des Tages stand;</li>
+  <li>die Medaillen, die Ihre Tagesrätsel gewonnen haben, wenn Sie 18 oder
+    älter sind: für jeden gelösten Tag die Sterne, die Ihr erstes Lösen
+    eingebracht hat. Sie werden nie an uns gesendet;</li>
+  <li>wenn das Spiel Ihnen seine Geschichte zeigt, welche ihrer Szenen Sie
+    gesehen haben, damit jede nur einmal von selbst abgespielt wird;</li>
+  <li>die Zahlen, die Ihr Album enthält und die nie an uns gesendet
+    werden: die Quadratzahlen, Primzahlen und anderen besonderen Zahlen,
+    die Sie in einem Level oder im Tagesrätsel gebildet haben, und welche
+    davon ein Ergebnis Ihnen noch zeigen wird;</li>
+  <li>wenn Sie jugendlich oder erwachsen sind, wann die App den Store
+    zuletzt gebeten hat, seine Bewertungsabfrage zu zeigen: der Tag, nie
+    die Uhrzeit, damit sie selten fragt, höchstens einmal in 120 Tagen,
+    nachdem Sie ein Level zum ersten Mal mit drei Sternen geschafft oder
+    eine Welt beendet haben. Ob die Abfrage erscheint, entscheidet der
+    Store, und eine Bewertung oder Rezension, die Sie darin abgeben, geht
+    allein an den Store: Die App erfährt sie nie und gibt nichts dafür.
+    Das bleibt auf diesem Gerät, und die App sendet es nirgendwohin;</li>
+  <li>die Nummer der neuesten Mitteilung von uns darüber, welche Versionen
+    noch gespielt werden dürfen, damit eine ältere Mitteilung, die jemand
+    anderes erneut sendet, ignoriert wird;</li>
+  <li>die Fassung der Nutzungsbedingungen, der Sie zugestimmt haben, der Tag
+    Ihrer Zustimmung und Ihre damalige Altersgruppe, damit die App weiß,
+    welche Bedingungen Sie angenommen haben, und Sie erneut fragen kann, wenn
+    sie sich ändern. Das bleibt auf diesem Gerät, und die App sendet es
+    nirgendwohin;</li>
+  <li>welche unserer Mitteilungen, dass das Spiel eingestellt wird oder seine
+    Bedingungen sich ändern, die App Ihnen gezeigt hat, damit jede nur einmal
+    gezeigt wird;</li>
+  <li>wenn Sie 18 oder älter sind und Erinnerungen einschalten, die
+    Erinnerungen, die noch angezeigt werden sollen. Es gibt zwei Arten, jede
+    aus, bis Sie sie einschalten: „Erinnerungen bei vollen Leben“, eine
+    Benachrichtigung, wenn Ihre Leben voll sind, angeboten, wenn Ihnen die
+    Leben ausgehen, und in den Einstellungen; und „Erinnerungen nach einem
+    Tag Pause“, nur in den Einstellungen einzuschalten, eine Benachrichtigung
+    zum Tagesrätsel des Tages oder zu Ihrem nächsten Level, einen Tag
+    nachdem Sie die App zuletzt genutzt haben, dann nach 2, 4 und 7 Tagen.
+    Keine kommt zwischen 21 und 9 Uhr. Sie werden auf diesem Gerät geplant,
+    das Gerät bittet vor der ersten um Ihre Erlaubnis, und nichts davon wird
+    irgendwohin gesendet. Schalten Sie jede Art mit ihrem Schalter in den
+    Einstellungen aus. Für niemanden unter 18 gibt es Erinnerungen.</li>
+</ul>
+<p>
+  <strong>Was das Spiel auf Ihrem Gerät speichert, ist verschlüsselt</strong>,
+  mit Ausnahme der unten beschriebenen iCloud-Kopie Ihres Fortschritts. Es
+  wird komprimiert, mit AES-256 versiegelt und in einer kleinen Datenbank
+  abgelegt, unter einem Schlüssel, den der sichere Speicher Ihres Geräts
+  verwahrt – der Schlüsselbund auf iPhone und iPad, der Android Keystore
+  unter Android – und nie neben den Daten. Eine Kopie der Dateien der App ist
+  ohne diesen Schlüssel nicht lesbar. Zwei kleine Dinge liegen außerhalb, in
+  den gewöhnlichen Einstellungen der App, weil die Prüfungen des Geräts sie
+  dort brauchen. Auf dem iPhone sind das die Kennung des Schlüssels, den App
+  Attest für Ihr Gerät erzeugt hat, dessen Bestätigung, bis unser Server sie
+  hat, und ob er sie hat, unter Namen, die Ihre Konto-Kennung enthalten.
+  Unter Android sind es die Schlüssel, die den Spielstand versiegeln und die
+  Kopie des Guthabens signieren, selbst vom Android Keystore versiegelt.
+</p>
+
+<h2>Ihr eigenes Cloud-Konto, nicht unseres</h2>
+<p>
+  Damit Sie Ihren Fortschritt beim Wechsel des Geräts nicht verlieren, kann
+  er auch in <strong>Ihr eigenes</strong> Apple- oder Google-Konto kopiert
+  werden:
+</p>
+<ul>
+  <li>
+    Auf iPhone und iPad über den iCloud-Schlüssel-Wert-Speicher, wenn iCloud
+    bei Ihnen eingeschaltet ist. Apple ist der Auftragsverarbeiter. Die App
+    verschlüsselt diese Kopie nicht, weil sie sich auf einem neuen Gerät
+    öffnen lassen muss, das Ihren Schlüssel nicht hat. Deshalb enthält sie
+    Ihren Fortschritt und sonst nichts – nie Ihre Münzen, Leben,
+    Einstellungen oder Ihr Konto –, und iOS behält auch eine Kopie davon auf
+    dem Gerät.
+  </li>
+  <li>
+    Unter Android über Android Auto Backup, das Teil des Betriebssystems ist.
+    Google ist der Auftragsverarbeiter. Der gesicherte Spielstand bleibt
+    verschlüsselt; den Schlüssel, der ihn auf Ihrem neuen Gerät öffnet,
+    verwahrt Googles Block Store, Ende-zu-Ende-verschlüsselt, wo Ihr Gerät
+    das unterstützt.
+  </li>
+</ul>
+<p>
+  Eine verschlüsselte oder iCloud-Sicherung Ihres iPhones oder iPads bringt
+  den verschlüsselten Spielstand zusammen mit seinem Schlüssel zurück, wenn
+  Sie ein neues Gerät wiederherstellen. Eine Sicherung ohne den Schlüssel –
+  zum Beispiel eine unverschlüsselte Sicherung auf einem Computer – bringt
+  den Spielstand unlesbar zurück, und das Spiel beginnt auf diesem Gerät von
+  vorn; Münzen und Leben sind nicht betroffen, weil unser Server sie führt.
+</p>
+<p>
+  Wir können diese Daten weder sehen noch abrufen. Sie liegen in Ihrem Konto,
+  unter der Datenschutzerklärung von Apple oder Google, und Sie können sie in
+  den Speichereinstellungen Ihres Kontos entfernen.
+</p>
+
+<h2>Ihr Konto</h2>
+<p>
+  Sobald die erste Frage beantwortet ist, legt die App bei Google Firebase
+  Authentication ein anonymes Konto an, es sei denn, die Antwort macht dieses
+  Gerät zu dem eines Kindes, das kein Konto hat. Dieses Konto enthält keinen
+  Namen, keine E-Mail-Adresse und keine Kontaktdaten – nur eine Kennung –,
+  und unter ihm führt unser Server Ihre Münzen und Leben.
+</p>
+<p>
+  Die Anmeldung mit Google oder Apple ist freiwillig, und das Spiel ist auch
+  ohne sie vollständig. Wenn Sie sich mit Google anmelden, übermittelt uns
+  Google eine Konto-Kennung, Ihre E-Mail-Adresse und Ihren Anzeigenamen.
+  Wenn Sie sich mit Apple anmelden, übermittelt uns Apple eine Konto-Kennung
+  und sonst nichts: Die App fragt Apple weder nach Ihrem Namen noch nach
+  Ihrer E-Mail-Adresse. Firebase Authentication speichert diese Angaben als
+  unser Auftragsverarbeiter. Mit der Anmeldung bleibt es dasselbe Konto,
+  sodass nichts verloren geht, was Sie hatten, und Ihre Münzen und Leben
+  können Ihnen auf ein neues Gerät folgen. Wir verwenden diese Angaben nur,
+  um zu wissen, dass ein Konto Ihnen gehört. Wir schreiben Ihnen keine
+  E-Mails, wir erstellen kein Profil von Ihnen, und wir verkaufen diese
+  Angaben nicht und geben sie nicht weiter.
+</p>
+
+<h2>Unser Server</h2>
+<p>
+  Unser Spielserver läuft auf Cloudflare. Unter Ihrer Konto-Kennung speichert
+  er: Ihr Münzguthaben; Ihre Leben und wann das nächste zurückkommt; wann von
+  Ihnen gestartete unbegrenzte Leben enden und die gekauften Stunden, die Sie
+  noch nicht gestartet haben; wie viele Münzen Ihnen Werbung heute
+  eingebracht hat und, 8 Tage lang, welche Videos Sie bezahlt haben, damit
+  keines doppelt zahlt; wie viele der heute geschafften Level ihr Leben ohne
+  Geräteprüfung zurückgegeben haben; wie viele Testkäufe in den Stores er
+  Ihrem Konto gutgeschrieben hat und die Münzen und Stunden unbegrenzter
+  Leben, die sie gebracht haben, zu denen ein bezahlter Kauf nie etwas
+  hinzufügt; Einweg-Fingerabdrücke der Käufe in den Stores, die er
+  gutgeschrieben hat, damit kein Kauf doppelt bezahlt wird; die Kennungen
+  Ihrer letzten 128 Anfragen und der noch offenen Versuche, damit nichts
+  doppelt Gesendetes doppelt zählt; auf dem iPhone den öffentlichen
+  Schlüssel, den Apples App Attest für Ihr Gerät ausgestellt hat, und einen
+  Zähler; und für ein Konto, das sich nie angemeldet hat, ungefähr wann es
+  zuletzt genutzt wurde, damit es nach 24 Monaten ohne Nutzung gelöscht
+  werden kann. Er speichert keinen Verlauf darüber, wie Sie gespielt oder was
+  Sie gekauft haben, und er speichert Ihre IP-Adresse nicht zu Ihrem Konto.
+  Der Datensatz ist dort, wo er gespeichert ist, verschlüsselt. Bei jedem
+  Abgleich teilt die App außerdem mit, welcher Build der App anfragt, damit
+  ein Build mit einem schweren Fehler zum Update aufgefordert werden kann;
+  diese Nummer wird geprüft und nicht gespeichert.
+</p>
+<p>
+  Cloudflare empfängt jede Anfrage, einschließlich der IP-Adresse, von der
+  sie kam, um sie an unseren Server zu übermitteln.
+</p>
+
+<h2>Käufe</h2>
+<p>
+  Jedes Level ist kostenlos. Verkauft werden Münzpakete, mit denen man Tipps
+  und die anderen Hilfen in einem Level kauft, eine Stunde unbegrenzte Leben
+  und das Entfernen der Werbung zwischen den Leveln. Die Zahlung wird
+  vollständig über Apples App Store oder Google Play abgewickelt –
+  <strong>Ihre Zahlungsdaten sehen wir nie</strong>. Nach der Zahlung sendet
+  die App unserem Server den signierten Kaufbeleg, den der Store ihr gibt.
+  Der Server prüft die Signatur des Stores, schreibt die Münzen gut und
+  speichert nur einen Einweg-Fingerabdruck der Transaktion. Jeder Kauf trägt
+  einen aus Ihrer Konto-Kennung abgeleiteten Code, damit kein anderes Konto
+  ihn beanspruchen kann; der Code verrät die Kennung nicht. Neben Ihrem
+  Datensatz vermerkt der Server außerdem, welches Konto jeden Kauf eingelöst
+  hat, als Einweg-Hash der Konto-Kennung, damit jeder Kauf einmal und nur
+  einem Konto gutgeschrieben wird.
+</p>
+<p>
+  Unter Android bestätigt unser Server einen Kauf, sobald er ihn
+  gutgeschrieben hat, auch gegenüber Google, damit er abgeschlossen wird,
+  selbst wenn die App das nicht selbst kann. Wenn einer der Stores einen
+  Kauf erstattet, teilt er das unserem Server mit, der Erstattungen nach
+  Produkt und Grund zählt. Einen Kauf, den Apple erstattet hat, kennzeichnet
+  er außerdem als erstattet, neben dem Einweg-Hash der Kennung des Kontos,
+  das ihn eingelöst hat, damit er nicht noch einmal gutgeschrieben werden
+  kann. Sonst wird nichts darüber gespeichert, wessen Erstattungen es waren,
+  und sobald dieses Konto gelöscht ist, nennt die Kennzeichnung niemanden
+  mehr.
+</p>
+<p>
+  Sie können auch <strong>Keine Werbung</strong> kaufen, allein oder mit 60
+  Münzen. Es schaltet die Werbung zwischen den Leveln dauerhaft ab; ein Video
+  für Münzen anzusehen bleibt freiwillig. Es ist ein einmaliger Kauf, den der
+  Store verwahrt: Die App merkt ihn sich auf Ihrem Gerät und fragt den Store
+  erneut, wenn Sie die App neu installieren oder auf „Käufe
+  wiederherstellen“ tippen. Für die Version mit Münzen schreibt unser Server
+  die Münzen einmal gut, genauso wie bei einem Paket.
+</p>
+<p>
+  Sie können auch eine <strong>Stunde unbegrenzte Leben</strong> kaufen.
+  Unser Server bewahrt sie auf, bis Sie sie starten, und vermerkt dann, wann
+  sie endet, genauso wie er Ihre Leben zählt, und bis dahin ist jeder Versuch
+  kostenlos.
+</p>
+
+<h2>Werbung</h2>
+<p>
+  EXAKT zeigt Werbung über Google AdMob, darunter freiwillige Videos, die Sie
+  mit Münzen belohnen. Um Werbung auszuwählen, anzuzeigen und zu messen und
+  um Betrug zu verhindern, erhebt AdMob Informationen von Ihrem Gerät: seine
+  Werbe-ID und unter Android seine App-Set-ID, die IP-Adresse, Angaben zu
+  Gerät und App, wie Sie mit Werbung interagieren, und Diagnosedaten darüber,
+  wie seine Werbung und seine Software funktionieren, etwa Absturz- und
+  Ladedaten. Google verarbeitet diese Daten nach seiner eigenen
+  Datenschutzerklärung unter
+  <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>
+  und kann sie für personalisierte Werbung nutzen, wo Sie das erlauben. Wie
+  Google Informationen aus Apps nutzt, die seine Dienste verwenden, steht
+  unter
+  <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>,
+  und wie es mit den Daten der Unternehmen umgeht, die seine Werbung nutzen,
+  unter
+  <a href="https://business.safety.google/privacy/">business.safety.google/privacy</a>.
+</p>
+<p>
+  <strong>Auf dem Gerät eines Kindes startet die App AdMob nie und fordert
+  keine Werbung an.</strong> Bei Jugendlichen trägt jede Werbeanfrage
+  Googles Einstellung für Jugendliche, im EWR, im Vereinigten Königreich und
+  in der Schweiz seine Einstellung für Kinder, wie unten beschrieben, sodass
+  die Werbung nie personalisiert ist und nichts für Remarketing genutzt wird.
+  Sie bittet Google außerdem um eingeschränkte Datenverarbeitung, bei der
+  Google die Daten der Anfrage nur als unser Dienstleister verarbeitet. iOS
+  fragt Jugendliche nie nach Tracking. Für alle gilt: Jede Werbung muss für
+  ein allgemeines Publikum eingestuft sein.
+</p>
+<p>
+  <strong>Im EWR, im Vereinigten Königreich und in der Schweiz bittet die App
+  um Ihre Einwilligung, bevor Werbung angefordert wird</strong>, wenn Sie
+  erwachsen sind, und zeigt nur nicht personalisierte Werbung, wenn Sie sie
+  nicht geben. Jugendliche werden dort nicht gefragt: Die App teilt Google
+  mit, dass der Spieler unter dem Einwilligungsalter ist, sodass Google keine
+  personalisierte Werbung zeigt, und überall dort, wo Googles
+  Einwilligungsplattform angibt, dass die DSGVO gilt, trägt jede Anfrage von
+  Jugendlichen Googles Einstellung für Kinder statt der für Jugendliche, die
+  die Anfrage auch von anderen Werbeunternehmen fernhält, etwa solchen, die
+  Werbung messen. Sie können Ihre Wahl jederzeit unter Einstellungen →
+  Datenschutzoptionen ändern. In den US-Bundesstaaten, deren
+  Datenschutzgesetze Ihnen erlauben, dem Verkauf oder der Weitergabe Ihrer
+  Daten für Werbung zu widersprechen, bietet die App diese Wahl ebenfalls an,
+  an derselben Stelle. Auf dem iPhone kommt eine kurze Erklärung, bevor iOS
+  fragt, ob Tracking erlaubt werden soll; AdMob nutzt die Werbe-ID nur, wenn
+  Sie das erlauben, und Sie können das in den iOS-Einstellungen unter
+  Datenschutz &amp; Sicherheit → Tracking ändern.
+</p>
+<p>
+  <strong>Überall dort, wo Googles Einwilligungsformular nicht gilt, ist
+  Ihre Werbung nicht personalisiert, bis Sie Ja sagen.</strong> Wenn Sie
+  erwachsen sind, fragt die App Sie einmal, bevor Werbung personalisiert
+  wird, mit „Ja“ und „Nein“ nebeneinander, und Sie spielen gleich, was immer
+  Sie wählen. Die Frage sagt, was Google erhält und warum, wie Sie Ihre
+  Antwort ändern und wie Sie sich in Indien beschweren können. Bis Sie Ja
+  sagen, und immer dann, wenn Ihre Antwort Nein ist, bittet jede Werbeanfrage
+  Google um nicht personalisierte Werbung und um eingeschränkte
+  Datenverarbeitung, bei der Google die Daten der Anfrage nur als unser
+  Dienstleister verarbeitet. Sie können Ihre Antwort jederzeit unter
+  Einstellungen → Personalisierte Werbung ändern: Einschalten stellt die
+  Frage erneut, und Ausschalten gilt ab der nächsten Werbung. Wo immer Sie
+  sind: Ist „Personalisierte Werbung“ ausgeschaltet, verlangt jede
+  Werbeanfrage dasselbe.
+</p>
+<p>
+  Wenn Sie ein Video mit Belohnung ansehen, gibt die App AdMob Ihre
+  Konto-Kennung, damit Google unserem Server mitteilen kann, für welches
+  Konto die Belohnung ist. Nichts anderes über Ihr Konto wird an
+  Werbetreibende weitergegeben.
+</p>
+
+<h2>Prüfungen, die das Spiel fair halten</h2>
+<p>
+  Damit Münzen und Leben nicht gefälscht werden können, bittet die App unter
+  Android Google Play Integrity oder auf dem iPhone Apple App Attest zu
+  bestätigen, dass es die echte EXAKT-App auf einem echten Gerät ist. Google
+  und Apple führen diese Prüfungen durch. Unter Android erhält unser Server
+  Googles signiertes Urteil. Auf dem iPhone erhält er einmal Apples
+  Bestätigung eines für Ihr Gerät erzeugten Schlüssels und danach bei jeder
+  Prüfung eine Signatur dieses Schlüssels; er speichert den Schlüssel und
+  einen Zähler. Bevor der Schlüssel erzeugt wird, gibt er Ihrem iPhone einen
+  Einmalcode, den es beim Erzeugen mitsigniert, und speichert einen
+  Einweg-Hash dieses Codes, der einmal gilt, innerhalb eines Tages. Sonst
+  speichert er nichts.
+</p>
+
+<h2>Bestenlisten</h2>
+<p>
+  Wenn Sie auf iPhone oder iPad bei Game Center oder unter Android bei Google
+  Play Games angemeldet sind, sendet das Spiel Ihre Punktzahlen für die
+  Bestenlisten an Apple oder Google: eine Summe für alle Level, die Sie
+  geschafft haben, und eine für jeden Abschnitt von fünfzig Leveln. Sie
+  zeigen diese Punktzahlen in ihren Bestenlisten neben Ihrem Spitznamen und
+  Bild bei Game Center oder Play Games, wo andere Spieler sie sehen können.
+  Google Play Games erhebt außerdem Informationen, die es für seinen Dienst
+  braucht, etwa welche Spiele Sie spielen. Apple und Google tun dies nach
+  ihren eigenen Datenschutzerklärungen.
+</p>
+<p>
+  <strong>Die Punktzahlen der Bestenlisten erreichen unseren Server nie,
+  ebenso wenig Ihr Spitzname oder Ihre Identität bei Game Center oder Play
+  Games.</strong> Die Punktzahlen werden auf Ihrem Gerät aus den geschafften
+  Leveln berechnet. Um Ihre Punktzahlen aus den Bestenlisten herauszuhalten,
+  melden Sie sich in den iOS-Einstellungen von Game Center ab oder in der
+  Play-Games-App von Google Play Games; das Spiel läuft ohne sie genauso.
+</p>
+<h2>Räume</h2>
+<p>
+  In Räumen spielen bis zu acht Spieler dieselben Level gegen eine gemeinsame
+  Uhr. <strong>Solange ein Raum besteht, und nicht länger,</strong> speichert
+  unser Server seinen Code aus sechs Zeichen und seine Plätze. Jeder Platz
+  ist an einer aus dem Konto des Spielers abgeleiteten Kennung erkennbar –
+  nie an der Konto-Kennung selbst, einem Namen oder einer E-Mail-Adresse –,
+  und der Server speichert, ob das Gerät jedes Platzes verbunden ist, die
+  Level und die Uhr der Runde sowie für jeden Platz die geschafften Level,
+  die Punkte und wann er zuletzt gepunktet hat. Für jedes Level, das Sie
+  schaffen, sendet die App die Züge, die Sie gespielt haben, und der Server
+  spielt sie nach, um sie zu werten; er speichert die Punktzahl, nicht die
+  Züge. Entfernt der Gastgeber vor der Runde einen Platz, speichert der Raum
+  auch dessen Kennung, damit dasselbe Konto nicht zurückkommen kann –
+  wiederum nur, solange der Raum besteht. Ein Raum löscht sich einige
+  Minuten nach seiner Runde selbst, und alles darin verschwindet mit ihm.
+  Ein Raum nimmt Ihrem Konto nichts: Er ist kostenlos und kostet keine
+  Münzen. Solange Sie Räume offen haben, vermerkt Ihr Konto die Codes der von
+  Ihnen eröffneten, höchstens zwei, damit ein Konto nicht mehr gleichzeitig
+  offen halten kann. Die Codes beendeter Räume werden entfernt, wenn Sie das
+  nächste Mal einen Raum eröffnen.
+</p>
+<p>
+  Die anderen Spieler in einem Raum sehen nur nummerierte Plätze – „Spieler
+  1“ bis „Spieler 8“ –, ob jeder verbunden ist, und die Punkte jedes Platzes.
+  Ein Raum hat keinen Chat und keinerlei freien Text, und niemand kann ihm
+  ohne den Code beitreten, den sein Gastgeber teilt.
+</p>
+
+<h2>Das Tagesrätsel</h2>
+<p>
+  Das Tagesrätsel ist ein Level pro Tag, für alle dasselbe. Wenn Sie es
+  lösen, sendet Ihr Gerät unserem Server den Tag und die Wischbewegungen, die
+  Sie gespielt haben, mit dem Anmelde-Token Ihres Kontos. Der Server prüft
+  das Token, spielt die Wischbewegungen nach, um zu sehen, ob sie das Rätsel
+  des Tages lösen, und zählt eins zu der Zahl der Spieler hinzu, die es mit
+  dieser Zahl von Zügen gelöst haben. <strong>Damit jedes Konto einmal am Tag
+  zählt, speichert er eine aus Ihrer Konto-Kennung gebildete Marke</strong>
+  mit einem nur für diesen Tag erzeugten Schlüssel, und wie viele Züge Ihr
+  erstes Lösen des Tages gebraucht hat: Die Marke lässt sich nicht in die
+  Kennung zurückverwandeln, und ein weiteres Lösen desselben Tages von Ihrem
+  Konto wird nicht noch einmal gezählt. Sonst speichert er nichts, was zeigt,
+  dass Sie es waren: nicht Ihre Adresse und nicht die Wischbewegungen –
+  abgesehen von dem, was jede Anfrage in unseren Protokollen hinterlässt, wie
+  unten unter „Protokolle“ beschrieben. Die Zählungen eines Tages, seine
+  Marken und sein Schlüssel werden eine Woche, nachdem der Tag überall zu
+  Ende ist, gelöscht, und dann kann niemand mehr eine Marke jemandem
+  zuordnen. Das Löschen Ihres Kontos löscht eine bereits gebildete Marke
+  nicht: Sobald Ihr Konto weg ist, kann niemand sie Ihnen zuordnen, und sie
+  verschwindet mit den Zählungen dieses Tages. Jeder kann die Zählungen eines
+  Tages lesen, und sie sagen nichts über einen Spieler. Auf dem Gerät eines
+  Kindes wird nichts gesendet: Das Rätsel wird allein auf dem Gerät gespielt.
+  Wenn Sie 18 oder älter sind, bleibt die Medaille, die das Lösen eines Tages
+  gewinnt, auf Ihrem Gerät und wird nie gesendet.
+</p>
+
+<h2>Die Versionsprüfung</h2>
+<p>
+  Beim Start lädt die App außerdem eine kleine statische Datei herunter, die
+  sagt, welche Versionen noch unterstützt werden, damit eine schwer
+  fehlerhafte Version gestoppt werden kann, und die, wenn wir eine haben,
+  unsere Mitteilung enthält, dass das Spiel eingestellt wird oder seine
+  Bedingungen sich ändern. Diese Anfrage trägt <strong>keine Kennung außer
+  der IP-Adresse, die jede Webanfrage trägt</strong>: Der Server, der die
+  Datei bereitstellt, sieht diese Adresse, nutzt sie nur, um die Datei zu
+  senden und die Website zu schützen, und nichts in der Anfrage verbindet sie
+  mit Ihrem Konto.
+</p>
+
+<h2>Protokolle</h2>
+<p>
+  <strong>Die Protokolle unseres Spielservers werden 180 Tage lang in Indien
+  aufbewahrt</strong>, wie es die Vorgaben der indischen Behörde CERT-In
+  verlangen, und dann gelöscht. Ab dem 13. Mai 2027 werden sie ein Jahr lang
+  aufbewahrt, wie es Indiens Digital Personal Data Protection Rules dann
+  verlangen. Für jede Anfrage, die der Server beantwortet, und jede Aufgabe,
+  die er selbst ausführt, enthalten sie die Uhrzeit, was angefragt wurde,
+  wie es ausging und etwaige Fehler, mit den Angaben, die Cloudflare zu einer
+  Anfrage aufzeichnet, darunter möglicherweise die IP-Adresse, von der sie
+  kam. Sie enthalten auch die Zeilen, die der Server schreibt, meist
+  Zählungen und Ergebnisse, die niemanden nennen. Einige können die Kennung
+  eines Kontos enthalten: die Löschung eines Kontos, dessen Spieler uns
+  geschrieben hat, um sie zu verlangen, und AdMobs Meldung eines Videos mit
+  Belohnung, deren Webadresse sie enthält. Die Protokolle von Firebase
+  Authentication zu unseren Konten werden genauso aufbewahrt. Nur KernelArch
+  Labs liest sie. Google speichert sie und Cloudflare schreibt sie, als
+  unsere Auftragsverarbeiter, und wir geben sie niemandem sonst, es sei denn,
+  das Gesetz verlangt es, wie es der Fall sein kann, wenn CERT-In sie nach
+  einem Vorfall anfordert. Das Löschen Ihres Kontos löscht sie nicht: Was sie
+  darüber enthalten, verschwindet, wenn sie dieses Alter erreichen.
+</p>
+<p>
+  Damit niemand ihn überfluten kann, zählt unser Server außerdem die Anfragen
+  von jeder IP-Adresse und von jedem Konto, jeweils für 60 Sekunden.
+  Cloudflare speichert jede Zählung und verwirft sie, wenn ihre Minute um
+  ist.
+</p>
+
+<h2>Wenn Sie uns schreiben</h2>
+<p>
+  Wenn Sie uns eine E-Mail schreiben – um etwas zu erfragen, sich zu
+  beschweren oder eine Werbung oder einen Fehler zu melden –, erhalten wir
+  Ihre Adresse und was immer Sie senden, und nutzen beides nur, um Ihnen zu
+  antworten und festzuhalten, was getan wurde. Wir bewahren eine Nachricht
+  ein Jahr lang auf, nachdem die darin angesprochene Sache abgeschlossen ist,
+  und löschen sie dann. „Fehler melden“ im Menü zeigt nur Angaben zum
+  Kopieren an: Es wird nichts gesendet, außer Sie senden es selbst. Das Gerät
+  eines Kindes zeigt dieselbe Adresse, und Eltern oder Erziehungsberechtigte
+  können gern für ein Kind schreiben. Eine Nachricht eines Kindes wird einmal
+  beantwortet und dann gelöscht, statt ein Jahr lang aufbewahrt zu werden.
+</p>
+
+<h2>Wer Ihre Daten verarbeitet</h2>
+<ul>
+  <li>
+    Google – Firebase Authentication (Konten), Google Cloud (unsere
+    Protokolle), AdMob (Werbung), Google Play (Käufe), Play Age Signals (Ihre
+    Altersspanne, unter Android), Play Integrity (Geräteprüfungen) und Google
+    Play Games (Bestenlisten).
+  </li>
+  <li>
+    Apple – der App Store (Käufe), App Attest (Geräteprüfungen), iCloud (Ihre
+    eigene Sicherung des Fortschritts) und Game Center (Bestenlisten).
+  </li>
+  <li>
+    Cloudflare – Hosting unseres Spielservers.
+  </li>
+</ul>
+<p>
+  Diese Unternehmen können Daten außerhalb Ihres Landes verarbeiten: Googles
+  Dienste in den Vereinigten Staaten und in seinen Rechenzentren weltweit,
+  wobei unsere Protokolle in Indien liegen; unseren Spielserver im Netz von
+  Cloudflare, in Rechenzentren weltweit; und Apples Dienste in den
+  Vereinigten Staaten und weltweit. Wo Daten den EWR, das Vereinigte
+  Königreich oder die Schweiz verlassen, enthalten ihre Verträge mit uns die
+  Standardvertragsklauseln der Europäischen Kommission oder deren britische
+  und schweizerische Fassungen, und Google und Cloudflare sind außerdem nach
+  dem EU-US Data Privacy Framework zertifiziert. Jedes von ihnen ist durch
+  seinen Vertrag mit uns verpflichtet, die Daten, die es für EXAKT
+  verarbeitet, mindestens so gut zu schützen wie diese Erklärung; wo eines
+  Daten für sich selbst nutzt, wie Google für Werbung, gilt auch seine eigene
+  Datenschutzerklärung. Wir geben Ihre personenbezogenen Daten an niemanden
+  weiter, außer wie hier beschrieben, und niemand bezahlt uns dafür. Aber die
+  Datenschutzgesetze von US-Bundesstaaten werten es als „Verkauf“ oder
+  „Weitergabe“ von Daten, wenn ein Werbenetzwerk die Daten eines Geräts
+  nutzen darf, um Werbung anzuzeigen, selbst wenn die Werbung nicht
+  personalisiert ist, und die Werbung in EXAKT tut das. Wo diese Gesetze
+  Ihnen ein Widerspruchsrecht geben, bietet die App es unter Einstellungen →
+  Datenschutzoptionen an.
+</p>
+<p>
+  <strong>In Japan</strong> beruht die Übermittlung Ihrer Daten an diese
+  Unternehmen im Ausland auf ihren Verträgen mit uns über deren Verarbeitung:
+  Jedes ist dadurch verpflichtet, sie so zu schützen, wie es das japanische
+  Datenschutzgesetz, der APPI, von uns verlangen würde (Art. 28). Sie beruht
+  nicht auf einer Einwilligung, für die Jugendliche von 13 bis 15 Jahren in
+  Japan, die mit einem Konto spielen, einen Elternteil bräuchten. Ihre Daten
+  gehen in die oben genannten Länder und an KernelArch Labs in Indien. Auf
+  Anfrage teilen wir Ihnen unverzüglich mit, wie jeder Empfänger sie schützt
+  und wie wir dafür sorgen, dass er das tut, sowie die anderen Dinge, die
+  Art. 32 des APPI aufzählt. Dazu gehören unsere Anschrift und der Name
+  unseres Vertreters, die diese Erklärung ebenfalls nennen wird, sobald die
+  eingetragenen Angaben des Unternehmens feststehen. Was die App von Ihrem
+  Gerät sendet, an wen und warum, steht auf Japanisch unter
+  www.kernelarch.com/exakt/external-transmission-ja.html und in der App unter
+  Einstellungen → Rechtliches, auf einem Gerät, das auf Japan oder
+  Japanisch eingestellt ist.
+</p>
+
+<h2>Warum wir sie verwenden dürfen</h2>
+<p>
+  Nach der DSGVO und der UK-DSGVO beruht jede oben genannte Verwendung auf
+  einer dieser Grundlagen:
+</p>
+<ul>
+  <li>
+    <strong>Das Spiel, das Sie wollten</strong> (ein Vertrag mit Ihnen): Ihr
+    Konto, seine Guthaben, Käufe, das Tagesrätsel und Räume. Bei
+    Jugendlichen, deren Vertrag das Recht ihres Wohnorts möglicherweise nicht
+    anerkennt, unser berechtigtes Interesse daran, das Spiel zu betreiben,
+    das sie spielen wollten.
+  </li>
+  <li>
+    <strong>Unsere berechtigten Interessen</strong> daran, das Spiel fair und
+    sicher zu halten und Ihnen zu antworten: die Geräteprüfungen, die Zählung
+    der Anfragen, die Protokolle und die E-Mails, die Sie uns senden.
+  </li>
+  <li>
+    <strong>Ihre Einwilligung</strong>, die Sie jederzeit widerrufen können:
+    personalisierte Werbung (Einstellungen → Personalisierte Werbung, oder
+    Einstellungen → Datenschutzoptionen, wo Googles Einwilligungsformular
+    gilt) und auf dem iPhone Tracking (Einstellungen → Datenschutzoptionen)
+    sowie Erinnerungen (Einstellungen → Erinnerungen bei vollen Leben und
+    Erinnerungen nach einem Tag Pause).
+  </li>
+</ul>
+
+<h2>Wie lange wir sie aufbewahren</h2>
+<p>
+  Ihr Konto und sein Datensatz auf unserem Server werden aufbewahrt, bis Sie
+  sie löschen oder bis das Gerät zu dem eines Kindes wird, wie unten unter
+  „Kinder und Jugendliche“ beschrieben, mit einer Ausnahme: Wenn Sie sich nie
+  angemeldet haben, wird der Datensatz mit seinen Münzen und Leben gelöscht,
+  sobald das Konto 24 Monate lang nicht genutzt wurde. Schon einmal Spielen
+  in dieser Zeit erhält ihn. Ebenso jeder Kauf: Ein Konto, auf dem Sie Münzen
+  oder Stunden unbegrenzter Leben gekauft haben, bleibt erhalten, egal wie
+  lange es ungenutzt ist, solange es Münzen oder gekaufte Stunden enthält.
+  Das Löschen Ihres Kontos entfernt das Firebase-Konto und den Datensatz auf
+  dem Server endgültig. Was bleibt, ist der Einweg-Fingerabdruck jedes Ihrer
+  Käufe, als bereits eingelöst gekennzeichnet, und als erstattet, wenn Apple
+  den Kauf erstattet hat, ohne etwas, das ihn mit Ihnen verbindet, damit
+  dieselbe Zahlung nie wieder gutgeschrieben werden kann – weder auf einem
+  anderen Konto noch auf diesem. 66 Minuten lang nach einer Löschung
+  speichert der Server außerdem, wann sie geschah, unter einer aus dem Konto
+  abgeleiteten Kennung, damit ein Anmelde-Token von davor, das bis zu einer
+  Stunde gilt, nicht genutzt werden kann; dann verschwindet auch das. Unsere Protokolle
+  behalten, was sie über das Konto enthalten, bis sie im Alter von 180 Tagen
+  gelöscht werden (ab dem 13. Mai 2027 im Alter von einem Jahr), wie oben
+  unter „Protokolle“ erklärt. Ein Raum löscht sich einige Minuten nach seiner
+  Runde selbst, wie oben unter „Räume“ erklärt. Was AdMob erhebt, wird nach
+  Googles eigenen Aufbewahrungsregeln aufbewahrt. Ihr Fortschritt auf dem
+  Gerät bleibt, bis Sie die App löschen.
+</p>
+
+<h2>Kinder und Jugendliche</h2>
+<p>
+  EXAKT ist für alle, Kinder eingeschlossen, deshalb fragt es als Erstes,
+  wann Sie geboren sind: einen Monat und ein Jahr, ohne Vorauswahl. Es
+  speichert nur die Altersgruppe, die sich aus der Antwort ergibt, nie das
+  Datum, auf dem Gerät und sendet sie nirgendwohin. Wer die Frage
+  überspringt, wird wie ein Kind behandelt. Unter Android kann das
+  Alterssignal von Google Play einen Spieler in eine jüngere Gruppe
+  einordnen, nie in eine ältere.
+</p>
+<p>
+  <strong>Ändern sich die Altersregeln für dieses Gerät, nachdem Sie
+  geantwortet haben, fragt die App einmal erneut.</strong> Neben Ihrer
+  Altersgruppe speichert sie das Alter, unter dem ein Spieler auf diesem
+  Gerät zum Zeitpunkt Ihrer Antwort als Kind galt. Ist dieses Alter jetzt
+  höher – weil eine spätere Version der App einen Spieler dort, wo Sie sind,
+  bis zu einem höheren Alter als Kind behandelt, oder weil die Sprachen oder
+  die Zeitzone des Geräts inzwischen auf ein Land hinweisen, dessen Gesetz
+  das tut – und könnte Ihre Antwort jetzt zu einer jüngeren Gruppe gehören,
+  fragt die App vor allem anderen erneut, wann Sie geboren sind, mit einem
+  Satz, der den Grund nennt. Ein Kind fragt sie nie erneut, denn seine
+  Gruppe kann nicht jünger werden, und ebenso wenig einen Erwachsenen, der
+  älter ist als jedes Alter, das diese Gesetze nennen. Auch die neue Antwort
+  kann Sie nur in eine jüngere Gruppe einordnen, nie in eine ältere;
+  gespeichert wird nur die Gruppe, nie das Datum; und Ihre Level bleiben,
+  wie sie sind. Wer die Frage überspringt, wird, wie beim ersten Mal, wie
+  ein Kind behandelt. Das Land entnimmt die App nur den Sprachen des Geräts und,
+  für Indien, seiner Uhr, nie der SIM-Karte oder dem Standort des Geräts.
+</p>
+<p>
+  <strong>Ein Kind – jeder unter 13; in Südkorea, Kanada, Chile und Peru
+  unter 14; in Indien, Kolumbien, Kenia, Nigeria und Südafrika unter 18 –
+  spielt allein auf dem Gerät, und wir speichern nichts über ein
+  Kind.</strong> Das Gerät eines Kindes hat kein Konto. Es sendet nichts an
+  unseren Spielserver, sodass wir keinen Datensatz dazu haben, außer einmal
+  auf einem Gerät, das ein Konto hatte, bevor es das Gerät eines Kindes
+  wurde: Es löscht dieses Konto, wie unten unter „Eltern“ beschrieben. Die
+  App startet darauf nie AdMob, sein Einwilligungsformular oder die
+  Tracking-Abfrage, sodass sie keine Werbung zeigt. Sie verkauft nichts und
+  hat keine Anmeldung, keine Räume und keine Bestenlisten. Ihr Tagesrätsel
+  wird allein auf dem Gerät gespielt, und es gibt keine Erinnerungen. Die
+  App bittet den Store nie um eine Bewertung. Die
+  einzigen Anfragen, die das Gerät stellt, sind neben dieser Löschung die
+  Versionsprüfung und unter Android die Abfrage des Alterssignals von Google
+  Play.
+  Die Versionsprüfung trägt nichts als die IP-Adresse, die jede Webanfrage
+  trägt, und der Host der Datei nutzt sie nur, um die Datei zu senden und die
+  Website zu schützen – zur Unterstützung des Betriebs der App selbst, in den
+  Worten der US-Datenschutzregel für Kinder – und nie, um das Kind zu
+  identifizieren oder zu kontaktieren. Auf dem iPhone wird sein Fortschritt
+  in das eigene iCloud des Geräts kopiert, wenn iCloud eingeschaltet ist, wie
+  bei jedem Spieler.
+</p>
+<p>
+  <strong>Jugendliche</strong> – 13 bis 17 Jahre, in Südkorea, Kanada, Chile
+  und Peru 14 bis 17; in Indien, Kolumbien, Kenia, Nigeria und Südafrika ist
+  jeder unter 18 ein Kind – spielen mit einem Konto, wie Erwachsene, mit drei
+  Unterschieden. Jede Werbeanfrage trägt Googles Einstellung für
+  Jugendliche, im EWR, im Vereinigten Königreich und in der Schweiz seine
+  Einstellung für Kinder, und bittet um eingeschränkte Datenverarbeitung,
+  sodass die Werbung nie personalisiert ist und Google nur als unser
+  Dienstleister handelt; iOS fragt Jugendliche nie nach Tracking; und
+  Jugendliche bekommen keine Erinnerungen. Jugendliche können über den App
+  Store oder Google Play kaufen, wo ein Elternteil mit der Kaufanfrage oder
+  den Kaufgenehmigungen von Google Play eine vorherige Zustimmung verlangen
+  kann.
+</p>
+<p>
+  <strong>Vor dem ersten Kauf von Jugendlichen bittet die App um die
+  Zustimmung eines Elternteils oder Erziehungsberechtigten.</strong> Sie
+  speichert auf diesem Gerät den Tag, an dem die oder der Jugendliche diese
+  bestätigt hat, mit der damaligen Altersgruppe, damit sie nur einmal fragt,
+  und sendet das nirgendwohin.
+</p>
+<p>
+  EXAKT hat keinen Chat und keine von Nutzern erstellten Inhalte. Seinen
+  Räumen tritt man nur mit einem Code bei, den der Gastgeber des Raums teilt,
+  und sie zeigen andere Spieler nur als nummerierte Plätze mit ihren Punkten.
+  Seine Bestenlisten sind die von Game Center und Google Play Games und
+  folgen den Alters- und Datenschutzeinstellungen dieser Dienste.
+</p>
+<p>
+  <strong>Eltern:</strong> Auf dem Gerät eines Kindes steht in den
+  Einstellungen „Nur auf diesem Gerät“, und wo das Kind etwas antippt, das
+  das Gerät auslässt, etwa eine Karte, die Münzen kostet, steht
+  „Altersgrenze“. Nichts davon liegt auf unserem Server, sodass es nichts
+  gibt, was wir Ihnen zeigen oder löschen könnten.
+  Das Konto von Jugendlichen kann unter Einstellungen → Konto → Konto löschen
+  gelöscht werden, oder ohne die App, wie unter „Ihre Rechte“ beschrieben.
+  Wenn ein Kind uns schreibt, antworten wir einmal und löschen dann die
+  Nachricht, es sei denn, ein Elternteil oder Erziehungsberechtigter schreibt
+  ebenfalls. Fragen zu den Daten eines Kindes oder von Jugendlichen sind
+  unter der unten genannten Adresse willkommen.
+</p>
+<p>
+  <strong>Wenn ein Gerät, das ein Konto hatte, zu dem eines Kindes
+  wird</strong>, weil das Alterssignal von Google Play sagt, dass der Spieler
+  ein Kind ist, oder seine Antwort auf die erneut gestellte Frage das sagt,
+  spielt das Gerät von da an allein, und die App löscht dieses
+  Konto: zuerst seinen Datensatz auf unserem Server mit seinen Münzen und
+  Leben, dann sein Firebase-Konto, dann die Kopie seines Guthabens auf dem
+  Gerät. Offline wartet sie, bis das Gerät online ist. Auf dem Konto
+  gekaufte Münzen können nicht auf das Gerät eines Kindes übergehen: Die App
+  sagt das einmal, und eine Erstattung wird bei dem Store beantragt, der die
+  Zahlung angenommen hat, bei Google Play unter play.google.com oder bei
+  Apple unter reportaproblem.apple.com. War das Konto mit Google angemeldet,
+  bittet Google Sie um Bestätigung, bevor sein Firebase-Konto mit der
+  E-Mail-Adresse und dem Namen, die Google übermittelt hat, gelöscht wird:
+  Die Mitteilung der App bietet das einmal an, und die Einstellungen, bis es
+  erledigt ist. Wenn Google Play nur verlangt, dass das Alter bestätigt wird,
+  bleibt das Konto ungenutzt erhalten, bis das geschehen ist: Das Alter eines
+  Kindes löscht es dann. Das Überspringen der erneut gestellten Frage löscht
+  ebenfalls nichts: Es nennt kein Alter, also spielt das Gerät allein, und
+  das Konto bleibt ungenutzt erhalten.
+</p>
+
+<h2>Ihre Rechte</h2>
+<p>
+  Nach der DSGVO, der UK-DSGVO, Indiens Digital Personal Data Protection Act,
+  dem CCPA und vergleichbaren Gesetzen haben Sie das Recht auf Auskunft,
+  Berichtigung und Löschung der personenbezogenen Daten, die wir über Sie
+  speichern, und auf eine Kopie davon, und das Recht, eine Einwilligung zu
+  widerrufen. Wo wir uns auf unsere berechtigten Interessen stützen, können
+  Sie widersprechen, und Sie können verlangen, dass wir die Verarbeitung
+  einschränken, solange über einen Antrag entschieden wird. Wir antworten
+  innerhalb eines Monats. Die Löschung ist in die App eingebaut –
+  Einstellungen → Konto → Konto löschen – und braucht keine E-Mail. Ohne die
+  App kann ein mit Google angemeldetes Konto per E-Mail von dieser
+  Google-Adresse aus gelöscht werden, wie
+  www.kernelarch.com/exakt/delete-account.html (auf Englisch) erklärt; ein
+  Konto, das sich nie angemeldet hat, enthält keinen Namen und keine
+  E-Mail-Adresse, die zeigen könnten, dass eine Nachricht von Ihnen stammt,
+  deshalb wird es in der App gelöscht. Eine Kopie dessen, was unser Server
+  über Ihr Konto speichert, ist ebenfalls in der App: Einstellungen → Kopie
+  meiner Daten. Für alles andere oder eine Berichtigung schreiben Sie an die
+  unten genannte Adresse. Sie können sich auch bei Ihrer
+  Datenschutzaufsichtsbehörde beschweren.
+</p>
+<p>
+  <strong>In Australien</strong> befolgen wir die Australian Privacy
+  Principles. Um die personenbezogenen Daten zu sehen, die wir über Sie
+  speichern, nutzen Sie Einstellungen → Kopie meiner Daten, und schreiben Sie
+  uns für alles, was dort nicht steht. Um etwas davon zu berichtigen,
+  schreiben Sie an die unten genannte Adresse. Wer sie sonst noch verarbeitet
+  und in welchen Ländern, steht unter „Wer Ihre Daten verarbeitet“: Google
+  und Apple in den Vereinigten Staaten und weltweit, Cloudflare weltweit und
+  unsere Protokolle in Indien. Um sich darüber zu beschweren, wie wir mit
+  Ihren personenbezogenen Daten umgehen, schreiben Sie an die unten genannte
+  Adresse: Wir bestätigen eine Beschwerde innerhalb von 48 Stunden mit einer
+  Referenznummer und beantworten sie innerhalb eines Monats. Wenn Sie mit
+  unserer Antwort nicht zufrieden sind, können Sie sich beim Office of the
+  Australian Information Commissioner beschweren, unter oaic.gov.au.
+</p>
+
+<h2>Änderungen</h2>
+<p>
+  Wenn sich diese Erklärung ändert, ändert sich das Datum oben mit, und die
+  Datenschutzangaben in beiden Store-Einträgen werden entsprechend angepasst.
+</p>
+
+<h2>Kontakt</h2>
+<p>
+  KernelArch Labs. Fragen, Anträge und Beschwerden zum Datenschutz, auch nach
+  Indiens Digital Personal Data Protection Act und Australiens Privacy Act,
+  richten Sie an unseren Datenschutzkontakt:
+  <a href="mailto:service@kernelarch.com">service@kernelarch.com</a>
+</p>
+
+<footer>
+  EXAKT. Diese Seite ist statisch, enthält keine Skripte, keine Cookies und
+  keine Tracker und lädt nichts von anderswo.
+</footer>
+
+</body>
+</html>

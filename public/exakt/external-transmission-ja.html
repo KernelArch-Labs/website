@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+  DRAFT FOR THE JAPANESE LAWYER'S REVIEW. The Japanese below is our own
+  draft, written on 29 October 2026 (#708); on 2 November 2026 the ads
+  paragraph gained the app's own question about personalised ads (#698).
+  A Japanese lawyer reads it before Japan opens (docs/FINAL_REVIEW.md, the
+  lawyer's question 7), and may change any of it.
+
+  The notice of external transmissions, 外部送信に関する公表事項, that the
+  Telecommunications Business Act asks of a service whose app sends
+  information about its user from the user's device to others (Art. 27-12,
+  in force since 16 June 2023). MIC's FAQ counts online games among those
+  services (Q2-8), and wants the notice in Japanese (Q3-3). For each thing
+  the app sends to, it gives what is sent, who receives it and why: the
+  three items the Act's ordinance lists.
+
+  Upload it as-is to https://www.kernelarch.com/exakt/external-transmission-ja.html.
+  The app bundles the same text as assets/legal/external-transmission-ja.txt,
+  generated from this file by tool/generate_legal_text.py, and shows it on a
+  Japanese phone under Settings → Legal. One self-contained file, with the
+  other pages' style block: no external assets, no fonts to fetch and no
+  scripts.
+
+  **Every row is a claim about the code**, and the English source is the
+  privacy policy: its Advertising, Your account, Checks that keep the game
+  fair, Leaderboards, Our server and Who processes your data sections, and
+  store/LISTING.md's data tables. If one of them changes, this page changes
+  with it. test/data/legal/policy_asset_test.dart holds the two to the same
+  companies and services.
+
+  **Each block is one source line.** Japanese has no spaces between words,
+  so a line break inside a sentence would show as a space, in a browser and
+  in the app.
+
+  Questions for the review:
+  - whether the app's own server, the stores and the backups need rows at
+    all, or fall under the ordinance's exceptions for what the service
+    needs; they are listed so that nothing is left out;
+  - the recipients' legal names, in particular iTunes K.K. for the App
+    Store in Japan;
+  - whether the notice is easy enough to reach: Settings → Legal, two taps
+    from Home.
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXAKT — 外部送信に関する公表事項</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 6rem; max-width: 42rem;
+    background: #08061c; color: #eaf6ff; line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                 sans-serif;
+    overflow-wrap: break-word;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
+  .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
+          padding-left: 1rem; margin: 2rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
+  code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
+         font-size: 0.9em; }
+  a { color: #00e5ff; }
+  footer { margin-top: 3rem; color: #a79fc8; font-size: 0.9rem;
+           border-top: 1px solid #2e1065; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>EXAKT — 外部送信に関する公表事項</h1>
+<p class="updated">最終更新日：2026年11月2日</p>
+
+<p class="lead">EXAKT（以下「本アプリ」）は、KernelArch Labs（以下「当社」）が提供するパズルゲームです。本アプリは、ゲームを提供するために、お客様の端末から当社やほかの事業者に情報を送信します。電気通信事業法第27条の12に基づき、送信される情報の内容、送信先の事業者、その利用目的を、以下のとおり公表します。<strong>13歳未満のお子様の端末からは、ほとんど何も送信されません。</strong></p>
+
+<p>本アプリの画面上の表記は、英語のまま記載しています（例：設定画面は「Settings」）。</p>
+
+<h2>13歳未満のお子様の端末</h2>
+
+<p>本アプリは最初に、生まれた年と月をおたずねします。その答え、または Android での Google Play の年齢シグナルによって13歳未満とされた端末は、アカウントを持たず、広告、購入、ログイン、ルーム、ランキングを使いません。質問をスキップした場合も同じです。このような端末から送信されるのは、以下のうち、対応しているバージョンの確認（「当社のサーバー」の項）と、Android での Google Play の年齢シグナルへの問い合わせだけです。その端末に以前アカウントがあった場合は、そのアカウントを削除するための通信を、当社のサーバーと Firebase に一度だけ行います。iPhone と iPad では、iCloud がオンの場合、進行状況がお客様ご自身の iCloud に保存されます（「進行状況のバックアップ」の項）。</p>
+
+<h2>広告（Google AdMob）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>広告識別子（iPhone と iPad では、トラッキングを許可した場合のみ）、Android のアプリセット ID、IP アドレス、端末と本アプリに関する情報、広告の表示や操作の状況、広告とそのソフトウェアの動作に関する診断情報（クラッシュや読み込みの情報など）。報酬付きの動画を見たときは、報酬を受け取るアカウントの識別子と、報酬の種類も送信されます。</li>
+<li><strong>送信先：</strong>Google LLC</li>
+<li><strong>利用目的：</strong>広告を選び、表示し、その効果を測定するため、および不正を防ぐため。お客様が許可した場合は、パーソナライズド広告にも利用されます。報酬付きの動画では、どのアカウントに報酬を付与するかを、Google が当社のサーバーに知らせるために利用されます。</li>
+</ul>
+
+<p>成人のお客様には、パーソナライズド広告を表示してよいかを、本アプリが一度だけお尋ねします。「Yes」とお答えいただくまで、パーソナライズド広告は表示されません。13歳から17歳のお客様の広告リクエストには、Google の未成年者向けの設定と、Google が当社のサービス提供者としてのみ情報を扱う「制限付きのデータ処理」の指定が付き、パーソナライズド広告は表示されません。パーソナライズド広告は、「Settings」の「Personalised ads」をオフにすれば、いつでも止められます。Google による情報の取扱いは、Google のプライバシーポリシー（<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>）と、Google のサービスを使うアプリからの情報の取扱いについての説明（<a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>）をご覧ください。</p>
+
+<h2>広告の同意の確認（Google User Messaging Platform）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>端末と本アプリに関する情報、IP アドレス、同意の画面を表示した場合はその表示と操作の状況、およびお客様の選択。13歳から17歳のお客様の場合は、同意できる年齢に達していないこと。</li>
+<li><strong>送信先：</strong>Google LLC</li>
+<li><strong>利用目的：</strong>お客様の地域で、広告についてどのような同意が必要かを判断し、必要な場合に同意の画面を表示して、その選択を広告に反映するため。日本では、通常、Google の同意の画面は表示されません。</li>
+</ul>
+
+<h2>アカウント（Firebase Authentication）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>最初の質問に答えたときに作られる匿名のアカウントの識別子と、そのログインの状態を保つためのトークン、端末と本アプリに関する情報、Firebase の動作に関する診断情報。Google でログインした場合は、Google が提供するアカウント識別子、メールアドレスと表示名。Apple でログインした場合は、Apple が提供するアカウント識別子のみです（お名前とメールアドレスは求めません）。</li>
+<li><strong>送信先：</strong>Google LLC（当社のためにアカウントを管理する委託先です）</li>
+<li><strong>利用目的：</strong>お客様のアカウントを作り、維持し、当社のサーバーがそのアカウントを確認できるようにするため。メールアドレスと表示名は、アカウントがお客様のものであることを確かめるためにだけ使い、当社のサーバーには届きません。</li>
+</ul>
+
+<h2>ログイン（Google、Apple）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>お客様がログインを選んだときの、Google または Apple へのログインの要求（Apple でのログインは、提供している場合のみ）。ログインのためにお客様が入力する情報は Google または Apple に直接送られ、当社には届きません。Google のログイン用のソフトウェアは、その動作を分析するために、端末や利用の状況に関する情報も収集します。</li>
+<li><strong>送信先：</strong>Google LLC、Apple Inc.</li>
+<li><strong>利用目的：</strong>お客様が選んだ方法でログインできるようにするため、および Google によるログイン用のソフトウェアの分析のため。ログインは任意で、ログインしなくてもゲームはすべて遊べます。</li>
+</ul>
+
+<h2>不正を防ぐための端末の確認（Play Integrity、App Attest）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>本アプリが正規のものであり、実際の端末で動いていることを確かめるための、本アプリと端末に関する情報と、確認ごとの要求の値。</li>
+<li><strong>送信先：</strong>Google LLC（Android の Play Integrity）、Apple Inc.（iPhone と iPad の App Attest）</li>
+<li><strong>利用目的：</strong>コインやライフが偽造されないよう、本アプリが本物の EXAKT で、実際の端末で動いていることを確かめるため。確認の結果は、当社のサーバーに送られます（「当社のサーバー」の項）。</li>
+</ul>
+
+<h2>年齢層の確認（Play Age Signals、Android のみ）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>本アプリを起動するたびの、お客様の年齢層の問い合わせ。Google Play は、年齢層を本アプリと共有してよいか、先にお客様に確認することがあります。</li>
+<li><strong>送信先：</strong>Google LLC</li>
+<li><strong>利用目的：</strong>年齢の質問への答えとあわせて、より慎重な年齢の扱いを適用するため。Google Play から返された年齢層は、13歳未満、13歳から17歳、18歳以上のどのグループかとしてだけ端末に保存され、どこにも送信されません。</li>
+</ul>
+
+<h2>購入（App Store、Google Play）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>購入する商品と購入の要求、およびアカウント識別子から作った符号（この符号から識別子は分かりません）。お支払いの情報は各ストアが扱い、当社には届きません。</li>
+<li><strong>送信先：</strong>Apple Inc.（日本の App Store の運営は iTunes株式会社）、Google LLC</li>
+<li><strong>利用目的：</strong>お支払いを処理し、購入した商品を正しいアカウントに届けるため。</li>
+</ul>
+
+<h2>ランキング（Game Center、Google Play Games）</h2>
+
+<p>ランキングを提供するバージョンで、お客様が Game Center または Google Play Games にサインインしている場合にだけ送信されます。</p>
+
+<ul>
+<li><strong>送信される情報：</strong>クリアしたレベル全体の合計スコアと、50レベルごとのステージのスコア。Google Play Games は、サービスの運営に必要な情報（遊んでいるゲームなど）も収集します。</li>
+<li><strong>送信先：</strong>Apple Inc.（iPhone と iPad の Game Center）、Google LLC（Android の Google Play Games）</li>
+<li><strong>利用目的：</strong>スコアをランキングに載せるため。スコアは、Game Center または Google Play Games のニックネームとアイコンとともに、ほかのプレイヤーに表示されます。スコアもニックネームも、当社のサーバーには届きません。</li>
+</ul>
+
+<h2>進行状況のバックアップ（iCloud、Android のバックアップ）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>iPhone と iPad では、iCloud がオンの場合、進行状況（クリアしたレベルと、各レベルの最少の手数と最高のスコア）のみで、コイン、ライフ、設定、アカウントは含みません。Android では、暗号化されたセーブデータと、それを新しい端末で開くための鍵。</li>
+<li><strong>送信先：</strong>Apple Inc.（iCloud）、Google LLC（Android の自動バックアップと Block Store）</li>
+<li><strong>利用目的：</strong>機種を変えたときに進行状況を失わないよう、お客様ご自身の Apple または Google のアカウントに保存するため。当社は、これを見ることも取り出すこともできません。</li>
+</ul>
+
+<h2>当社のサーバー（KernelArch Labs）</h2>
+
+<ul>
+<li><strong>送信される情報：</strong>アカウントのログイン用のトークン（アカウント識別子を含みます）、コインとライフの増減と使用、ストアが署名した購入の記録、端末の確認の結果（Google の判定、または Apple の証明とその鍵による署名）、本アプリのビルド番号。デイリーパズルを解いたときは、その日付と操作。ルームで遊ぶときは、ルームのコードと、クリアしたレベルの操作。どの通信でも、送信元の IP アドレスが、サーバーを動かす Cloudflare に届きます。</li>
+<li><strong>送信先：</strong>KernelArch Labs（当社）。サーバーは Cloudflare, Inc. のネットワーク上で動き、サーバーのログは、Google LLC が当社のために Google Cloud（インド）に保管します。</li>
+<li><strong>利用目的：</strong>コインとライフの残高を保つため、購入を反映するため、ゲームの公正さと安全を保つため、デイリーパズルの集計とルームを提供するため、重大な不具合のあるバージョンに更新をお願いするため。</li>
+</ul>
+
+<p>本アプリは起動時に、対応しているバージョンを記した小さなファイルも読み込みます。この通信には、通常のウェブの通信に伴う IP アドレスのほかに情報は含まれず、ファイルを配信するサーバーは、IP アドレスをファイルの送信とサイトの安全のためにだけ使います。</p>
+
+<h2>送信を止めるには</h2>
+
+<ul>
+<li><strong>パーソナライズド広告：</strong>「Settings」の「Personalised ads」をオフにします。iPhone と iPad のトラッキングは、iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」で変更できます。</li>
+<li><strong>ランキング：</strong>Game Center または Google Play Games からサインアウトします。ゲームはそのまま遊べます。</li>
+<li><strong>進行状況のバックアップ：</strong>iCloud、またはお使いの Google アカウントのバックアップの設定でオフにできます。</li>
+<li><strong>アカウント：</strong>「Settings」→「Account」→「Delete account」で、アカウントと、当社のサーバー上のその記録を削除できます。</li>
+</ul>
+
+<h2>お問い合わせ</h2>
+
+<p>この公表事項についてのご質問は、<a href="mailto:service@kernelarch.com">service@kernelarch.com</a> までお送りください。当社による情報の取扱いは、プライバシーポリシー（英語）に詳しく記載しています：<a href="https://www.kernelarch.com/exakt/privacy-policy.html">www.kernelarch.com/exakt/privacy-policy.html</a></p>
+
+<footer>EXAKT。このページは静的なページで、スクリプト、Cookie、トラッカーを一切使わず、ほかの場所から何も読み込みません。</footer>
+
+</body>
+</html>

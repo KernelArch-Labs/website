@@ -24,14 +24,23 @@
     background: #08061c; color: #eaf6ff; line-height: 1.6;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
                  sans-serif;
+    overflow-wrap: break-word;
   }
-  h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.5rem; color: #00e5ff; }
-  .updated { color: #a79fc8; font-size: 0.9rem; margin-top: 0; }
+  h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.02em;
+       margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.5rem 0 0.75rem;
+       color: #00e5ff; }
+  h3 { font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem;
+       color: #00e5ff; }
+  p, li { text-wrap: pretty; }
+  p { margin: 0 0 1rem; }
+  .updated { color: #a79fc8; font-size: 0.9rem; }
   .lead { font-size: 1.1rem; border-left: 2px solid #00e5ff;
           padding-left: 1rem; margin: 2rem 0; }
-  ul { padding-left: 1.2rem; }
-  li { margin: 0.4rem 0; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin: 0.5rem 0; padding-left: 0.25rem; }
+  li::marker { color: #00e5ff; }
+  strong { color: #ffffff; }
   code { background: #170b3b; padding: 0.1rem 0.35rem; border-radius: 4px;
          font-size: 0.9em; }
   a { color: #00e5ff; }
@@ -42,7 +51,7 @@
 <body>
 
 <h1>EXAKT — Delete your account</h1>
-<p class="updated">Last updated: 28 October 2026</p>
+<p class="updated">Last updated: 8 November 2026</p>
 
 <p class="lead">
   You can delete your EXAKT account and everything our server holds about
@@ -88,10 +97,11 @@
 </ul>
 <p>
   One thing stays for good: a one-way fingerprint of each purchase you
-  made, marked as already redeemed and linked to nobody, so that the same
-  payment can never be credited again. For an hour, our server also keeps
-  when the deletion happened, so that a sign-in from before it can't be
-  used; then that is deleted too. Our logs, kept for India's CERT-In, keep
+  made, marked as already redeemed, and as refunded if Apple refunded it,
+  and linked to nobody, so that the same payment can never be credited
+  again. For 66 minutes, our server also keeps when the deletion happened,
+  so that a sign-in from before it can't be used; then that is deleted
+  too. Our logs, kept for India's CERT-In, keep
   what they hold about the account until they are deleted at 180 days old,
   or a year old from 13 May 2027.
 </p>

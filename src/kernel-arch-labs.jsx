@@ -139,7 +139,9 @@ const PRODUCTS_DATA = [
     ],
     vPoints: [
       "Three free hints on every level, each one worked out from the board in front of you by the same solver, never a guess",
-      "A daily puzzle, the same for everyone: no hints, every try free, your first clear counts, and no streak to keep up",
+      "A daily puzzle, the same for everyone, easy on Monday and hardest at the weekend: no hints, every try free, your first clear counts, and the days before today can be played too, with no streak to keep up",
+      "Story 1, The Almost King: the first 300 levels are seven worlds, with a short story of Pip and four friends told in scenes. A scene opens each world, a line follows each first clear, and Skip story leaves any scene. The Home Town changes with each world finished, one tap from Home or the map. Nothing in it is sold, and nothing waits for an ad",
+      "A number album: the squares, cubes, primes, powers of two and other special numbers your number becomes on the way to a target join it, each with a line about it. It shows only what you made, with no gaps, counts or dates",
       "Free to play, with ads from Google AdMob: an ad between levels at most once every four clears, and optional videos for coins or a life. No Ads, bought once, ends the ads between levels",
       "No analytics or crash reporting of our own. Coins and lives are kept on our server against an anonymous account; signing in is optional, and you can delete your account from inside the app",
       "An age question at first launch, of which only an age group is kept, on the phone. A child's phone plays with no account, no ads and no purchases",
