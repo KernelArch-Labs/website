@@ -129,7 +129,7 @@ const PRODUCTS_DATA = [
     szStatus: "Pre-release",
     szOneLiner: "Arithmetic puzzles where you have to hit the number exactly",
     szDescription:
-      "You have a number and a target. Swipe, and your number slides across a board of arithmetic tiles, taking the operations it runs into, and the way you swipe decides which tile comes in next. Land on the target exactly: not close, exactly. All 2,000 levels are generated and then solved by the game's own solver before they ship, so there is no such thing as an impossible board, and the par you see before you start comes from a verified solution.",
+      "You have a number and a target. Swipe, and your number slides across a board of arithmetic tiles, taking the operations it runs into, and the way you swipe decides which tile comes in next. Land on the target exactly: not close, exactly. All 2,000 levels are generated and then solved by the game's own solver before they ship, so there is no such thing as an impossible board, and the moves for three stars, shown before you start, come from a verified solution.",
     vFacts: [
       { szLabel: "Levels", szValue: "2,000" },
       { szLabel: "Free levels", szValue: "All" },
